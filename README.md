@@ -51,3 +51,9 @@ Você precisa ter uma conta no [Figma](http://figma.com/) para acessá-lo 😉.
 ## 📝 Licença
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## Contribuintes
+<div>
+  <img src="https://avatars.githubusercontent.com/larissadantier?size=100" />
+  <img src="https://avatars.githubusercontent.com/eduardoangelosimon?size=100" />
+</div>
