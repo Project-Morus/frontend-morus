@@ -7,6 +7,7 @@ Em construção..🚧👷‍♂️
 Trata-se de uma aplicação web para a gestão de condôminos, todo o sistema será para facilitar tanto para os moradores quanto para o sindicato na admnistração.
 
 ## Tecnologias 💻
+- [Vite](https://vitejs.dev)
 - [TypeScript](https://www.typescriptlang.org)
 - [ReactJS](https://react.dev)
 - [React Hook Form](https://www.react-hook-form.com)
