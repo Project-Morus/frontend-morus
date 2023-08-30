@@ -1,18 +1,18 @@
 const TYPOGRAPHY = {
   HEADERS_SIZES: {
-    h1: '35px',
-    h2: '29px',
-    h3: '24px',
+    h1: '2.1875rem',
+    h2: '1.8125rem',
+    h3: '1.5rem',
   },
   TEXT_SIZES: {
-    large: '20px',
-    medium: '16px',
-    small: '14px',
-    xsmall: '12px',
+    large: '1.25rem',
+    medium: '1rem',
+    small: '1rem',
+    xsmall: '0.75rem',
   },
   CAPTION_SIZES: {
-    medium: '10px',
-    small: '8px',
+    medium: '0.625rem',
+    small: '0.5rem',
   },
   FONT_WEIGHTS: {
     regular: '400',
