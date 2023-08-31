@@ -1,7 +1,8 @@
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from './styles/themes/default';
 import { GlobalStyle } from './styles/themes/global';
-import Home from './pages/Home';
+import { BrowserRouter } from 'react-router-dom';
+import Router from './routes/Router';
 
 
 function App() {
@@ -9,7 +10,9 @@ function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
-      <Home />
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
     </ThemeProvider>
   )
 }

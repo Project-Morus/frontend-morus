@@ -1,17 +1,17 @@
 import { render, screen } from '@testing-library/react';
-import Home from '../../../pages/Home';
+import Login from '../../../pages/Login';
 import { withTheme } from '../../../helpers/withTheme';
 
-const HomeWithTheme = withTheme(Home)
-describe('Home Component', () => {
+const LoginWithTheme = withTheme(Login)
+describe('Login Component', () => {
   test('Render component', () => {
-    render(<HomeWithTheme />)
-    expect(screen.getByText('Home'))
+    render(<LoginWithTheme />)
+    expect(screen.getByText('Login'))
   })
 
-  test('Snapshot Home', () => {
+  test('Snapshot Login', () => {
     const { asFragment } = render(
-      <HomeWithTheme />,
+      <LoginWithTheme />,
     )
     expect(asFragment()).toMatchSnapshot()
   })

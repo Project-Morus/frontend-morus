@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home Component Snapshot Home 1`] = `
+exports[`Login Component Snapshot Login 1`] = `
 <DocumentFragment>
   <div>
     <h1
       style="font-size: 2.1875rem;"
     >
-      Home
+      Login
     </h1>
   </div>
 </DocumentFragment>
