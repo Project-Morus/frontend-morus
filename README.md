@@ -13,6 +13,7 @@ Trata-se de uma aplicação web para a gestão de condôminos, todo o sistema se
 - [React Hook Form](https://www.react-hook-form.com)
 - [Zod (Validações de formulários)](https://zod.dev)
 - [Jest (Testes unitários)](https://jestjs.io/pt-BR/)
+- [Testing Library](https://testing-library.com)
 - [Styled Components](https://styled-components.com)
 - [Axios](https://axios-http.com/ptbr/)
 
