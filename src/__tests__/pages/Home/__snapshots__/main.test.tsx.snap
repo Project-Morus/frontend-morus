@@ -8,23 +8,6 @@ exports[`Login Component Snapshot Login 1`] = `
     >
       Login
     </h1>
-    <div
-      class="sc-bcPKhP htqPTV"
-    >
-      <label
-        class="sc-grXZZQ ldwdmZ"
-        disabled=""
-        for="email"
-      >
-        E-mail
-      </label>
-      <input
-        class="sc-dkjKgF ddkJja"
-        disabled=""
-        id="email"
-        placeholder="teste"
-      />
-    </div>
   </div>
 </DocumentFragment>
 `;
