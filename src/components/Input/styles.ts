@@ -27,10 +27,10 @@ export const LabelSC = styled.label<{ disabled?: boolean }>`
     `}
 `;
 
-export const InputSC = styled.input<{ hasError?: boolean; disabled?: boolean }>`
+export const InputSC = styled.input<{ hasError?: boolean }>`
   color: ${({ theme }) => theme.colors.grey[400]};
-  padding: 0.5rem;
-  border: solid ${({ theme }) => theme.colors.grey[100]} ${({ theme }) => theme.border.width.regular};
+  padding: ${({ theme }) => theme.spacing[3]};
+  border: ${({ theme }) => theme.border.width.regular} solid ${({ theme }) => theme.colors.grey[100]} ;
 
   border-radius: ${({ theme }) => theme.border.radius.regular};
 
@@ -39,28 +39,23 @@ export const InputSC = styled.input<{ hasError?: boolean; disabled?: boolean }>`
     color: ${({ theme }) => theme.colors.primary[500]};
   }
 
-  &::placeholder {
-    color: ${({ theme }) => theme.colors.grey[100]};
-  }
-
-  &:placeholder && :disabled {
+  &::placeholder  {
     color: ${({ theme }) => theme.colors.grey[50]};
   }
+
+  &:disabled {
+      color: ${({ theme }) => theme.colors.grey[50]};
+      border-color: ${({ theme }) => theme.colors.grey[50]};
+      background: ${({ theme }) => theme.colors.white[50]};
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
 
   ${({ hasError }) =>
     hasError &&
     css`
       color: ${({ theme }) => theme.colors.red[500]};
       border-color: ${({ theme }) => theme.colors.red[500]};
-    `}
-
-  ${({ disabled }) =>
-    disabled &&
-    css`
-      color: ${({ theme }) => theme.colors.grey[50]};
-      border-color: ${({ theme }) => theme.colors.grey[50]};
-      background-color: ${({ theme }) => theme.colors.white};
-      cursor: not-allowed;
     `}
 `;
 
