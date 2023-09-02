@@ -21,6 +21,6 @@ export const GlobalStyle = createGlobalStyle`
   body, input, textarea, button {
     font-family: ${({ theme }) => theme.typography.FONT_FAMILIES.nunito};
     font-weight: ${({ theme }) => theme.typography.FONT_WEIGHTS.regular};
-    font-size: ${({ theme }) => theme.typography.TEXT_SIZES.large}
+    font-size: ${({ theme }) => theme.typography.TEXT_SIZES.medium}
   }
 `
