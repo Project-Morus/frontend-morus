@@ -1,17 +1,17 @@
-import { forwardRef, useId } from "react";
-import { ContainerSC, InputSC, LabelSC, HelperTextSC } from "./styles";
+import { forwardRef } from "react";
+import { ContainerSC, InputSC, LabelSC, ErrorTextSC } from "./styles";
 import { IInputProps } from "./types";
 
 const Input = forwardRef<HTMLInputElement, IInputProps>(
-  ({ hasError, label, helperText, ...props }, ref) => {
-    const inputId = useId();
-
+  ({ id, maxWidth, hasError, label, errorText, disabled, ...props }, ref) => {
     return (
-      <ContainerSC>
-        <LabelSC htmlFor={inputId}>{label}</LabelSC>
-        <InputSC hasError={hasError} id={inputId} ref={ref} {...props} />
+      <ContainerSC maxWidth={maxWidth}>
+        <LabelSC disabled={disabled} htmlFor={id}>
+          {label}
+        </LabelSC>
+        <InputSC disabled={disabled} hasError={hasError} id={id} ref={ref} {...props} />
 
-        {hasError && <HelperTextSC>{helperText}</HelperTextSC>}
+        {hasError && <ErrorTextSC>{errorText}</ErrorTextSC>}
       </ContainerSC>
     );
   }
