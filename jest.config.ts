@@ -14,5 +14,5 @@ export default {
   moduleDirectories: ['node_modules'],
   moduleFileExtensions: ['tsx', 'js', 'ts'],
   modulePaths: ['<rootDir>'],
-  setupFilesAfterEnv: ['<rootDir>/setup-jest.js'],
+  setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
 }

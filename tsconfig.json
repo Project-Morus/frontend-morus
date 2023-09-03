@@ -11,23 +11,29 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "baseUrl": "src",
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
+  "types": [
+    "@testing-library/jest-dom"
+  ],
   "exclude": [
     "node_modules"
   ],
   "include": [
-    "src"
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "./jest-setup.ts"
   ],
   "references": [
     {
