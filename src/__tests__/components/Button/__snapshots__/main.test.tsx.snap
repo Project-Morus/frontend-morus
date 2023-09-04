@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Component Snapshot Button 1`] = `
+<DocumentFragment>
+  .c0 {
+  width: 100%;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  background: none;
+  cursor: pointer;
+  padding: 0.75rem;
+  transition: all 0.2s;
+}
+
+.c0:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c1 {
+  background-color: #0353A4;
+  color: #FFF;
+}
+
+.c1:not(:disabled):hover {
+  background-color: #034C95;
+}
+
+<button
+    class="c0 c1"
+  >
+    <span>
+      Button
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button Component Snapshot Button with variant secondary 1`] = `
+<DocumentFragment>
+  .c0 {
+  width: 100%;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  background: none;
+  cursor: pointer;
+  padding: 0.75rem;
+  transition: all 0.2s;
+}
+
+.c0:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.c1 {
+  border: 2px solid #0353A4;
+  color: #0353A4;
+}
+
+.c1:not(:disabled):hover {
+  border-color: #034C95;
+  background-color: #0353A4;
+  color: #FFF;
+}
+
+<button
+    class="c0 c1"
+  >
+    <span>
+      Button
+    </span>
+  </button>
+</DocumentFragment>
+`;

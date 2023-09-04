@@ -1,7 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import Input from "../../../components/Input";
-import "@testing-library/jest-dom";
-import "jest-styled-components";
 import { withTheme } from "../../../helpers/withTheme";
 
 const InputWithTheme = withTheme(Input);
@@ -25,7 +23,12 @@ describe("Input Component", () => {
   });
 
   test("Verify if error message is rendering correctly", () => {
-    render(<InputWithTheme id={idName} hasError errorText="Error Message" label="Name" />);
+    render(<InputWithTheme
+      id={idName}
+      hasError
+      errorText="Error Message"
+      label="Name"
+    />);
     const errorMessage = screen.getByText("Error Message");
 
     expect(errorMessage).toBeInTheDocument();
