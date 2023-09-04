@@ -1,13 +1,13 @@
 import { ButtonSecondarySC } from "../../styles";
 import { IButtonProps } from "../../types";
 
-const ButtonSecondary = (props: Omit<IButtonProps, 'variant'>) => {
+const ButtonSecondary = ({ text, maxWidth, ...props }: Omit<IButtonProps, 'variant'>) => {
   return (
     <ButtonSecondarySC
-      maxWidth={props.maxWidth}
+      maxWidth={maxWidth}
       {...props}
     >
-      <span>{props.text}</span>
+      <span>{text}</span>
     </ButtonSecondarySC>
   );
 }
