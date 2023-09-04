@@ -66,11 +66,6 @@ exports[`Button Component Snapshot Button with variant secondary 1`] = `
   color: #FFF;
 }
 
-.c1:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
 <button
     class="c0 c1"
   >

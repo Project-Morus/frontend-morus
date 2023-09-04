@@ -20,9 +20,4 @@ export const ButtonSecondarySC = styled(BASE_STYLE)`
     background-color: ${({ theme }) => theme.colors.primary[500]};
     color: ${({ theme }) => theme.colors.white[50]};
   }
-
-  &:disabled {
-    opacity: 0.5; 
-    cursor: not-allowed;
-  }
 `
