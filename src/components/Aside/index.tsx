@@ -3,12 +3,10 @@ import { IAsideProps } from "./types";
 import LogoWhiteSvg from "../../assets/svg/LogoWhite";
 
 const Aside = ({ position = 'right', ...props }: IAsideProps) => {
-  const roleSVG = 'logoMorusWhite'
-
   return (
     <ContainerSC $position={position} role={props.role}>
       <ContentSC $position={position}>
-        <LogoWhiteSvg role={roleSVG} />
+        <LogoWhiteSvg />
       </ContentSC>
 
       {props.children}

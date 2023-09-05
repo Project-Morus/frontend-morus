@@ -171,7 +171,6 @@ exports[`Login Component Snapshot Login 1`] = `
         <svg
           fill="none"
           height="500"
-          role="logoMorusWhite"
           width="500"
           xmlns="http://www.w3.org/2000/svg"
         >
