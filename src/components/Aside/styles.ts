@@ -8,21 +8,21 @@ export const ContainerSC = styled.section<{ $position: PositionsAsideTypes }>`
   
   display: flex;
   flex-direction: ${({ $position }) => $position === 'right' ? 'row-reverse' : 'row'};
-  `
+`
 
 export const ContentSC = styled.aside<{ $position: PositionsAsideTypes }>`
-width: 100%;
+  width: 100%;
 
-display: flex;
-align-items: center;
-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-background-color: ${({ theme }) => theme.colors.primary[500]};
-border-radius: ${({ theme }) => theme.border.radius.regular};
+  background-color: ${({ theme }) => theme.colors.primary[500]};
+  border-radius: ${({ theme }) => theme.border.radius.regular};
 
-margin: ${({ theme, $position }) => $position === 'right'
-    ? `${theme.spacing[4]} ${theme.spacing[4]} ${theme.spacing[4]} 0`
-    : `${theme.spacing[4]} 0 ${theme.spacing[4]} ${theme.spacing[4]}`};
+  margin: ${({ theme, $position }) => $position === 'right'
+      ? `${theme.spacing[4]} ${theme.spacing[4]} ${theme.spacing[4]} 0`
+      : `${theme.spacing[4]} 0 ${theme.spacing[4]} ${theme.spacing[4]}`};
 `
 
 export const FooterSC = styled.footer<{ $position: PositionsAsideTypes }>`

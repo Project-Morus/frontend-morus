@@ -1,20 +1,14 @@
 import { ContainerSC, ContentSC, FooterSC } from "./styles";
-import logoMorusWhite from '../../assets/svg/LogoWhite.svg'
 import { IAsideProps } from "./types";
-import { ALT_IMAGE, SIZE_IMAGE } from "./stylesUtils";
+import LogoWhiteSvg from "../../assets/svg/LogoWhite";
 
 const Aside = ({ position = 'right', ...props }: IAsideProps) => {
-
+  const roleSVG = 'logoMorusWhite'
 
   return (
-    <ContainerSC $position={position}>
+    <ContainerSC $position={position} role={props.role}>
       <ContentSC $position={position}>
-        <img
-          width={SIZE_IMAGE}
-          height={SIZE_IMAGE}
-          src={logoMorusWhite}
-          alt={ALT_IMAGE}
-        />
+        <LogoWhiteSvg role={roleSVG} />
       </ContentSC>
 
       {props.children}

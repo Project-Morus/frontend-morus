@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
+import { IBaseProps } from "../../types";
 
-export interface IAsideProps {
+export interface IAsideProps extends IBaseProps {
   children: ReactNode,
   position?: PositionsAsideTypes
 }
