@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const ContainerSC = styled.div<{ maxWidth?: number }>`
+export const ContainerSC = styled.div<{ $maxWidth?: number }>`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -9,10 +9,10 @@ export const ContainerSC = styled.div<{ maxWidth?: number }>`
     margin-top: ${({ theme }) => theme.spacing[5]};
   }
 
-  ${({ maxWidth }) =>
-    maxWidth &&
+  ${({ $maxWidth }) =>
+    $maxWidth &&
     css`
-      max-width: ${maxWidth}px;
+      max-width: ${$maxWidth}px;
     `}
 `;
 

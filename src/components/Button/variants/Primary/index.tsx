@@ -4,7 +4,7 @@ import { IButtonProps } from "../../types";
 const ButtonPrimary = ({ text, maxWidth, ...props }: Omit<IButtonProps, 'variant'>) => {
   return (
     <ButtonPrimarySC
-      maxWidth={maxWidth}
+      $maxWidth={maxWidth}
       {...props}
     >
       <span>{text}</span>

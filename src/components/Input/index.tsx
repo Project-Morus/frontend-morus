@@ -5,7 +5,7 @@ import { IInputProps } from "./types";
 const Input = forwardRef<HTMLInputElement, IInputProps>(
   ({ id, maxWidth, hasError, label, errorText, disabled, ...props }, ref) => {
     return (
-      <ContainerSC maxWidth={maxWidth}>
+      <ContainerSC $maxWidth={maxWidth}>
         <LabelSC disabled={disabled} htmlFor={id}>
           {label}
         </LabelSC>
