@@ -19,6 +19,12 @@ describe("Aside Component", () => {
     expect(screen.getByText('Aside')).toBeVisible();
   })
 
+  test("Verify if component SVG in Aside is rendering", () => {
+    render(<AsideWithTheme role={role}>Aside</AsideWithTheme>);
+
+    expect(screen.getByRole('logoMorusWhite')).toBeVisible();
+  })
+
   test("Snapshot Aside with position right (default)", () => {
     const { asFragment } = render(<AsideWithTheme role={role}>Aside</AsideWithTheme>);
     expect(asFragment()).toMatchSnapshot();

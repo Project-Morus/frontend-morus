@@ -37,6 +37,7 @@ exports[`Aside Component Snapshot Aside with position left 1`] = `
       <svg
         fill="none"
         height="500"
+        role="logoMorusWhite"
         width="500"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -117,6 +118,7 @@ exports[`Aside Component Snapshot Aside with position right (default) 1`] = `
       <svg
         fill="none"
         height="500"
+        role="logoMorusWhite"
         width="500"
         xmlns="http://www.w3.org/2000/svg"
       >
