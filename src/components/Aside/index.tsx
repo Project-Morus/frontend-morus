@@ -14,7 +14,6 @@ const Aside = ({ position = 'right', ...props }: IAsideProps) => {
           height={SIZE_IMAGE}
           src={logoMorusWhite}
           alt={ALT_IMAGE}
-          loading="lazy"
         />
       </ContentSC>
 
