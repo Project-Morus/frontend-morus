@@ -29,7 +29,7 @@ export const FooterSC = styled.footer<{ $position: PositionsAsideTypes }>`
   position: absolute;
   bottom: ${ABSOLUTE_BOTTOM};
  
-  color: ${({ theme }) => theme.colors.grey[100]};
+  color: ${({ theme }) => theme.colors.grey[300]};
 
   font-size: ${({ theme }) => theme.typography.TEXT_SIZES.xsmall};
 
