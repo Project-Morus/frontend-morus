@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { PositionsAsideTypes } from './types'
 import { ABSOLUTE_BOTTOM, ABSOLUTE_X, VIEWPORT_HEIGHT } from './stylesUtils'
 
-export const ContainerSC = styled.aside<{ $position: PositionsAsideTypes }>`
+export const ContainerSC = styled.section<{ $position: PositionsAsideTypes }>`
   width: 100%;
   height: ${VIEWPORT_HEIGHT};
   
@@ -10,14 +10,14 @@ export const ContainerSC = styled.aside<{ $position: PositionsAsideTypes }>`
   flex-direction: ${({ $position }) => $position === 'right' ? 'row-reverse' : 'row'};
   `
 
-export const ContentSC = styled.div<{ $position: PositionsAsideTypes }>`
+export const ContentSC = styled.aside<{ $position: PositionsAsideTypes }>`
 width: 100%;
 
 display: flex;
 align-items: center;
 justify-content: center;
 
-background: ${({ theme }) => theme.colors.primary[500]};
+background-color: ${({ theme }) => theme.colors.primary[500]};
 border-radius: ${({ theme }) => theme.border.radius.regular};
 
 margin: ${({ theme, $position }) => $position === 'right'

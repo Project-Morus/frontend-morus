@@ -14,10 +14,6 @@ export const ContentSC = styled.div`
   max-width: 450px;
 `
 
-export const FormSC = styled.form`
-  margin: ${({ theme }) => theme.spacing[10]} 0;
-`
-
 export const TitleSC = styled.h1`
   font-size: ${({ theme }) => theme.typography.HEADERS_SIZES.h1};
   color: ${({ theme }) => theme.colors.primary[800]};
@@ -25,6 +21,10 @@ export const TitleSC = styled.h1`
   text-align: center;
 
   margin-bottom: ${({ theme }) => theme.spacing[7]};
+`
+
+export const FormSC = styled.form`
+  margin: ${({ theme }) => theme.spacing[10]} 0;
 `
 
 export const TextSC = styled.p`
@@ -45,6 +45,14 @@ export const ForgotPasswordSC = styled.span`
   font-weight: ${({ theme }) => theme.typography.FONT_WEIGHTS.bold};
 
   margin-top: ${({ theme }) => theme.spacing[10]};
+
+  user-select: none;  
+
+  transition: color 0.2s;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.primary[800]};
+  }
 `
 
 export const WrapperButtonSC = styled.div`
@@ -59,4 +67,19 @@ export const WithoutAccountSC = styled.p`
   text-align: center;
 
   margin-top: ${({ theme }) => theme.spacing[15]};
+
+  user-select: none;
+
+  font-weight: ${({ theme }) => theme.typography.FONT_WEIGHTS.bold};
+
+  strong { 
+    color: ${({ theme }) => theme.colors.primary[500]};
+    cursor: pointer;
+
+    transition: color 0.2s;
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.primary[800]};
+    }
+  }
 `
