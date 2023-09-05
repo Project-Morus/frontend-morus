@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 import { PositionsAsideTypes } from './types'
-import { ABSOLUTE_BOTTOM, ABSOLUTE_X, VIEWPORT_HEIGHT } from './stylesUtils'
+import { ABSOLUTE_BOTTOM, ABSOLUTE_X } from './stylesUtils'
 
 export const ContainerSC = styled.section<{ $position: PositionsAsideTypes }>`
   width: 100%;
-  height: ${VIEWPORT_HEIGHT};
+  height: 100vh;
   
   display: flex;
   flex-direction: ${({ $position }) => $position === 'right' ? 'row-reverse' : 'row'};

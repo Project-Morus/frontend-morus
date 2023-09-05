@@ -1,17 +1,19 @@
 import { ContainerSC, ContentSC, FooterSC } from "./styles";
 import logoMorusWhite from '../../assets/svg/LogoWhite.svg'
 import { IAsideProps } from "./types";
+import { ALT_IMAGE, SIZE_IMAGE } from "./stylesUtils";
 
 const Aside = ({ position = 'right', ...props }: IAsideProps) => {
+
 
   return (
     <ContainerSC $position={position}>
       <ContentSC $position={position}>
         <img
-          width={500}
-          height={500}
+          width={SIZE_IMAGE}
+          height={SIZE_IMAGE}
           src={logoMorusWhite}
-          alt="Uma imagem da logo Morus representada por 4 torres de tamanhos diferentes sendo um alto, dois médios e um pequeno e escrito logo abaixo: Morus Condomínios"
+          alt={ALT_IMAGE}
           loading="lazy"
         />
       </ContentSC>
