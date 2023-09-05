@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const ContainerSC = styled.div<{ maxWidth?: number }>`
+export const ContainerSC = styled.div<{ $maxWidth?: number }>`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -9,25 +9,25 @@ export const ContainerSC = styled.div<{ maxWidth?: number }>`
     margin-top: ${({ theme }) => theme.spacing[5]};
   }
 
-  ${({ maxWidth }) =>
-    maxWidth &&
+  ${({ $maxWidth }) =>
+    $maxWidth &&
     css`
-      max-width: ${maxWidth}px;
+      max-width: ${$maxWidth}px;
     `}
 `;
 
-export const LabelSC = styled.label<{ disabled?: boolean }>`
+export const LabelSC = styled.label<{ $disabled?: boolean }>`
   color: ${({ theme }) => theme.colors.grey[400]};
   margin-bottom: ${({ theme }) => theme.spacing[2]};
 
-  ${({ disabled }) =>
-    disabled &&
+  ${({ $disabled }) =>
+    $disabled &&
     css`
       color: ${({ theme }) => theme.colors.grey[100]};
     `}
 `;
 
-export const InputSC = styled.input<{ hasError?: boolean }>`
+export const InputSC = styled.input<{ $hasError?: boolean }>`
   color: ${({ theme }) => theme.colors.grey[400]};
   padding: ${({ theme }) => theme.spacing[3]};
   border: ${({ theme }) => theme.border.width.regular} solid ${({ theme }) => theme.colors.grey[100]} ;
@@ -51,8 +51,8 @@ export const InputSC = styled.input<{ hasError?: boolean }>`
       opacity: 0.5;
     }
 
-  ${({ hasError }) =>
-    hasError &&
+  ${({ $hasError }) =>
+    $hasError &&
     css`
       color: ${({ theme }) => theme.colors.red[500]};
       border-color: ${({ theme }) => theme.colors.red[500]};

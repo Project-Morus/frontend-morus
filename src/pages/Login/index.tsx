@@ -1,13 +1,25 @@
-import { useTheme } from "styled-components";
+import Aside from "../../components/Aside";
+import Footer from "./parts/Footer";
+import Form from "./parts/Form";
+import Header from "./parts/Header";
+import {
+  ContentSC,
+  WrapperSC
+} from "./styles";
 
 const Login = () => {
-  const theme = useTheme();
   return (
-    <div>
-      <h1 style={{ fontSize: `${theme.typography.HEADERS_SIZES.h1}` }}>
-        Login
-      </h1>
-    </div>
+    <main>
+      <Aside position="left">
+        <WrapperSC>
+          <ContentSC>
+            <Header />
+            <Form />
+            <Footer />
+          </ContentSC>
+        </WrapperSC>
+      </Aside>
+    </main>
   );
 };
 

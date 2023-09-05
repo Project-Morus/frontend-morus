@@ -7,6 +7,10 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html { 
+    touch-action: manipulation;
+  }
+
   :focus {
     outline: 0;
   }

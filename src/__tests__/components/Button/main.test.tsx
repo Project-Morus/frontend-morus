@@ -10,7 +10,7 @@ describe('Button Component', () => {
     render(<ButtonWithTheme text={textButton} />)
 
 
-    expect(screen.getByRole(buttonElement)).toBeTruthy()
+    expect(screen.getByRole(buttonElement)).toBeVisible()
   })
 
   test('Verify if text is rendering in Button', () => {
