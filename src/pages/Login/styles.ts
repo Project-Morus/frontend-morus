@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { CONTENT_MAX_WIDTH } from './stylesUtils'
 
 export const WrapperSC = styled.div`
   width: 100%;
@@ -11,7 +12,7 @@ export const WrapperSC = styled.div`
 `
 
 export const ContentSC = styled.div`
-  max-width: 450px;
+  max-width: ${CONTENT_MAX_WIDTH};
 `
 
 export const TitleSC = styled.h1`
@@ -23,13 +24,15 @@ export const TitleSC = styled.h1`
   margin-bottom: ${({ theme }) => theme.spacing[7]};
 `
 
+export const TextSC = styled.p`
+  color: ${({ theme }) => theme.colors.grey[300]};
+`
+
 export const FormSC = styled.form`
   margin: ${({ theme }) => theme.spacing[10]} 0;
 `
 
-export const TextSC = styled.p`
-  color: ${({ theme }) => theme.colors.grey[300]};
-`
+
 
 export const ForgotPasswordSC = styled.span`
   display: block;
@@ -63,7 +66,8 @@ export const WrapperButtonSC = styled.div`
   margin-top: ${({ theme }) => theme.spacing[7]};
 `
 
-export const WithoutAccountSC = styled.p`
+export const WithoutAccountSC = styled.span`
+  display: block;
   text-align: center;
 
   margin-top: ${({ theme }) => theme.spacing[15]};
