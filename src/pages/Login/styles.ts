@@ -32,8 +32,6 @@ export const FormSC = styled.form`
   margin: ${({ theme }) => theme.spacing[10]} 0;
 `
 
-
-
 export const ForgotPasswordSC = styled.span`
   display: block;
 
