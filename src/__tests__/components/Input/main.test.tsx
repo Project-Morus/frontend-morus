@@ -12,7 +12,7 @@ describe("Input Component", () => {
 
     const role = "textbox";
 
-    expect(screen.getByRole(role)).toBeInTheDocument();
+    expect(screen.getByRole(role)).toBeVisible();
   });
 
   test("Verify if label is rendering correctly", () => {
