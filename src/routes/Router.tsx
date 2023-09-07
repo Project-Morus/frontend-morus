@@ -11,7 +11,7 @@ const Router = () => {
 
       <Route path="/" element={<DefaultLayoutAuth />}>
         <Route path="login" element={<Login />} />
-        <Route path="/forgotPasswordFirstStep" element={<ForgotPasswordFirstStep />} />
+        <Route path="forgotPasswordFirstStep" element={<ForgotPasswordFirstStep />} />
       </Route>
     </Routes>
   );
