@@ -5,8 +5,8 @@ import DividerSecondary from "./variants/Secondary";
 
 const Divider = ({ variant = "primary", ...props }: IDividerProps) => {
   const variantType: Record<VariantsTypes, ReactNode> = {
-    primary: <DividerPrimary {...props} />,
-    secondary: <DividerSecondary {...props} />,
+    primary: <DividerPrimary {...props} role='divider' />,
+    secondary: <DividerSecondary {...props} role='divider' />,
   };
 
   return variantType[variant];

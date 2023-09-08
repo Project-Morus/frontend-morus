@@ -7,7 +7,7 @@ import { BackToLoginButtonSC, ContentSC, WrapperSC } from "./styles";
 const ForgotPasswordFirstStep = () => {
   return (
     <main>
-      <Aside position="right">
+      <Aside>
         <WrapperSC>
           <ContentSC>
             {/* Falta colocar ícone de seta para voltar */}

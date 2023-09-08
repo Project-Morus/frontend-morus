@@ -1,8 +1,10 @@
-export interface IDividerProps {
+import { IBaseProps } from "../../types";
+
+export interface IDividerProps extends IBaseProps {
   maxWidth?: number;
-  marginTop?: number;
-  marginBottom?: number;
-  variant: VariantsTypes;
+  marginTop?: string;
+  marginBottom?: string;
+  variant?: VariantsTypes;
 }
 
 export type VariantsTypes = "primary" | "secondary";

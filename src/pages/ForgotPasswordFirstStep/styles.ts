@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { CONTENT_MAX_WIDTH } from "./stylesUtils";
+import { BUTTON_MAX_WIDTH, CONTENT_MAX_WIDTH, ICON_SQUARE_DIAMETER, POSITION_BACK_LOGIN } from "./stylesUtils";
 
 export const WrapperSC = styled.div`
   width: 100%;
@@ -17,22 +17,28 @@ export const ContentSC = styled.div`
 
 export const BackToLoginButtonSC = styled.button`
   position: absolute;
-  top: ${({ theme }) => theme.spacing[4]};
-  left: ${({ theme }) => theme.spacing[4]};
+  top: ${POSITION_BACK_LOGIN};
+  left: ${POSITION_BACK_LOGIN};
+
+  max-width: ${BUTTON_MAX_WIDTH};
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  width: 250px;
   background: none;
+
   cursor: pointer;
+
   transition: background-color 0.2s;
+
   border: none;
+  border-radius: ${({ theme }) => theme.border.radius.regular};
 
   color: ${({ theme }) => theme.colors.primary[500]};
+
   font-weight: ${({ theme }) => theme.typography.FONT_WEIGHTS.bold};
-  border-radius: ${({ theme }) => theme.border.radius.regular};
+
   padding: ${({ theme }) => theme.spacing[2]};
 
   &:hover {
@@ -42,20 +48,25 @@ export const BackToLoginButtonSC = styled.button`
 
 export const WrapperIconSquareSC = styled.div`
   width: 100%;
+  
   display: flex;
   align-items: center;
   justify-content: center;
+
   margin-bottom: ${({ theme }) => theme.spacing[8]};
 `;
 
 export const IconSquareSC = styled.div`
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
-  border-radius: ${({ theme }) => theme.border.radius.regular};
-  width: 70px;
-  height: 70px;
+  width: ${ICON_SQUARE_DIAMETER};
+  height: ${ICON_SQUARE_DIAMETER};
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+
+  border-radius: ${({ theme }) => theme.border.radius.regular};
 `;
 
 export const TitleSC = styled.h1`
