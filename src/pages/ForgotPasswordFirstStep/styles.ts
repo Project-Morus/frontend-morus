@@ -15,6 +15,49 @@ export const ContentSC = styled.div`
   max-width: ${CONTENT_MAX_WIDTH};
 `;
 
+export const BackToLoginButtonSC = styled.button`
+  position: absolute;
+  top: ${({ theme }) => theme.spacing[4]};
+  left: ${({ theme }) => theme.spacing[4]};
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 250px;
+  background: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border: none;
+
+  color: ${({ theme }) => theme.colors.primary[500]};
+  font-weight: ${({ theme }) => theme.typography.FONT_WEIGHTS.bold};
+  border-radius: ${({ theme }) => theme.border.radius.regular};
+  padding: ${({ theme }) => theme.spacing[2]};
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.primary[50]};
+  }
+`;
+
+export const WrapperIconSquareSC = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: ${({ theme }) => theme.spacing[8]};
+`;
+
+export const IconSquareSC = styled.div`
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+  border-radius: ${({ theme }) => theme.border.radius.regular};
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const TitleSC = styled.h1`
   font-size: ${({ theme }) => theme.typography.HEADERS_SIZES.h1};
   color: ${({ theme }) => theme.colors.primary[500]};
@@ -60,8 +103,6 @@ export const WrapperButtonSC = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  margin-top: ${({ theme }) => theme.spacing[7]};
 `;
 
 export const WithoutAccountSC = styled.span`

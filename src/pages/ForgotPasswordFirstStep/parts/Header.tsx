@@ -1,8 +1,14 @@
-import { TextSC, TitleSC } from "../styles";
+import { IconSquareSC, TextSC, TitleSC, WrapperIconSquareSC } from "../styles";
 
 const Header = () => {
   return (
     <header>
+      <WrapperIconSquareSC>
+        <IconSquareSC>
+          <p>Icon</p>
+        </IconSquareSC>
+      </WrapperIconSquareSC>
+
       <TitleSC>Esqueceu sua senha? </TitleSC>
 
       <TextSC>

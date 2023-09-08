@@ -15,10 +15,10 @@ const Form = () => {
     <FormSC onSubmit={handleSubmitAuth}>
       <Input id="e-mail" label="E-mail" placeholder="Insira o seu e-mail" />
 
-      <Divider variant="secondary" marginTop={100} />
+      <Divider variant="secondary" marginTop={50} marginBottom={50} />
 
       <WrapperButtonSC>
-        <Button text="Entrar" maxWidth={370} />
+        <Button text="Enviar" maxWidth={370} />
       </WrapperButtonSC>
     </FormSC>
   );
