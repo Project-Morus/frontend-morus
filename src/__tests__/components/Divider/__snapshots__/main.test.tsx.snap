@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Divider Component Snapshot Divider 1`] = `
+<DocumentFragment>
+  .c0 {
+  width: 100%;
+  max-width: px;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.c1 {
+  border-color: #E6EEF6;
+}
+
+<div
+    class="c0 c1"
+    role="divider"
+  />
+</DocumentFragment>
+`;
+
+exports[`Divider Component Snapshot Divider with variant secondary 1`] = `
+<DocumentFragment>
+  .c0 {
+  width: 100%;
+  max-width: px;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.c1 {
+  border-color: #D9D9D9;
+}
+
+<div
+    class="c0 c1"
+    role="divider"
+  />
+</DocumentFragment>
+`;
