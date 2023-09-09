@@ -1,9 +1,11 @@
 import { FormEvent } from "react";
-import Button from "../../../components/Button";
-import Input from "../../../components/Input";
+
 import { FormSC, WrapperButtonSC } from "../styles";
-import Divider from "../../../components/Divider";
+
 import { useTheme } from "styled-components";
+import Input from "../../../../components/Input";
+import Button from "../../../../components/Button";
+import Divider from "../../../../components/Divider";
 
 const Form = () => {
   const theme = useTheme()
