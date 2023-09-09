@@ -1,21 +1,21 @@
 import { FormEvent } from "react";
-import Button from "../../../components/Button";
-import Input from "../../../components/Input";
 import { FormSC, WarningTextSC, WrapperButtonSC } from "../styles";
-import Divider from "../../../components/Divider";
 import { useTheme } from "styled-components";
+import Input from "../../../../components/Input";
+import Divider from "../../../../components/Divider";
+import Button from "../../../../components/Button";
 
 const Form = () => {
   const theme = useTheme();
 
-  const handleSubmitAuth = (e: FormEvent) => {
+  const handleSubmitNewPassword = (e: FormEvent) => {
     e.preventDefault();
 
     console.log("Submit Login Sucess");
   };
 
   return (
-    <FormSC onSubmit={handleSubmitAuth}>
+    <FormSC onSubmit={handleSubmitNewPassword}>
       <Input id="new-password" label="Nova senha" placeholder="Senha" />
       <WarningTextSC>
         Sua nova senha deve conter letras maiúsculas, minúsculas, números e caracteres especiais. Além disso, deve

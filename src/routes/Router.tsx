@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import Login from "../pages/Login";
-import ForgotPasswordFirstStep from "../pages/ForgotPasswordFirstStep";
-import ForgotPasswordSecondStep from "../pages/ForgotPasswordSecondStep";
 import DefaultLayoutAuth from "../layout/DefaultLayoutAuth";
 import LandingPage from "../pages/LandingPage";
+import ForgotPasswordFirstStep from "../pages/ForgotPassword/ForgotPasswordFirstStep";
+import ForgotPasswordSecondStep from "../pages/ForgotPassword/ForgotPasswordSecondStep";
 
 const Router = () => {
   return (
