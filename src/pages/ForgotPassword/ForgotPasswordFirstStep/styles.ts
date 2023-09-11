@@ -60,19 +60,6 @@ export const WrapperIconSquareSC = styled.div`
   margin-bottom: ${({ theme }) => theme.spacing[8]};
 `;
 
-export const IconSquareSC = styled.div`
-  width: ${ICON_SQUARE_DIAMETER};
-  height: ${ICON_SQUARE_DIAMETER};
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
-
-  border-radius: ${({ theme }) => theme.border.radius.regular};
-`;
-
 export const TitleSC = styled.h1`
   font-size: ${({ theme }) => theme.typography.HEADERS_SIZES.h1};
   color: ${({ theme }) => theme.colors.primary[500]};

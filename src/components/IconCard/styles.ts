@@ -10,7 +10,7 @@ export const CardSC = styled.div<{ $variant: VariantsCardTypes }>`
   align-items: center;
   justify-content: center;
 
-  background-color: ${({ theme, $variant }) => $variant === 'primary' ? theme.colors.primary[50] : theme.colors.white};
+  background-color: ${({ theme, $variant }) => $variant === 'primary' ? theme.colors.primary[50] : theme.colors.white[50]};
 
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
 
