@@ -1,16 +1,14 @@
-import Aside from "../../components/Aside";
+
+import Aside from "../../../components/Aside";
 import Footer from "./parts/Footer";
 import Form from "./parts/Form";
 import Header from "./parts/Header";
-import {
-  ContentSC,
-  WrapperSC
-} from "./styles";
+import { ContentSC, WrapperSC } from "./styles";
 
-const Login = () => {
+const ForgotPasswordTwoStep = () => {
   return (
     <main>
-      <Aside position="left">
+      <Aside>
         <WrapperSC>
           <ContentSC>
             <Header />
@@ -23,4 +21,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ForgotPasswordTwoStep;

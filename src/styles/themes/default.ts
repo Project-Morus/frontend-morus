@@ -8,6 +8,6 @@ export const defaultTheme = {
   colors: COLORS,
   spacing: SPACING,
   typography: TYPOGRAPHY,
-  breckpoints: BREAKPOINTS,
+  breakpoints: BREAKPOINTS,
   border: BORDER,
 } as const

@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const BASE_STYLE = styled.button<{ maxWidth?: number }>`
+export const BASE_STYLE = styled.button<{ $maxWidth?: number }>`
   width: 100%;
 
   font-weight:  ${({ theme }) => theme.typography.FONT_WEIGHTS.bold};
@@ -21,5 +21,5 @@ export const BASE_STYLE = styled.button<{ maxWidth?: number }>`
 
   transition: all 0.2s;
   
-  ${({ maxWidth }) => maxWidth && `max-width: ${maxWidth}px`};
+  ${({ $maxWidth }) => $maxWidth && `max-width: ${$maxWidth}px`};
 `
