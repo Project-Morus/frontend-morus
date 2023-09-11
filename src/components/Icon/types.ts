@@ -1,4 +1,3 @@
-
 import { IBaseProps } from '../../types';
 import PhosphorIconsMap from './parts/phosphorIconsMap';
 
