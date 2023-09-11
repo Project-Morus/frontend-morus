@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BUTTON_MAX_WIDTH, CONTENT_MAX_WIDTH, ICON_SQUARE_DIAMETER, POSITION_BACK_LOGIN } from "./stylesUtils";
+import { BUTTON_MAX_WIDTH, CONTENT_MAX_WIDTH, POSITION_BACK_LOGIN } from "./stylesUtils";
 import { Link } from "react-router-dom";
 
 export const WrapperSC = styled.div`

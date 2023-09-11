@@ -1,12 +1,11 @@
-import { IconSquareSC, TextSC, TitleSC, WrapperIconSquareSC } from "../styles";
+import IconCard from "../../../../components/IconCard";
+import { TextSC, TitleSC, WrapperIconSquareSC } from "../styles";
 
 const Header = () => {
   return (
     <header>
       <WrapperIconSquareSC>
-        <IconSquareSC>
-          <p>Icon</p>
-        </IconSquareSC>
+        <IconCard icon='ph-fingerprint-simple' />
       </WrapperIconSquareSC>
 
       <TitleSC>Escolha uma nova senha </TitleSC>
