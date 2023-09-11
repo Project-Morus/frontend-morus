@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { CONTENT_MAX_WIDTH } from './stylesUtils'
+import { Link } from 'react-router-dom'
 
 export const WrapperSC = styled.div`
   width: 100%;
@@ -32,11 +33,10 @@ export const FormSC = styled.form`
   margin: ${({ theme }) => theme.spacing[10]} 0;
 `
 
-export const ForgotPasswordSC = styled.span`
+export const ForgotPasswordSC = styled(Link)`
   display: block;
 
   text-align: right;
-  text-decoration: underline;
 
   cursor: pointer;
 
@@ -83,5 +83,16 @@ export const WithoutAccountSC = styled.span`
     &:hover {
       color: ${({ theme }) => theme.colors.primary[800]};
     }
+  }
+`
+
+export const SignUpSC = styled(Link)`
+  text-decoration: none;  
+  color: ${({ theme }) => theme.colors.primary[500]};
+
+  transition: color 0.2s;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.primary[800]};
   }
 `

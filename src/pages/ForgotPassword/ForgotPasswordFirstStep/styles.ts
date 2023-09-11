@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { BUTTON_MAX_WIDTH, CONTENT_MAX_WIDTH, ICON_SQUARE_DIAMETER, POSITION_BACK_LOGIN } from "./stylesUtils";
+import { Link } from "react-router-dom";
 
 export const WrapperSC = styled.div`
   width: 100%;
@@ -15,7 +16,7 @@ export const ContentSC = styled.div`
   max-width: ${CONTENT_MAX_WIDTH};
 `;
 
-export const BackToLoginButtonSC = styled.button`
+export const BackToLoginButtonSC = styled(Link)`
   position: absolute;
   top: ${POSITION_BACK_LOGIN};
   left: ${POSITION_BACK_LOGIN};
@@ -24,7 +25,8 @@ export const BackToLoginButtonSC = styled.button`
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: ${({ theme }) => theme.spacing[4]};
 
   background: none;
 
@@ -40,6 +42,8 @@ export const BackToLoginButtonSC = styled.button`
   font-weight: ${({ theme }) => theme.typography.FONT_WEIGHTS.bold};
 
   padding: ${({ theme }) => theme.spacing[2]};
+
+  text-decoration: none;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.primary[50]};
@@ -137,3 +141,14 @@ export const WithoutAccountSC = styled.span`
     }
   }
 `;
+
+export const SignUpSC = styled(Link)`
+  text-decoration: none;  
+  color: ${({ theme }) => theme.colors.primary[500]};
+
+  transition: color 0.2s;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.primary[800]};
+  }
+`

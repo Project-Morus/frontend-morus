@@ -19,7 +19,7 @@ exports[`Login Component Snapshot Login 1`] = `
   margin: 0.75rem 0 0.75rem 0.75rem;
 }
 
-.c16 {
+.c17 {
   position: absolute;
   bottom: 12px;
   color: #6B6B6B;
@@ -57,7 +57,6 @@ exports[`Login Component Snapshot Login 1`] = `
 .c11 {
   display: block;
   text-align: right;
-  text-decoration: underline;
   cursor: pointer;
   color: #0353A4;
   font-size: 0.875rem;
@@ -93,6 +92,16 @@ exports[`Login Component Snapshot Login 1`] = `
 }
 
 .c15 strong:hover {
+  color: #022E5A;
+}
+
+.c16 {
+  text-decoration: none;
+  color: #0353A4;
+  transition: color 0.2s;
+}
+
+.c16:hover {
   color: #022E5A;
 }
 
@@ -256,11 +265,12 @@ exports[`Login Component Snapshot Login 1`] = `
                 type="password"
               />
             </div>
-            <span
+            <a
               class="c11"
+              href="/forgotPasswordFirstStep"
             >
               Esqueci a minha senha
-            </span>
+            </a>
             <div
               class="c12"
             >
@@ -277,14 +287,17 @@ exports[`Login Component Snapshot Login 1`] = `
             class="c15"
           >
             Ainda não possui uma conta? 
-            <strong>
+            <a
+              class="c16"
+              href="/"
+            >
               Cadastre-se aqui
-            </strong>
+            </a>
           </span>
         </div>
       </div>
       <footer
-        class="c16"
+        class="c17"
       >
         Todos os direitos reservados Morus Company 2023 | Versão 1.0.0
       </footer>
