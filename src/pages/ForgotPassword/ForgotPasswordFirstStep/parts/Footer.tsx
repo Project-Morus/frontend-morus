@@ -1,8 +1,8 @@
-import { WithoutAccountSC } from "../styles";
+import { SignUpSC, WithoutAccountSC } from "../styles";
 
 const Footer = () => {
   return (
-    <WithoutAccountSC>Ainda não possui uma conta? <strong>Cadastre-se aqui</strong></WithoutAccountSC>
+    <WithoutAccountSC>Ainda não possui uma conta? <SignUpSC to=''>Cadastre-se aqui</SignUpSC></WithoutAccountSC>
   );
 }
 

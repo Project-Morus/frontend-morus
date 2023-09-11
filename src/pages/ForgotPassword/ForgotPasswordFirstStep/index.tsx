@@ -13,7 +13,7 @@ const ForgotPasswordFirstStep = () => {
         <WrapperSC>
           <ContentSC>
             {/* Falta colocar ícone de seta para voltar */}
-            <BackToLoginButtonSC>
+            <BackToLoginButtonSC to='/login' >
               <Icon name="ph-arrow-left" size="20" stroke="bold" />Voltar para a tela de login
             </BackToLoginButtonSC>
             <Header />
