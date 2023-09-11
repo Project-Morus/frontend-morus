@@ -1,4 +1,4 @@
-import { IBaseProps } from './../../../types';
+import { IBaseProps } from '../../types';
 import PhosphorIconsMap from './parts/phosphorIconsMap';
 
 export interface IIconProps extends IIconBaseProps {

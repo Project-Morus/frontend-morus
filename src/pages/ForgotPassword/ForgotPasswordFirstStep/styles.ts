@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BUTTON_MAX_WIDTH, CONTENT_MAX_WIDTH, ICON_SQUARE_DIAMETER, POSITION_BACK_LOGIN } from "./stylesUtils";
+import { BUTTON_MAX_WIDTH, CONTENT_MAX_WIDTH, POSITION_BACK_LOGIN } from "./stylesUtils";
 import { Link } from "react-router-dom";
 
 export const WrapperSC = styled.div`
@@ -58,19 +58,6 @@ export const WrapperIconSquareSC = styled.div`
   justify-content: center;
 
   margin-bottom: ${({ theme }) => theme.spacing[8]};
-`;
-
-export const IconSquareSC = styled.div`
-  width: ${ICON_SQUARE_DIAMETER};
-  height: ${ICON_SQUARE_DIAMETER};
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
-
-  border-radius: ${({ theme }) => theme.border.radius.regular};
 `;
 
 export const TitleSC = styled.h1`
