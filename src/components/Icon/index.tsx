@@ -9,7 +9,7 @@ const Icon = ({ name, color, size, stroke, onClick, ...props }: IIconProps) => {
     const icon = PhosphorIconsMap[name as PhosphorIconsTypes]
 
     const element = createElement(icon, {
-      size,
+      size: size || '24',
       weight: stroke,
     })
 

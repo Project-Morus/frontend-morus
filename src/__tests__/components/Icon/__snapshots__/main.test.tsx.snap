@@ -7,6 +7,9 @@ exports[`Icon component Snapshot Icon 1`] = `
 }
 
 .c1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   max-width: 100%;
   width: fit-content;
   width: -moz-fit-content;
