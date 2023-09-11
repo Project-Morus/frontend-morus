@@ -24,7 +24,8 @@ export const BackToLoginButtonSC = styled.button`
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: ${({ theme }) => theme.spacing[4]};
 
   background: none;
 

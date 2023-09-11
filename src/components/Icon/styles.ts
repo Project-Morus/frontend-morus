@@ -7,6 +7,10 @@ export const IconSC = styled.div<{ $iconColor?: string }>`
 `
 
 export const PureIconSC = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   max-width: 100%;
 
   width: fit-content;
