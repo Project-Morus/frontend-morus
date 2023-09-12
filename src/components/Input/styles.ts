@@ -30,7 +30,8 @@ export const LabelSC = styled.label<{ $disabled?: boolean }>`
 export const InputSC = styled.input<{ $hasError?: boolean }>`
   color: ${({ theme }) => theme.colors.grey[400]};
   padding: ${({ theme }) => theme.spacing[3]};
-  border: ${({ theme }) => theme.border.width.regular} solid ${({ theme }) => theme.colors.grey[100]} ;
+  border: ${({ theme }) => theme.border.width.regular} solid ${({ theme }) => theme.colors.grey[100]};
+  
 
   border-radius: ${({ theme }) => theme.border.radius.regular};
 
