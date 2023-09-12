@@ -9,6 +9,9 @@ export default {
   transformIgnorePatterns: [
     'node_modules'
   ],
+  testMatch: [
+    "**/?(*.)+(spec|test).[tj]s?(x)"
+  ],
   coveragePathIgnorePatterns: ['node_modules'],
   watchPathIgnorePatterns: ["node_modules"],
   moduleDirectories: ['node_modules'],
