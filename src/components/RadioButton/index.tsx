@@ -1,10 +1,17 @@
-import { RadioSC, WrapperSC } from "./styles";
+import { LabelSC, RadioSC, WrapperSC } from "./styles";
+import { IRadioButtonProps } from "./types";
 
-const RadioButton = () => {
+const RadioButton = ({ label = '', id, disabled = false, ...props }: IRadioButtonProps) => {
+
   return (
-    <WrapperSC>
-      <RadioSC type="radio" id='propsid' name='propsName' value="propsValue" />
-      <label htmlFor="propsid">Email</label>
+    <WrapperSC $disabled={disabled}>
+      <RadioSC
+        type="radio"
+        id={id}
+        disabled={disabled}
+        {...props}
+      />
+      <LabelSC htmlFor={id} $disabled={disabled}>{label}</LabelSC>
     </WrapperSC>
   );
 }
