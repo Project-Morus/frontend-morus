@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioButton Component Snapshot RadioButton 1`] = `
+<DocumentFragment>
+  .c1 {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  border-radius: 50%;
+  border: 2px solid #023B74;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.c1:checked {
+  border-width: 5px;
+}
+
+.c1:not(:checked):hover {
+  border-color: #0353A4;
+}
+
+.c1:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.c0 {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  border: 1px solid #BABABA;
+  border-radius: 5px;
+  background-color: #FFF;
+  padding: 1rem;
+}
+
+.c2 {
+  color: #4E4E4E;
+}
+
+<div
+    class="c0"
+  >
+    <input
+      class="c1"
+      id="idname"
+      role="radiogroup"
+      type="radio"
+    />
+    <label
+      class="c2"
+      for="idname"
+    >
+      Name
+    </label>
+  </div>
+</DocumentFragment>
+`;
