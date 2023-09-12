@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SequencialStepper component Snapshot SequencialStepper 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 2.25rem;
+}
+
+.c1 {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #3575B6;
+}
+
+.c2 {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #B1CAE3;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    />
+    <div
+      class="c2"
+    />
+    <div
+      class="c2"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SequencialStepper component Snapshot SequencialStepper with currentStep in last step 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 2.25rem;
+}
+
+.c1 {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #B1CAE3;
+}
+
+.c2 {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #3575B6;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    />
+    <div
+      class="c1"
+    />
+    <div
+      class="c2"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SequencialStepper component Snapshot SequencialStepper with currentStep in two 1`] = `
+<DocumentFragment>
+  .c0 {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 2.25rem;
+}
+
+.c1 {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #B1CAE3;
+}
+
+.c2 {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #3575B6;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    />
+    <div
+      class="c2"
+    />
+    <div
+      class="c1"
+    />
+  </div>
+</DocumentFragment>
+`;
