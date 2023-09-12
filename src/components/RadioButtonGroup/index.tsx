@@ -2,7 +2,7 @@ import RadioButton from "../RadioButton";
 import { FieldsetSC, WrapperSC } from "./styles";
 import { IOptionGroupProps, IOptionProps } from "./types";
 
-const RadioButtonGroup = ({ label = '', options, onChange }: IOptionGroupProps) => {
+const RadioButtonGroup = ({ label = '', options, onChange, required }: IOptionGroupProps) => {
 
   const renderOptions = () => {
     return options.map(({ label, name, disabled }: IOptionProps, index) => {
@@ -16,6 +16,7 @@ const RadioButtonGroup = ({ label = '', options, onChange }: IOptionGroupProps) 
           label={label}
           id={optionId}
           name={name}
+          required={required}
           disabled={disabled}
           defaultChecked={index === 0}
           onChange={onChange}
