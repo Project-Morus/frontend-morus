@@ -1,5 +1,6 @@
 export interface IOptionGroupProps {
   label: string;
+  name?: string;
   options: IOptionProps[];
   required?: boolean;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
@@ -7,6 +8,5 @@ export interface IOptionGroupProps {
 
 export interface IOptionProps {
   label: string;
-  name?: string;
   disabled?: boolean;
 }

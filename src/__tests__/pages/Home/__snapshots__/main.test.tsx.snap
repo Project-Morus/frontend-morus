@@ -19,7 +19,7 @@ exports[`Login Component Snapshot Login 1`] = `
   margin: 0.75rem 0 0.75rem 0.75rem;
 }
 
-.c17 {
+.c16 {
   position: absolute;
   bottom: 12px;
   color: #6B6B6B;
@@ -54,7 +54,7 @@ exports[`Login Component Snapshot Login 1`] = `
   margin: 2.25rem 0;
 }
 
-.c11 {
+.c10 {
   display: block;
   text-align: right;
   cursor: pointer;
@@ -66,18 +66,18 @@ exports[`Login Component Snapshot Login 1`] = `
   transition: color 0.2s;
 }
 
-.c11:hover {
+.c10:hover {
   color: #022E5A;
 }
 
-.c12 {
+.c11 {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 1.5rem;
 }
 
-.c15 {
+.c14 {
   display: block;
   text-align: center;
   margin-top: 3.5rem;
@@ -85,27 +85,27 @@ exports[`Login Component Snapshot Login 1`] = `
   font-weight: 700;
 }
 
-.c15 strong {
+.c14 strong {
   color: #0353A4;
   cursor: pointer;
   transition: color 0.2s;
 }
 
-.c15 strong:hover {
+.c14 strong:hover {
   color: #022E5A;
 }
 
-.c16 {
+.c15 {
   text-decoration: none;
   color: #0353A4;
   transition: color 0.2s;
 }
 
-.c16:hover {
+.c15:hover {
   color: #022E5A;
 }
 
-.c13 {
+.c12 {
   width: 100%;
   font-weight: 700;
   border: none;
@@ -117,52 +117,48 @@ exports[`Login Component Snapshot Login 1`] = `
   max-width: 370px;
 }
 
-.c13:disabled {
+.c12:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.c14 {
+.c13 {
   background-color: #0353A4;
   color: #FFF;
 }
 
-.c14:not(:disabled):hover {
+.c13:not(:disabled):hover {
   background-color: #034C95;
 }
 
-.c8 {
+.c7 {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.c7+.c7 {
-  margin-top: 1rem;
-}
-
-.c9 {
+.c8 {
   color: #4E4E4E;
   margin-bottom: 0.25rem;
 }
 
-.c10 {
+.c9 {
   color: #4E4E4E;
   padding: 0.5rem;
   border: 1px solid #BABABA;
   border-radius: 5px;
 }
 
-.c10:focus {
+.c9:focus {
   border-color: #0353A4;
   color: #0353A4;
 }
 
-.c10::placeholder {
+.c9::placeholder {
   color: #E9E9E9;
 }
 
-.c10:disabled {
+.c9:disabled {
   color: #E9E9E9;
   border-color: #E9E9E9;
   background: #FFF;
@@ -235,47 +231,47 @@ exports[`Login Component Snapshot Login 1`] = `
             class="c6"
           >
             <div
-              class="c7 c8"
+              class="c7"
             >
               <label
-                class="c9"
+                class="c8"
                 for="e-mail"
               >
                 E-mail
               </label>
               <input
-                class="c10"
+                class="c9"
                 id="e-mail"
                 placeholder="Insira o seu e-mail"
               />
             </div>
             <div
-              class="c7 c8"
+              class="c7"
             >
               <label
-                class="c9"
+                class="c8"
                 for="passaword"
               >
                 Senha
               </label>
               <input
-                class="c10"
+                class="c9"
                 id="passaword"
                 placeholder="Insira a sua senha"
                 type="password"
               />
             </div>
             <a
-              class="c11"
+              class="c10"
               href="/forgotPasswordFirstStep"
             >
               Esqueci a minha senha
             </a>
             <div
-              class="c12"
+              class="c11"
             >
               <button
-                class="c13 c14"
+                class="c12 c13"
               >
                 <span>
                   Entrar
@@ -284,11 +280,11 @@ exports[`Login Component Snapshot Login 1`] = `
             </div>
           </form>
           <span
-            class="c15"
+            class="c14"
           >
             Ainda não possui uma conta? 
             <a
-              class="c16"
+              class="c15"
               href="/"
             >
               Cadastre-se aqui
@@ -297,7 +293,7 @@ exports[`Login Component Snapshot Login 1`] = `
         </div>
       </div>
       <footer
-        class="c17"
+        class="c16"
       >
         Todos os direitos reservados Morus Company 2023 | Versão 1.0.0
       </footer>

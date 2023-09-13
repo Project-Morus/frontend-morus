@@ -7,13 +7,15 @@ import Input from "../../../../components/Input";
 import Divider from "../../../../components/Divider";
 import SequencialStepper from "../../../../components/SequencialStepper";
 import RadioButtonGroup from "../../../../components/RadioButtonGroup";
+import { createArrayWithObjectsKeys } from "../../../../helpers/createArrayWithObjectsKeys";
+
 
 const Form = () => {
   const theme = useTheme();
 
   const [selectedValue, setSelectedValue] = useState<string>("Sim");
 
-  function drinkSelectionHandler(event: React.ChangeEvent<HTMLInputElement>) {
+  const drinkSelectionHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedValue(event.target.value);
   }
 
@@ -23,18 +25,21 @@ const Form = () => {
     console.log("Submit Login Sucess");
   };
 
+  const quantitySteps = createArrayWithObjectsKeys(3)
+
   return (
     <>
       <FormSC onSubmit={handleSubmitAuth}>
         <WrapperDivideInTwo>
           <RadioButtonGroup
             label="Seu condomínio possui porteiro?"
+            name="yes-or-no"
             options={[
-              { label: "Sim", name: "yes" },
-              { label: "Não", name: "no" },
-            ]}
-            onChange={() => drinkSelectionHandler}
-          ></RadioButtonGroup>
+              { label: "Sim" },
+              { label: "Não" }]
+            }
+            onChange={drinkSelectionHandler}
+          />
         </WrapperDivideInTwo>
         <WrapperDivideInTwo>
           <Input id="name" label="Nome" placeholder="Insira o nome do condomínio" />
@@ -62,7 +67,7 @@ const Form = () => {
       </FormSC>
 
       <CentralizerSC>
-        <SequencialStepper items={[0, 1, 2]} currentStep={0} />
+        <SequencialStepper items={quantitySteps} currentStep={0} />
       </CentralizerSC>
     </>
   );
