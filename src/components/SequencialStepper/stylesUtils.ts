@@ -1,7 +1,7 @@
 import { css } from "styled-components";
 import { DotStatusTypes } from "./types";
 
-export const CIRCLE_DIMENSIONS = '15px';
+export const CIRCLE_DIMENSIONS = '10px';
 
 const DEFAULT_DOT = css`
   ${({ theme }) => theme.colors.primary[100]}

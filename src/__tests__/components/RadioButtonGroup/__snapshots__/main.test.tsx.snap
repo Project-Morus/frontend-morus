@@ -57,11 +57,12 @@ exports[`RadioButtonGroup Component Snapshot RadioButtonGroup 1`] = `
 
 .c0 {
   border: none;
+  width: 100%;
 }
 
 .c1 {
   display: flex;
-  gap: 1rem;
+  gap: 2.25rem;
   margin-top: 0.75rem;
 }
 

@@ -2,38 +2,34 @@
 
 exports[`Input Component Snapshot Input 1`] = `
 <DocumentFragment>
-  .c1 {
+  .c0 {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.c0+.c0 {
-  margin-top: 1rem;
-}
-
-.c2 {
+.c1 {
   color: #4E4E4E;
   margin-bottom: 0.25rem;
 }
 
-.c3 {
+.c2 {
   color: #4E4E4E;
   padding: 0.5rem;
   border: 1px solid #BABABA;
   border-radius: 5px;
 }
 
-.c3:focus {
+.c2:focus {
   border-color: #0353A4;
   color: #0353A4;
 }
 
-.c3::placeholder {
+.c2::placeholder {
   color: #E9E9E9;
 }
 
-.c3:disabled {
+.c2:disabled {
   color: #E9E9E9;
   border-color: #E9E9E9;
   background: #FFF;
@@ -42,16 +38,16 @@ exports[`Input Component Snapshot Input 1`] = `
 }
 
 <div
-    class="c0 c1"
+    class="c0"
   >
     <label
-      class="c2"
+      class="c1"
       for="idname"
     >
       Name
     </label>
     <input
-      class="c3"
+      class="c2"
       id="idname"
     />
   </div>
