@@ -4,6 +4,7 @@ import DefaultLayoutAuth from "../layout/DefaultLayoutAuth";
 import LandingPage from "../pages/LandingPage";
 import ForgotPasswordFirstStep from "../pages/ForgotPassword/ForgotPasswordFirstStep";
 import ForgotPasswordSecondStep from "../pages/ForgotPassword/ForgotPasswordSecondStep";
+import CondominiumRegisterFirstStep from "../pages/CondominiumRegister/FirstStep";
 
 const Router = () => {
   return (
@@ -14,6 +15,7 @@ const Router = () => {
         <Route path="login" element={<Login />} />
         <Route path="forgotPasswordFirstStep" element={<ForgotPasswordFirstStep />} />
         <Route path="forgotPasswordSecondStep" element={<ForgotPasswordSecondStep />} />
+        <Route path="condominiumRegisterFirstStep" element={<CondominiumRegisterFirstStep />} />
       </Route>
     </Routes>
   );

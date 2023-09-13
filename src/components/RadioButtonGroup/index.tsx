@@ -2,8 +2,7 @@ import RadioButton from "../RadioButton";
 import { FieldsetSC, WrapperSC } from "./styles";
 import { IOptionGroupProps, IOptionProps } from "./types";
 
-const RadioButtonGroup = ({ label = '', options, onChange, required }: IOptionGroupProps) => {
-
+const RadioButtonGroup = ({ label = "", options, onChange, required }: IOptionGroupProps) => {
   const renderOptions = () => {
     return options.map(({ label, name, disabled }: IOptionProps, index) => {
       const shortenedOptionLabel = label.replace(/\s+/g, "");
@@ -23,16 +22,14 @@ const RadioButtonGroup = ({ label = '', options, onChange, required }: IOptionGr
         />
       );
     });
-  }
+  };
 
   return (
     <FieldsetSC>
       <legend>{label}</legend>
-      <WrapperSC>
-        {renderOptions()}
-      </WrapperSC>
+      <WrapperSC>{renderOptions()}</WrapperSC>
     </FieldsetSC>
   );
-}
+};
 
 export default RadioButtonGroup;
