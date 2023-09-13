@@ -263,7 +263,7 @@ exports[`Login Component Snapshot Login 1`] = `
             </div>
             <a
               class="c10"
-              href="/forgotPasswordFirstStep"
+              href="/forgotPassword/sendEmail"
             >
               Esqueci a minha senha
             </a>
