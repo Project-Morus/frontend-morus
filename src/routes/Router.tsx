@@ -11,11 +11,16 @@ const Router = () => {
     <Routes>
       <Route path="/" element={<LandingPage />} />
 
-      <Route path="/" element={<DefaultLayoutAuth />}>
+      <Route element={<DefaultLayoutAuth />}>
         <Route path="login" element={<Login />} />
-        <Route path="forgotPasswordFirstStep" element={<ForgotPasswordFirstStep />} />
-        <Route path="forgotPasswordSecondStep" element={<ForgotPasswordSecondStep />} />
-        <Route path="condominiumRegisterFirstStep" element={<CondominiumRegisterFirstStep />} />
+        <Route path="condominium-register">
+          <Route path="firstStep" element={<CondominiumRegisterFirstStep />} />
+        </Route>
+
+        <Route path="forgotPassword">
+          <Route path="sendEmail" element={<ForgotPasswordFirstStep />} />
+          <Route path="newPassword" element={<ForgotPasswordSecondStep />} />
+        </Route>
       </Route>
     </Routes>
   );
