@@ -8,7 +8,7 @@ import Divider from "../../../../components/Divider";
 import SequencialStepper from "../../../../components/SequencialStepper";
 import RadioButtonGroup from "../../../../components/RadioButtonGroup";
 import { createArrayWithObjectsKeys } from "../../../../helpers/createArrayWithObjectsKeys";
-
+import Button from "../../../../components/Button";
 
 const Form = () => {
   const theme = useTheme();
@@ -17,7 +17,7 @@ const Form = () => {
 
   const drinkSelectionHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedValue(event.target.value);
-  }
+  };
 
   const handleSubmitAuth = (e: FormEvent) => {
     e.preventDefault();
@@ -25,7 +25,7 @@ const Form = () => {
     console.log("Submit Login Sucess");
   };
 
-  const quantitySteps = createArrayWithObjectsKeys(3)
+  const quantitySteps = createArrayWithObjectsKeys(3);
 
   return (
     <>
@@ -34,10 +34,7 @@ const Form = () => {
           <RadioButtonGroup
             label="Seu condomínio possui porteiro?"
             name="yes-or-no"
-            options={[
-              { label: "Sim" },
-              { label: "Não" }]
-            }
+            options={[{ label: "Sim" }, { label: "Não" }]}
             onChange={drinkSelectionHandler}
           />
         </WrapperDivideInTwo>
@@ -67,6 +64,7 @@ const Form = () => {
       </FormSC>
 
       <CentralizerSC>
+        <Button text={"Próxima etapa"} />
         <SequencialStepper items={quantitySteps} currentStep={0} />
       </CentralizerSC>
     </>

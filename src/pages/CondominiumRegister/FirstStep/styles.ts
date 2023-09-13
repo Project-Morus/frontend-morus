@@ -49,8 +49,11 @@ export const FormSC = styled.form`
 
 export const CentralizerSC = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-top: ${({ theme }) => theme.spacing[25]};
+  gap: ${({ theme }) => theme.spacing[8]};
+  align-items: center;
+  margin-top: ${({ theme }) => theme.spacing[10]};
 `;
 
 export const WrapperButtonSC = styled.div`
