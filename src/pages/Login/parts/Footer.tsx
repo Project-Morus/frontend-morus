@@ -2,8 +2,10 @@ import { SignUpSC, WithoutAccountSC } from "../styles";
 
 const Footer = () => {
   return (
-    <WithoutAccountSC>Ainda não possui uma conta? <SignUpSC to=''>Cadastre-se aqui</SignUpSC></WithoutAccountSC>
+    <WithoutAccountSC>
+      Ainda não cadastrou o seu condomínio? <SignUpSC to="">Cadastre aqui</SignUpSC>
+    </WithoutAccountSC>
   );
-}
+};
 
 export default Footer;
