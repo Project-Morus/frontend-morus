@@ -6,6 +6,12 @@ export const WrapperSC = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  margin: 0 ${({ theme }) => theme.spacing[3]};
+`;
+
+export const InputWrapperSC = styled.div`
+  margin-bottom: ${({ theme }) => theme.spacing[4]};
 `;
 
 export const ContentSC = styled.div`
@@ -20,10 +26,7 @@ export const WrapperIconAndTitleSC = styled(BASE_STYLE)`
 export const WrapperDivideInTwoSC = styled(BASE_STYLE)`
   width: 100%;
   column-gap: ${({ theme }) => theme.spacing[10]};
-
-  & + & {
-    margin-top: ${({ theme }) => theme.spacing[6]};
-  }
+  margin-top: ${({ theme }) => theme.spacing[4]};
 `;
 
 export const TitleSC = styled.h1`
@@ -42,24 +45,12 @@ export const SubtitleSC = styled.h2`
 
 export const FormSC = styled.form`
   margin: ${({ theme }) => theme.spacing[10]} 0;
-  width: ${CONTENT_MAX_WIDTH};
   height: 450px;
-  overflow-y: scroll;
-`;
-
-export const CentralizerSC = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: ${({ theme }) => theme.spacing[8]};
-  align-items: center;
-  margin-top: ${({ theme }) => theme.spacing[10]};
+  overflow-y: auto;
 `;
 
 export const WrapperButtonSC = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  margin-top: ${({ theme }) => theme.spacing[6]};
 `;

@@ -1,8 +1,9 @@
+import { WrapperSC } from "../styles";
 import Form from "./parts/Form";
 import Header from "./parts/Header";
-import { ContentSC, WrapperSC } from "./styles";
+import { ContentSC } from "./styles";
 
-const CondominiumRegisterFirstStep = () => {
+const CondominiumRegisterThirdStep = () => {
   return (
     <main>
       <WrapperSC>
@@ -15,4 +16,4 @@ const CondominiumRegisterFirstStep = () => {
   );
 };
 
-export default CondominiumRegisterFirstStep;
+export default CondominiumRegisterThirdStep;
