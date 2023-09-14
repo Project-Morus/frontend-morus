@@ -12,8 +12,6 @@ const Form = () => {
 
   const [selectedValue, setSelectedValue] = useState<string>("Sim");
 
-  console.log(selectedValue);
-
   const drinkSelectionHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedValue(event.target.value);
   };

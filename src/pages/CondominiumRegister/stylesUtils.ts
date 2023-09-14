@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 
+export const CONTENT_WIDTH_SCROLL = "3px";
 export const CONTENT_MAX_HEIGHT = "350px";
 export const CONTENT_MAX_HEIGHT_MEDIUM = "300px";
 export const CONTENT_MAX_HEIGHT_XLARGE = "330px";
@@ -15,10 +16,10 @@ export const BASE_STYLE = styled.div`
 
 export const BASE_STYLE_SCROLL = () => css`
   overflow-y: scroll;
-  padding: 1rem;
+  padding: ${({ theme }) => theme.spacing[5]};
 
   &::-webkit-scrollbar {
-      width: 3px;
+      width: ${CONTENT_WIDTH_SCROLL};
       height: 100%;
       
     }
