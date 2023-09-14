@@ -14,7 +14,7 @@ const Form = () => {
       <Input id="e-mail" label="E-mail" placeholder="Insira o seu e-mail" />
       <Input id="passaword" label="Senha" placeholder="Insira a sua senha" type="password" />
 
-      <ForgotPasswordSC to='/forgotPasswordFirstStep'>Esqueci a minha senha</ForgotPasswordSC>
+      <ForgotPasswordSC to='/forgotPassword/sendEmail'>Esqueci a minha senha</ForgotPasswordSC>
 
       <WrapperButtonSC>
         <Button text="Entrar" maxWidth={370} />

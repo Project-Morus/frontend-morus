@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioButtonGroup Component Snapshot RadioButtonGroup 1`] = `
+<DocumentFragment>
+  .c3 {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  border-radius: 50%;
+  border: 2px solid #023B74;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.c3:checked {
+  border-width: 5px;
+}
+
+.c3:not(:checked):hover {
+  border-color: #0353A4;
+}
+
+.c3:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.c2 {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  border: 1px solid #BABABA;
+  border-radius: 5px;
+  background-color: #FFF;
+  padding: 1rem;
+}
+
+.c5 {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  border: 1px solid #BABABA;
+  border-radius: 5px;
+  background-color: #FFF;
+  padding: 1rem;
+  opacity: 0.5;
+}
+
+.c4 {
+  color: #4E4E4E;
+}
+
+.c6 {
+  color: #4E4E4E;
+  opacity: 0.5;
+}
+
+.c0 {
+  border: none;
+  width: 100%;
+}
+
+.c1 {
+  display: flex;
+  gap: 2.25rem;
+  margin-top: 0.75rem;
+}
+
+<fieldset
+    class="c0"
+  >
+    <legend>
+      Name
+    </legend>
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <input
+          checked=""
+          class="c3"
+          id="radio-option-Coffee"
+          name="drink-types"
+          type="radio"
+          value="Coffee"
+        />
+        <label
+          class="c4"
+          for="radio-option-Coffee"
+        >
+          Coffee
+        </label>
+      </div>
+      <div
+        class="c2"
+      >
+        <input
+          class="c3"
+          id="radio-option-Tea"
+          name="drink-types"
+          type="radio"
+          value="Tea"
+        />
+        <label
+          class="c4"
+          for="radio-option-Tea"
+        >
+          Tea
+        </label>
+      </div>
+      <div
+        class="c5"
+      >
+        <input
+          class="c3"
+          disabled=""
+          id="radio-option-Cerveja"
+          name="drink-types"
+          type="radio"
+          value="Cerveja"
+        />
+        <label
+          class="c6"
+          for="radio-option-Cerveja"
+        >
+          Cerveja
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</DocumentFragment>
+`;

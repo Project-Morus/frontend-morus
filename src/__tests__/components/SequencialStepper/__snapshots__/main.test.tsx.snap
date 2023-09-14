@@ -10,15 +10,15 @@ exports[`SequencialStepper component Snapshot SequencialStepper 1`] = `
 }
 
 .c1 {
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: #3575B6;
 }
 
 .c2 {
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: #B1CAE3;
 }
@@ -49,15 +49,15 @@ exports[`SequencialStepper component Snapshot SequencialStepper with currentStep
 }
 
 .c1 {
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: #B1CAE3;
 }
 
 .c2 {
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: #3575B6;
 }
@@ -88,15 +88,15 @@ exports[`SequencialStepper component Snapshot SequencialStepper with currentStep
 }
 
 .c1 {
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: #B1CAE3;
 }
 
 .c2 {
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: #3575B6;
 }

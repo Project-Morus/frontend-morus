@@ -1,4 +1,3 @@
-
 import Aside from "../../../components/Aside";
 import Icon from "../../../components/Icon";
 import Footer from "./parts/Footer";
@@ -12,9 +11,9 @@ const ForgotPasswordFirstStep = () => {
       <Aside>
         <WrapperSC>
           <ContentSC>
-            {/* Falta colocar ícone de seta para voltar */}
-            <BackToLoginButtonSC to='/login' >
-              <Icon name="ph-arrow-left" size="20" stroke="bold" />Voltar para a tela de login
+            <BackToLoginButtonSC to="/login">
+              <Icon name="ph-arrow-left" size="20" stroke="bold" />
+              Voltar para a tela de login
             </BackToLoginButtonSC>
             <Header />
             <Form />
