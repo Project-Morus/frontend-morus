@@ -35,8 +35,8 @@ const Form = () => {
       <FormSC>
         <InputWrapperSC>
           <Input
-            id={"areaQuantity"}
-            label={"Quantas torres o condomínio possui?"}
+            id="areaQuantity"
+            label="Quantas áreas de lazer o condomínio possui?"
             value={areaQuantity}
             type="number"
             min={1}

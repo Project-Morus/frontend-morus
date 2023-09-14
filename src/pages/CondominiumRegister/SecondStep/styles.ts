@@ -1,13 +1,11 @@
 import styled from "styled-components";
-import { BASE_STYLE, CONTENT_MAX_WIDTH } from "./stylesUtils";
+import { BASE_STYLE, BASE_STYLE_SCROLL, CONTENT_MAX_HEIGHT, CONTENT_MAX_HEIGHT_MEDIUM, CONTENT_MAX_HEIGHT_XLARGE } from "../stylesUtils";
 
 export const WrapperSC = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  margin: 0 ${({ theme }) => theme.spacing[3]};
 `;
 
 export const InputWrapperSC = styled.div`
@@ -15,7 +13,7 @@ export const InputWrapperSC = styled.div`
 `;
 
 export const ContentSC = styled.div`
-  width: ${CONTENT_MAX_WIDTH};
+  width: 100%;
 `;
 
 export const WrapperIconAndTitleSC = styled(BASE_STYLE)`
@@ -44,9 +42,17 @@ export const SubtitleSC = styled.h2`
 `;
 
 export const FormSC = styled.form`
-  margin: ${({ theme }) => theme.spacing[10]} 0;
-  height: 450px;
-  overflow-y: auto;
+  margin: ${({ theme }) => theme.spacing[4]} 0;
+  max-height: ${CONTENT_MAX_HEIGHT};
+
+  ${BASE_STYLE_SCROLL};
+  @media (min-width: ${({ theme }) => theme.breakpoints.medium}) and (max-width: ${({ theme }) => theme.breakpoints.large}) {
+    max-height: ${CONTENT_MAX_HEIGHT_MEDIUM};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.large}) and (max-width: ${({ theme }) => theme.breakpoints.xlarge}) {
+    max-height: ${CONTENT_MAX_HEIGHT_XLARGE};
+  }
 `;
 
 export const WrapperButtonSC = styled.div`

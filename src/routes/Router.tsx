@@ -4,9 +4,6 @@ import DefaultLayoutAuth from "../layout/DefaultLayoutAuth";
 import LandingPage from "../pages/LandingPage";
 import ForgotPasswordFirstStep from "../pages/ForgotPassword/ForgotPasswordFirstStep";
 import ForgotPasswordSecondStep from "../pages/ForgotPassword/ForgotPasswordSecondStep";
-import CondominiumRegisterFirstStep from "../pages/CondominiumRegister/FirstStep";
-import CondominiumRegisterSecondStep from "../pages/CondominiumRegister/SecondStep";
-import CondominiumRegisterThirdStep from "../pages/CondominiumRegister/ThirdStep";
 import CondominiumRegister from "../pages/CondominiumRegister";
 
 const Router = () => {
@@ -16,16 +13,12 @@ const Router = () => {
 
       <Route element={<DefaultLayoutAuth />}>
         <Route path="login" element={<Login />} />
-        <Route path="condominium-register" element={<CondominiumRegister />}>
-          <Route path="firstStep" element={<CondominiumRegisterFirstStep />} />
-          <Route path="secondStep" element={<CondominiumRegisterSecondStep />} />
-          <Route path="thirdStep" element={<CondominiumRegisterThirdStep />} />
-        </Route>
+        <Route path="condominium-register" element={<CondominiumRegister />} />
+      </Route>
 
-        <Route path="forgotPassword">
-          <Route path="sendEmail" element={<ForgotPasswordFirstStep />} />
-          <Route path="newPassword" element={<ForgotPasswordSecondStep />} />
-        </Route>
+      <Route path="forgotPassword">
+        <Route path="sendEmail" element={<ForgotPasswordFirstStep />} />
+        <Route path="newPassword" element={<ForgotPasswordSecondStep />} />
       </Route>
     </Routes>
   );

@@ -23,6 +23,7 @@ const CondominiumRegister = () => {
           <Button
             text={selectedStep < 3 ? "Próxima etapa" : "Finalizar"}
             onClick={() => selectedStep < 3 && setSelectedStep(selectedStep + 1)}
+            maxWidth={480}
           />
           <SequencialStepper items={quantitySteps} currentStep={selectedStep} />
         </CentralizerSC>

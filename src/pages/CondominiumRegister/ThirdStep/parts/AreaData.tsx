@@ -6,7 +6,7 @@ const TowerData = () => {
     <>
       <WrapperDivideInTwoSC>
         <Input type="string" id={"name"} label={"Nome"} />
-        <Input min={0} type="number" id={"maxPeoPleQuantity"} label={"Quantidade máxima de pessoas"} />
+        <Input min={0} type="number" id={"maxPeoPleQuantity"} label={"Qtd. máxima de pessoas"} />
       </WrapperDivideInTwoSC>
     </>
   );

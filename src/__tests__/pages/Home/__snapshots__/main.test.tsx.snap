@@ -282,12 +282,12 @@ exports[`Login Component Snapshot Login 1`] = `
           <span
             class="c14"
           >
-            Ainda não possui uma conta? 
+            Ainda não cadastrou o seu condomínio? 
             <a
               class="c15"
               href="/"
             >
-              Cadastre-se aqui
+              Cadastre aqui
             </a>
           </span>
         </div>

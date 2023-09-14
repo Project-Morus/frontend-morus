@@ -1,7 +1,7 @@
 import { FormEvent } from "react";
 import Button from "../../../components/Button";
 import Input from "../../../components/Input";
-import { ForgotPasswordSC, FormSC, WrapperButtonSC } from "../styles";
+import { ForgotPasswordSC, FormSC, WrapperButtonSC, WrapperInputsSC } from "../styles";
 
 const Form = () => {
   const handleSubmitAuth = (e: FormEvent) => {
@@ -11,8 +11,10 @@ const Form = () => {
   }
   return (
     <FormSC onSubmit={handleSubmitAuth}>
-      <Input id="e-mail" label="E-mail" placeholder="Insira o seu e-mail" />
-      <Input id="passaword" label="Senha" placeholder="Insira a sua senha" type="password" />
+      <WrapperInputsSC>
+        <Input id="e-mail" label="E-mail" placeholder="Insira o seu e-mail" />
+        <Input id="passaword" label="Senha" placeholder="Insira a sua senha" type="password" />
+      </WrapperInputsSC>
 
       <ForgotPasswordSC to='/forgotPassword/sendEmail'>Esqueci a minha senha</ForgotPasswordSC>
 
