@@ -29,6 +29,12 @@ export const TextSC = styled.p`
   color: ${({ theme }) => theme.colors.grey[300]};
 `
 
+export const WrapperInputsSC = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing[6]};
+`
+
 export const FormSC = styled.form`
   margin: ${({ theme }) => theme.spacing[10]} 0;
 `

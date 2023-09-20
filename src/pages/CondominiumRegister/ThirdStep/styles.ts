@@ -1,12 +1,17 @@
 import styled from "styled-components";
-import { BASE_STYLE, BASE_STYLE_SCROLL, CONTENT_MAX_HEIGHT_MEDIUM, CONTENT_MAX_HEIGHT_XLARGE } from "../stylesUtils";
+import { BASE_STYLE, BASE_STYLE_SCROLL, CONTENT_MAX_HEIGHT, CONTENT_MAX_HEIGHT_MEDIUM, CONTENT_MAX_HEIGHT_XLARGE } from "../stylesUtils";
 import { CONTENT_MAX_WIDTH } from "./stylesUtils";
 
 export const WrapperSC = styled.div`
   width: 100%;
+  
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+export const InputWrapperSC = styled.div`
+  margin-bottom: ${({ theme }) => theme.spacing[4]};
 `;
 
 export const ContentSC = styled.div`
@@ -21,10 +26,7 @@ export const WrapperIconAndTitleSC = styled(BASE_STYLE)`
 export const WrapperDivideInTwoSC = styled(BASE_STYLE)`
   width: 100%;
   column-gap: ${({ theme }) => theme.spacing[10]};
-
-  & + & {
-    margin-top: ${({ theme }) => theme.spacing[6]};
-  }
+  margin-top: ${({ theme }) => theme.spacing[4]};
 `;
 
 export const TitleSC = styled.h1`
@@ -44,8 +46,11 @@ export const SubtitleSC = styled.h2`
 export const FormSC = styled.form`
   width: 100%;
   max-width: ${CONTENT_MAX_WIDTH};
+  max-height: ${CONTENT_MAX_HEIGHT};
   
   margin: ${({ theme }) => theme.spacing[10]} 0;
+
+  ${BASE_STYLE_SCROLL};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) and (max-width: ${({ theme }) => theme.breakpoints.large}) {
     margin: ${({ theme }) => theme.spacing[6]} 0;
@@ -61,19 +66,8 @@ export const FormSC = styled.form`
   }
 `;
 
-export const CentralizerSC = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: ${({ theme }) => theme.spacing[8]};
-  align-items: center;
-  margin-top: ${({ theme }) => theme.spacing[10]};
-`;
-
 export const WrapperButtonSC = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  margin-top: ${({ theme }) => theme.spacing[6]};
 `;
