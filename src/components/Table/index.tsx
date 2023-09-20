@@ -6,22 +6,22 @@ function Table<T extends Record<string, any>>({ headerCells, rowCells, emptyMess
     (rowCells?.length) ? (
       <TableSC {...props}>
         <thead>
-          {headerCells.map(({ colName }, index) => (
-            <th key={index}>{colName}</th>
-          ))}
+          <tr>
+            {headerCells.map(({ colName }, index) => (
+              <th key={index}>{colName}</th>
+            ))}
+          </tr>
         </thead>
 
-        {rowCells.length > 0 && (
-          <TBodySC>
-            {rowCells.map((item, rowIndex) => (
-              <TrSC key={rowIndex}>
-                {Object.keys(item).map((key, columnIndex) => (
-                  <TdSC key={columnIndex}>{item[key]}</TdSC>
-                ))}
-              </TrSC>
-            ))}
-          </TBodySC>
-        )}
+        <TBodySC>
+          {rowCells.map((item, rowIndex) => (
+            <TrSC key={rowIndex}>
+              {Object.keys(item).map((key, columnIndex) => (
+                <TdSC key={columnIndex}>{item[key]}</TdSC>
+              ))}
+            </TrSC>
+          ))}
+        </TBodySC>
       </TableSC>
     ) : <WrapperMessageSC>{emptyMessage}</WrapperMessageSC>
   )

@@ -4,8 +4,10 @@ export const TableSC = styled.table`
   width: 100%;
 
   border-spacing: 0 ${({ theme }) => theme.spacing[4]};
+  border-radius: ${({ theme }) => theme.border.radius.regular};
 
   background-color: ${({ theme }) => theme.colors.white[100]};
+  
   padding: ${({ theme }) => theme.spacing[4]};
 
   thead {
@@ -49,4 +51,6 @@ export const WrapperMessageSC = styled.div`
   color: ${({ theme }) => theme.colors.primary[500]};
 
   background-color: ${({ theme }) => theme.colors.white[100]};
+
+  border-radius: ${({ theme }) => theme.border.radius.regular};
 `

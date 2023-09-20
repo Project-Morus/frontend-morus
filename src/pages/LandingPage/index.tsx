@@ -7,8 +7,9 @@ const LandingPage = () => {
       <h1>Landing Page</h1>
 
 
-      <Table headerCells={HEADER_TABLE_CELLS} rowCells={ROW_NAME_CELLS} />
-      <Table headerCells={HEADER_TABLE_CELLS} rowCells={[]} emptyMessage='A tabela está vazia no momento. Espere o síndico adicionar novas informações!' />
+      <div style={{ height: '100vh', background: '#E6EEF6', padding: '1rem' }}>
+        <Table headerCells={HEADER_TABLE_CELLS} rowCells={ROW_NAME_CELLS} emptyMessage='A tabela está vazia no momento. Espere o síndico adicionar novas informações!' />
+      </div>
     </div>
   );
 }
