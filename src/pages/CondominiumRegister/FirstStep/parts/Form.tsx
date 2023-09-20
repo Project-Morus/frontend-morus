@@ -1,14 +1,11 @@
 import { FormEvent, useState } from "react";
 
-import { CentralizerSC, FormSC, SubtitleSC, WrapperDivideInTwo } from "../styles";
+import { FormSC, SubtitleSC, WrapperDivideInTwoSC, WrapperSC } from "../styles";
 
 import { useTheme } from "styled-components";
 import Input from "../../../../components/Input";
 import Divider from "../../../../components/Divider";
-import SequencialStepper from "../../../../components/SequencialStepper";
 import RadioButtonGroup from "../../../../components/RadioButtonGroup";
-import { createArrayWithObjectsKeys } from "../../../../helpers/createArrayWithObjectsKeys";
-import Button from "../../../../components/Button";
 
 const Form = () => {
   const theme = useTheme();
@@ -25,49 +22,42 @@ const Form = () => {
     console.log("Submit Login Sucess");
   };
 
-  const quantitySteps = createArrayWithObjectsKeys(3);
-
   return (
-    <>
+    <WrapperSC>
       <FormSC onSubmit={handleSubmitAuth}>
-        <WrapperDivideInTwo>
+        <WrapperDivideInTwoSC>
           <RadioButtonGroup
             label="Seu condomínio possui porteiro?"
             name="yes-or-no"
             options={[{ label: "Sim" }, { label: "Não" }]}
             onChange={drinkSelectionHandler}
           />
-        </WrapperDivideInTwo>
-        <WrapperDivideInTwo>
+        </WrapperDivideInTwoSC>
+        <WrapperDivideInTwoSC>
           <Input id="name" label="Nome" placeholder="Insira o nome do condomínio" />
           <Input id="towers" label="Quantidade de Torres" placeholder="Ex: 3" />
-        </WrapperDivideInTwo>
+        </WrapperDivideInTwoSC>
 
         <Divider variant="secondary" marginTop={theme.spacing[8]} marginBottom={theme.spacing[8]} />
 
         <SubtitleSC>Localização</SubtitleSC>
 
-        <WrapperDivideInTwo>
+        <WrapperDivideInTwoSC>
           <Input id="street" label="Logradouro" placeholder="Insira o nome do logradouro" />
           <Input maxWidth={100} id="number" label="Número" placeholder="Ex: 1804" />
-        </WrapperDivideInTwo>
+        </WrapperDivideInTwoSC>
 
-        <WrapperDivideInTwo>
+        <WrapperDivideInTwoSC>
           <Input maxWidth={150} id="cep" label="CEP" placeholder="Ex: 29000120" />
           <Input id="neighborhood" label="Bairro" placeholder="Insira o nome do bairro" />
-        </WrapperDivideInTwo>
+        </WrapperDivideInTwoSC>
 
-        <WrapperDivideInTwo>
+        <WrapperDivideInTwoSC>
           <Input id="state" label="Estado" placeholder="Insira o nome do estado" />
           <Input id="city" label="Cidade" placeholder="Insira o nome da cidade" />
-        </WrapperDivideInTwo>
+        </WrapperDivideInTwoSC>
       </FormSC>
-
-      <CentralizerSC>
-        <Button text={"Próxima etapa"} />
-        <SequencialStepper items={quantitySteps} currentStep={0} />
-      </CentralizerSC>
-    </>
+    </WrapperSC>
   );
 };
 
