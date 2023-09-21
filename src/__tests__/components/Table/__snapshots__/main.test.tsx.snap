@@ -1,0 +1,445 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table component Snapshot Table 1`] = `
+<DocumentFragment>
+  .c0 {
+  width: 100%;
+  border-spacing: 0 0.75rem;
+  border-radius: 5px;
+  background-color: #F8F8F8;
+  padding: 0.75rem;
+}
+
+.c0 thead {
+  text-align: left;
+  color: #999999;
+}
+
+.c0 thead th {
+  padding-left: 0.75rem;
+}
+
+.c3 {
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #4E4E4E;
+}
+
+.c1 {
+  background-color: #FFF;
+}
+
+.c2 {
+  box-shadow: 0px 4px 4px 0px rgba(0, 74, 173, 0.15);
+  border-radius: 5px;
+}
+
+.c4 {
+  color: #0353A4;
+}
+
+.c6 {
+  color: #CE323B;
+}
+
+.c5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  width: fit-content;
+  width: -moz-fit-content;
+  height: fit-content;
+  height: -moz-fit-content;
+}
+
+<table
+    class="c0"
+  >
+    <thead>
+      <tr>
+        <th>
+          Id
+        </th>
+        <th>
+          Nome
+        </th>
+        <th>
+          Data
+        </th>
+        <th>
+          Status
+        </th>
+        <th>
+          Ações
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="c1"
+    >
+      <tr
+        class="c2"
+      >
+        <td
+          class="c3"
+        >
+          1
+        </td>
+        <td
+          class="c3"
+        >
+          Eduardo Simon
+        </td>
+        <td
+          class="c3"
+        >
+          20/12/2023
+        </td>
+        <td
+          class="c3"
+        >
+          Em progresso
+        </td>
+        <td
+          class="c3"
+        >
+          <div
+            style="display: flex; gap: 0.8rem;"
+          >
+            <div
+              class="c4"
+            >
+              <div
+                class="c5"
+                data-testid="ph-pencil-simple-line"
+              >
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  viewBox="0 0 256 256"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M227.32,73.37,182.63,28.69a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H216a8,8,0,0,0,0-16H115.32l112-112A16,16,0,0,0,227.32,73.37ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.69,147.32,64l24-24L216,84.69Z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              class="c6"
+            >
+              <div
+                class="c5"
+                data-testid="ph-trash"
+              >
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  viewBox="0 0 256 256"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="c2"
+      >
+        <td
+          class="c3"
+        >
+          2
+        </td>
+        <td
+          class="c3"
+        >
+          Eduardo Simon
+        </td>
+        <td
+          class="c3"
+        >
+          20/12/2023
+        </td>
+        <td
+          class="c3"
+        >
+          Em progresso
+        </td>
+        <td
+          class="c3"
+        >
+          <div
+            style="display: flex; gap: 0.8rem;"
+          >
+            <div
+              class="c4"
+            >
+              <div
+                class="c5"
+                data-testid="ph-pencil-simple-line"
+              >
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  viewBox="0 0 256 256"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M227.32,73.37,182.63,28.69a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H216a8,8,0,0,0,0-16H115.32l112-112A16,16,0,0,0,227.32,73.37ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.69,147.32,64l24-24L216,84.69Z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              class="c6"
+            >
+              <div
+                class="c5"
+                data-testid="ph-trash"
+              >
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  viewBox="0 0 256 256"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="c2"
+      >
+        <td
+          class="c3"
+        >
+          3
+        </td>
+        <td
+          class="c3"
+        >
+          Eduardo Simon
+        </td>
+        <td
+          class="c3"
+        >
+          20/12/2023
+        </td>
+        <td
+          class="c3"
+        >
+          Em progresso
+        </td>
+        <td
+          class="c3"
+        >
+          <div
+            style="display: flex; gap: 0.8rem;"
+          >
+            <div
+              class="c4"
+            >
+              <div
+                class="c5"
+                data-testid="ph-pencil-simple-line"
+              >
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  viewBox="0 0 256 256"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M227.32,73.37,182.63,28.69a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H216a8,8,0,0,0,0-16H115.32l112-112A16,16,0,0,0,227.32,73.37ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.69,147.32,64l24-24L216,84.69Z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              class="c6"
+            >
+              <div
+                class="c5"
+                data-testid="ph-trash"
+              >
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  viewBox="0 0 256 256"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="c2"
+      >
+        <td
+          class="c3"
+        >
+          4
+        </td>
+        <td
+          class="c3"
+        >
+          Eduardo Simon
+        </td>
+        <td
+          class="c3"
+        >
+          20/12/2023
+        </td>
+        <td
+          class="c3"
+        >
+          Em progresso
+        </td>
+        <td
+          class="c3"
+        >
+          <div
+            style="display: flex; gap: 0.8rem;"
+          >
+            <div
+              class="c4"
+            >
+              <div
+                class="c5"
+                data-testid="ph-pencil-simple-line"
+              >
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  viewBox="0 0 256 256"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M227.32,73.37,182.63,28.69a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H216a8,8,0,0,0,0-16H115.32l112-112A16,16,0,0,0,227.32,73.37ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.69,147.32,64l24-24L216,84.69Z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              class="c6"
+            >
+              <div
+                class="c5"
+                data-testid="ph-trash"
+              >
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  viewBox="0 0 256 256"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="c2"
+      >
+        <td
+          class="c3"
+        >
+          5
+        </td>
+        <td
+          class="c3"
+        >
+          Eduardo Simon
+        </td>
+        <td
+          class="c3"
+        >
+          20/12/2023
+        </td>
+        <td
+          class="c3"
+        >
+          Em progresso
+        </td>
+        <td
+          class="c3"
+        >
+          <div
+            style="display: flex; gap: 0.8rem;"
+          >
+            <div
+              class="c4"
+            >
+              <div
+                class="c5"
+                data-testid="ph-pencil-simple-line"
+              >
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  viewBox="0 0 256 256"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M227.32,73.37,182.63,28.69a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H216a8,8,0,0,0,0-16H115.32l112-112A16,16,0,0,0,227.32,73.37ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.69,147.32,64l24-24L216,84.69Z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              class="c6"
+            >
+              <div
+                class="c5"
+                data-testid="ph-trash"
+              >
+                <svg
+                  fill="currentColor"
+                  height="20"
+                  viewBox="0 0 256 256"
+                  width="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
