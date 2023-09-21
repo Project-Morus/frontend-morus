@@ -5,6 +5,8 @@ import LandingPage from "../pages/LandingPage";
 import ForgotPasswordFirstStep from "../pages/ForgotPassword/ForgotPasswordFirstStep";
 import ForgotPasswordSecondStep from "../pages/ForgotPassword/ForgotPasswordSecondStep";
 import CondominiumRegister from "../pages/CondominiumRegister";
+import DefaultLayoutSystem from "../layout/DefaultLayoutSystem";
+import Home from "../pages/Home";
 
 const Router = () => {
   return (
@@ -19,6 +21,10 @@ const Router = () => {
       <Route path="forgotPassword">
         <Route path="sendEmail" element={<ForgotPasswordFirstStep />} />
         <Route path="newPassword" element={<ForgotPasswordSecondStep />} />
+      </Route>
+
+      <Route path="system" element={<DefaultLayoutSystem />}>
+        <Route path="home" element={<Home />} />
       </Route>
     </Routes>
   );
