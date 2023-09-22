@@ -55,6 +55,10 @@ const COLORS = {
     800: "#87480D",
     900: "#67370A",
   },
+
+  purple: {
+    50: "#916DDE",
+  },
 };
 
 export default COLORS;
