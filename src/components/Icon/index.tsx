@@ -18,7 +18,7 @@ const Icon = ({ name, color, size, stroke, onClick, ...props }: IIconProps) => {
 
   return (
     <IconSC $iconColor={color}>
-      <PureIconSC onClick={onClick} className={props.className} data-testid={getIconTestId(name, props?.['data-testid'])}>
+      <PureIconSC $hasOnClick={!!onClick} onClick={onClick} className={props.className} data-testid={getIconTestId(name, props?.['data-testid'])}>
         {ChosenIcon}
       </PureIconSC>
     </IconSC>

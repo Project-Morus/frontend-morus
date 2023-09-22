@@ -2,8 +2,11 @@ import { FormEvent } from "react";
 import Button from "../../../components/Button";
 import Input from "../../../components/Input";
 import { ForgotPasswordSC, FormSC, WrapperButtonSC, WrapperInputsSC } from "../styles";
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
+  const navigate = useNavigate();
+
   const handleSubmitAuth = (e: FormEvent) => {
     e.preventDefault()
 
@@ -19,7 +22,7 @@ const Form = () => {
       <ForgotPasswordSC to='/forgotPassword/sendEmail'>Esqueci a minha senha</ForgotPasswordSC>
 
       <WrapperButtonSC>
-        <Button text="Entrar" maxWidth={370} />
+        <Button text="Entrar" maxWidth={370} onClick={() => navigate('/system/home')} />
       </WrapperButtonSC>
     </FormSC>
   );
