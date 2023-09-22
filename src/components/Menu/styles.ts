@@ -6,8 +6,9 @@ export const ContainerSC = styled.aside`
   position: fixed;
 
   width: 100%;
-  height: 100%;
   max-width: ${MAX_WIDTH_MENU};
+  height: 100%;
+  
   padding: ${({ theme }) => theme.spacing[9]};
   background: ${({ theme }) => theme.colors.white[50]};
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);

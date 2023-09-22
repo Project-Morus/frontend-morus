@@ -1,8 +1,14 @@
+
+import CardInformation from "./parts/CardInformation";
+import CardInformations from "./parts/CardInformations";
+import { ContainerSC } from "./styles";
+
 const Home = () => {
   return (
-    <>
-      <h1>asd</h1>
-    </>
+    <ContainerSC>
+      <CardInformation />
+      <CardInformations />
+    </ContainerSC>
   );
 }
 

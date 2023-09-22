@@ -8,6 +8,7 @@ export const ContainerSC = styled.div`
 
 export const WrapperSC = styled.main`
   width: 100%;
+  overflow-x: hidden;
   padding: ${({ theme }) => theme.spacing[5]} ${({ theme }) => theme.spacing[14]};
   margin-left: ${MAX_MARGIN_LEFT};
 `;
