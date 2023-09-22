@@ -1,16 +1,20 @@
 import { Outlet } from "react-router-dom";
 import Menu from "../../components/Menu";
-import { ContainerSC, WrapperSC } from "./styles";
+import { ContainerSC, WrapperSC, InternalWrapperSC } from "./styles";
+import Header from "./parts/Header";
 
 const DefaultLayoutSystem = () => {
   return (
     <ContainerSC>
       <Menu />
       <WrapperSC>
-        <Outlet />
+        <Header />
+        <InternalWrapperSC>
+          <Outlet />
+        </InternalWrapperSC>
       </WrapperSC>
     </ContainerSC>
   );
-}
+};
 
 export default DefaultLayoutSystem;
