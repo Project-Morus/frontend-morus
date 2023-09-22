@@ -7,6 +7,7 @@ import ForgotPasswordSecondStep from "../pages/ForgotPassword/ForgotPasswordSeco
 import CondominiumRegister from "../pages/CondominiumRegister";
 import DefaultLayoutSystem from "../layout/DefaultLayoutSystem";
 import Home from "../pages/Home";
+import Residents from "../pages/Residents";
 
 const Router = () => {
   return (
@@ -25,6 +26,7 @@ const Router = () => {
 
       <Route path="system" element={<DefaultLayoutSystem />}>
         <Route path="home" element={<Home />} />
+        <Route path="residents" element={<Residents />} />
       </Route>
     </Routes>
   );
