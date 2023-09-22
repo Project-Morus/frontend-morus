@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { MAX_WIDTH_MENU } from "./stylesUtils";
 
 export const ContainerSC = styled.aside`
   width: 100%;
-  max-width: 270px;
   height: 100vh;
+  max-width: ${MAX_WIDTH_MENU};
   padding: ${({ theme }) => theme.spacing[9]};
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
