@@ -6,6 +6,15 @@ export interface IBackdropProps {
 }
 
 export interface IModalProps {
-  children: ReactNode;
+  variant?: VariantsTypes;
+  children?: ReactNode;
   closeModal: () => void;
+  onConfirmModal: () => void;
 }
+
+export interface IModalVariantsProps {
+  children?: ReactNode;
+  onConfirmModal: () => void;
+}
+
+export type VariantsTypes = "confirmation" | "warning" | "iconAndTitle";

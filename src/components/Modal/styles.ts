@@ -1,24 +1,24 @@
 import styled from "styled-components";
+import { BASE_STYLE } from "./stylesUtils";
 
-export const ModalSC = styled.div`
+export const ButtonsConainterSC = styled.div`
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: ${({ theme }) => theme.spacing[7]};
-  font-size: 1.2rem;
-  border-radius: 1rem;
-  background-color: ${({ theme }) => theme.colors.white[100]};
-  margin: auto;
+  justify-content: space-between;
 `;
 
-export const BackdropSC = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000000e1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+export const ChildrenContainerSC = styled.div`
+  margin: ${({ theme }) => theme.spacing[8]} 0;
+  text-align: center;
+`;
+
+export const ConfirmationModalSC = styled(BASE_STYLE)`
+  background-color: white;
+  width: 620px;
+  overflow: auto;
+`;
+
+export const IconAndTitleModalSC = styled(BASE_STYLE)`
+  background-color: white;
 `;
