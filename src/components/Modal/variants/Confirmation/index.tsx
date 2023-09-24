@@ -1,5 +1,5 @@
 import Button from "../../../Button";
-import { ChildrenContainerSC, ButtonsConainterSC, ConfirmationModalSC } from "../../styles";
+import { ChildrenContainerSC, ButtonsContainerSC, ConfirmationModalSC } from "../../styles";
 import { IModalVariantsProps } from "../../types";
 
 export const ConfirmationModal = ({
@@ -14,10 +14,10 @@ export const ConfirmationModal = ({
 
       <ChildrenContainerSC>{children}</ChildrenContainerSC>
 
-      <ButtonsConainterSC>
+      <ButtonsContainerSC>
         <Button text={"Cancelar"} maxWidth={200} variant="secondary" />
         <Button text={buttonLabel} maxWidth={200} variant="green" onClick={onConfirmModal} />
-      </ButtonsConainterSC>
+      </ButtonsContainerSC>
     </ConfirmationModalSC>
   );
 };

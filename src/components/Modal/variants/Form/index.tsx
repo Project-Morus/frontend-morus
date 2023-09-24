@@ -1,6 +1,6 @@
 import Button from "../../../Button";
 import IconCard from "../../../IconCard";
-import { ButtonsConainterSC, ChildrenContainerSC, FormModalSC, HeaderSC } from "../../styles";
+import { ButtonsContainerSC, ChildrenContainerSC, FormModalSC, HeaderSC } from "../../styles";
 import { IFormModalProps } from "../../types";
 
 export const FormModal = ({
@@ -20,10 +20,10 @@ export const FormModal = ({
 
       <ChildrenContainerSC>{children}</ChildrenContainerSC>
 
-      <ButtonsConainterSC>
+      <ButtonsContainerSC>
         <Button text={"Cancelar"} maxWidth={200} variant="secondary" />
         <Button text={buttonLabel} maxWidth={200} variant="primary" onClick={onConfirmModal} />
-      </ButtonsConainterSC>
+      </ButtonsContainerSC>
     </FormModalSC>
   );
 };

@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { BASE_STYLE } from "./stylesUtils";
+import { BASE_STYLE, WIDTH_CONFIRMATION_MODAL } from "./stylesUtils";
 
-export const ButtonsConainterSC = styled.div`
+export const ButtonsContainerSC = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
@@ -22,11 +22,12 @@ export const HeaderSC = styled.div`
 
 export const ConfirmationModalSC = styled(BASE_STYLE)`
   background-color: white;
-  width: 620px;
+  width: 100%;
+  max-width: ${WIDTH_CONFIRMATION_MODAL};
   overflow: auto;
 `;
 
 export const FormModalSC = styled(BASE_STYLE)`
   background-color: white;
-  width: 700px;
+  max-width: ${WIDTH_CONFIRMATION_MODAL};
 `;
