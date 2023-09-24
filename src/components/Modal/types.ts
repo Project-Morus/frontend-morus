@@ -1,23 +1,26 @@
 import { ReactNode } from "react";
 import { IconNamesTypes } from "../Icon/types";
+import { IBaseProps } from "../../types";
 
-export interface IBackdropProps {
+export interface IBackdropProps extends IBaseProps {
   children: ReactNode;
   closeModal: () => void;
+  open: boolean;
 }
 
 export interface IModalProps extends IFormModalProps {
+  open: boolean;
   variant?: VariantsTypes;
   children?: ReactNode;
   closeModal: () => void;
   onConfirmModal: () => void;
 }
 
-export interface IModalVariantsProps {
+export interface IModalVariantsProps extends IBaseProps {
   children?: ReactNode;
   onConfirmModal: () => void;
   confirmButtonName?: string;
-  label?: string,
+  buttonLabel?: string;
 }
 
 export interface IFormModalProps extends IModalVariantsProps {

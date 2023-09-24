@@ -12,21 +12,20 @@ const LandingPage = () => {
     <>
       <h1>Landing Page</h1>
       <button onClick={handleModal}>Abrir modal</button>
-      {modalOpen && (
-        <Modal
-          variant="form"
-          onConfirmModal={() => { }}
-          closeModal={() => setModalOpen(false)}
-          iconName="ph-user"
-          modalTitle="Funcionou  :)"
-          label="Aceitar"
-        >
-          <p>
-            Tem certeza que deseja aceitar a reserva do morador Eduardo Simon da área comum da cobertura? Esta ação não
-            poderá ser desfeita.
-          </p>
-        </Modal>
-      )}
+      <Modal
+        open={modalOpen}
+        variant="form"
+        onConfirmModal={() => {}}
+        closeModal={() => setModalOpen(false)}
+        iconName="ph-user"
+        modalTitle="Funcionou  :)"
+        buttonLabel="Aceitar"
+      >
+        <p>
+          Tem certeza que deseja aceitar a reserva do morador Eduardo Simon da área comum da cobertura? Esta ação não
+          poderá ser desfeita.
+        </p>
+      </Modal>
     </>
   );
 };

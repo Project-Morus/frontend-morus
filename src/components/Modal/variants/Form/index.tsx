@@ -8,10 +8,11 @@ export const FormModal = ({
   onConfirmModal,
   iconName = "ph-activity",
   modalTitle,
-  label = "Confirmar",
+  buttonLabel = "Confirmar",
+  role,
 }: IFormModalProps) => {
   return (
-    <FormModalSC>
+    <FormModalSC role={role}>
       <HeaderSC>
         <IconCard variant="primary" icon={iconName} />
         <h1>{modalTitle}</h1>
@@ -21,7 +22,7 @@ export const FormModal = ({
 
       <ButtonsConainterSC>
         <Button text={"Cancelar"} maxWidth={200} variant="secondary" />
-        <Button text={label} maxWidth={200} variant="primary" onClick={onConfirmModal} />
+        <Button text={buttonLabel} maxWidth={200} variant="primary" onClick={onConfirmModal} />
       </ButtonsConainterSC>
     </FormModalSC>
   );

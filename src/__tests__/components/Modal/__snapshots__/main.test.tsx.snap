@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal Component Snapshot Modal 1`] = `<DocumentFragment />`;
+
+exports[`Modal Component Snapshot Modal with variant form 1`] = `<DocumentFragment />`;
+
+exports[`Modal Component Snapshot Modal with variant warning 1`] = `<DocumentFragment />`;
