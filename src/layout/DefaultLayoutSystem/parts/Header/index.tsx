@@ -1,5 +1,14 @@
 import Button from "../../../../components/Button";
-import { HeaderSC, ContentResidentSC, WrapperResidentSC, TagSC, DateNowSC, NameResidentSC, WrapperActionsSC, InfoResidentSC } from "./styles";
+import {
+  HeaderSC,
+  ContentResidentSC,
+  WrapperResidentSC,
+  TagSC,
+  DateNowSC,
+  NameResidentSC,
+  WrapperActionsSC,
+  InfoResidentSC,
+} from "./styles";
 
 const Header = () => {
   return (
@@ -18,6 +27,6 @@ const Header = () => {
       </WrapperActionsSC>
     </HeaderSC>
   );
-}
+};
 
 export default Header;

@@ -9,6 +9,7 @@ import DefaultLayoutSystem from "../layout/DefaultLayoutSystem";
 import Home from "../pages/Home";
 import Residents from "../pages/Residents";
 import Archives from "../pages/Archives";
+import CashBook from "../pages/CashBook";
 
 const Router = () => {
   return (
@@ -29,7 +30,7 @@ const Router = () => {
         <Route path="home" element={<Home />} />
         <Route path="residents" element={<Residents />} />
         <Route path="archives" element={<Archives />} />
-
+        <Route path="cashBook" element={<CashBook />} />
       </Route>
     </Routes>
   );
