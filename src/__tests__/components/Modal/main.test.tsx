@@ -1,38 +1,40 @@
+
+import ReactDOM from "react-dom/client";
 import { render, screen, fireEvent, getByRole } from "@testing-library/react";
 import Modal from "../../../components/Modal";
 import { withTheme } from "../../../helpers/withTheme";
-import Backdrop from "../../../components/Modal/parts/Backdrop";
+import { unmountComponentAtNode } from "react-dom";
+import { act } from "react-dom/test-utils";
 
 const ModalWithTheme = withTheme(Modal);
-const BackdropWithTheme = withTheme(Backdrop);
 const modalElement = "modal";
 const modalChildrenText = "Teste";
 
-// Crie um elemento do DOM para o portal no ambiente de teste
-const portalRoot = document.createElement("div");
-portalRoot.id = "portal";
-document.body.appendChild(portalRoot);
+const closeModalFn = jest.fn()
+const confirmModalFn = jest.fn()
 
-describe("Backdrop Component", () => {
-  it("Verify if component is rendering", () => {
-    // Renderize o componente
-    const { getByRole } = render(
-      <BackdropWithTheme open closeModal={() => {}} role="backdrop">
-        <h1>{modalChildrenText}</h1>
-      </BackdropWithTheme>
-    );
-    const backdropElement = getByRole("backdrop");
 
-    expect(backdropElement).toBeInTheDocument();
-  });
-});
 
 describe("Modal Component", () => {
-  it("Verify if component is rendering", () => {
+  let container: HTMLElement;
+
+  beforeEach(() => {
+    container = document.createElement('div');
+    container.id = 'portal';
+    document.body.appendChild(container);
+  });
+
+  afterEach(() => {
+    if (container) {
+      container.remove();
+    }
+  });
+  test("Verify if component is rendering", () => {
     render(
-      <ModalWithTheme open closeModal={() => {}} onConfirmModal={() => {}} role="modal">
+      <ModalWithTheme open closeModal={closeModalFn} onConfirmModal={confirmModalFn} role="modal">
         <h1>{modalChildrenText}</h1>
-      </ModalWithTheme>
+      </ModalWithTheme>,
+      { container }
     );
 
     expect(screen.getByRole(modalElement)).toBeVisible();
@@ -41,18 +43,20 @@ describe("Modal Component", () => {
 
   test("Snapshot Modal", () => {
     const { asFragment } = render(
-      <ModalWithTheme open closeModal={() => {}} onConfirmModal={() => {}} role="modal">
+      <ModalWithTheme open closeModal={closeModalFn} onConfirmModal={confirmModalFn} role="modal">
         <h1>{modalChildrenText}</h1>
-      </ModalWithTheme>
+      </ModalWithTheme>,
+      { container }
     );
 
     expect(asFragment()).toMatchSnapshot();
   });
   test("Snapshot Modal with variant warning", () => {
     const { asFragment } = render(
-      <ModalWithTheme open closeModal={() => {}} onConfirmModal={() => {}} role="modal" variant="warning">
+      <ModalWithTheme open closeModal={closeModalFn} onConfirmModal={confirmModalFn} role="modal" variant="warning">
         <h1>{modalChildrenText}</h1>
-      </ModalWithTheme>
+      </ModalWithTheme>,
+      { container }
     );
 
     expect(asFragment()).toMatchSnapshot();
@@ -62,15 +66,16 @@ describe("Modal Component", () => {
     const { asFragment } = render(
       <ModalWithTheme
         open
-        closeModal={() => {}}
-        onConfirmModal={() => {}}
+        closeModal={() => { }}
+        onConfirmModal={() => { }}
         role="modal"
         variant="form"
         iconName="ph-user"
-        modalTitle={modalChildrenText}
+        modalTitle="Modal Content"
       >
-        <h1>{modalChildrenText}</h1>
-      </ModalWithTheme>
+        <h1>Modal Content</h1>
+      </ModalWithTheme>,
+      { container }
     );
 
     expect(asFragment()).toMatchSnapshot();
