@@ -13,12 +13,20 @@ export const ChildrenContainerSC = styled.div`
   text-align: center;
 `;
 
+export const HeaderSC = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing[8]};
+`;
+
 export const ConfirmationModalSC = styled(BASE_STYLE)`
   background-color: white;
   width: 620px;
   overflow: auto;
 `;
 
-export const IconAndTitleModalSC = styled(BASE_STYLE)`
+export const FormModalSC = styled(BASE_STYLE)`
   background-color: white;
+  width: 700px;
 `;
