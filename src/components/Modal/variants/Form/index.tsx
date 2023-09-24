@@ -3,12 +3,12 @@ import IconCard from "../../../IconCard";
 import { ButtonsConainterSC, ChildrenContainerSC, FormModalSC, HeaderSC } from "../../styles";
 import { IFormModalProps } from "../../types";
 
-const FormModal = ({
+export const FormModal = ({
   children,
   onConfirmModal,
   iconName = "ph-activity",
   modalTitle,
-  confirmButtonName = "Confirmar",
+  label = "Confirmar",
 }: IFormModalProps) => {
   return (
     <FormModalSC>
@@ -21,10 +21,8 @@ const FormModal = ({
 
       <ButtonsConainterSC>
         <Button text={"Cancelar"} maxWidth={200} variant="secondary" />
-        <Button text={confirmButtonName} maxWidth={200} variant="primary" onClick={onConfirmModal} />
+        <Button text={label} maxWidth={200} variant="primary" onClick={onConfirmModal} />
       </ButtonsConainterSC>
     </FormModalSC>
   );
 };
-
-export default FormModal;

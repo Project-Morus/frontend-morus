@@ -15,10 +15,11 @@ const LandingPage = () => {
       {modalOpen && (
         <Modal
           variant="form"
-          onConfirmModal={() => {}}
+          onConfirmModal={() => { }}
           closeModal={() => setModalOpen(false)}
           iconName="ph-user"
           modalTitle="Funcionou  :)"
+          label="Aceitar"
         >
           <p>
             Tem certeza que deseja aceitar a reserva do morador Eduardo Simon da área comum da cobertura? Esta ação não

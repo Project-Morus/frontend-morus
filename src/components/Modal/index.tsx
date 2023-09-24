@@ -1,9 +1,8 @@
 import { ReactNode } from "react";
 import { IModalProps, VariantsTypes } from "./types";
-import ConfirmationModal from "./variants/Confirmation";
-import WarningModal from "./variants/Warning";
 import Backdrop from "./parts/Backdrop";
-import FormModal from "./variants/Form";
+import { ConfirmationModal, WarningModal, FormModal } from "./variants";
+
 
 const Modal = ({
   variant = "confirmation",
@@ -13,24 +12,32 @@ const Modal = ({
   iconName,
   modalTitle,
   confirmButtonName,
+  label
 }: IModalProps) => {
   const variantType: Record<VariantsTypes, ReactNode> = {
     confirmation: (
-      <ConfirmationModal onConfirmModal={onConfirmModal} confirmButtonName={confirmButtonName}>
+      <ConfirmationModal
+        onConfirmModal={onConfirmModal}
+        confirmButtonName={confirmButtonName}
+        label={label}>
         {children}
       </ConfirmationModal>
     ),
     warning: (
-      <WarningModal onConfirmModal={onConfirmModal} confirmButtonName={confirmButtonName}>
+      <WarningModal
+        onConfirmModal={onConfirmModal}
+        confirmButtonName={confirmButtonName}
+        label={label}>
         {children}
       </WarningModal>
     ),
     form: (
       <FormModal
         onConfirmModal={onConfirmModal}
-        iconName={iconName!}
+        iconName={iconName}
         modalTitle={modalTitle}
         confirmButtonName={confirmButtonName}
+        label={label}
       >
         {children}
       </FormModal>

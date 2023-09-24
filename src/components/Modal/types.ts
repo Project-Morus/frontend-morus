@@ -17,6 +17,7 @@ export interface IModalVariantsProps {
   children?: ReactNode;
   onConfirmModal: () => void;
   confirmButtonName?: string;
+  label?: string,
 }
 
 export interface IFormModalProps extends IModalVariantsProps {
