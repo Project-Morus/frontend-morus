@@ -1,7 +1,10 @@
 import { styled } from "styled-components";
 
+export const HEIGHT_BUTTON = '50px'
+
 export const BASE_STYLE = styled.button<{ $maxWidth?: number }>`
   width: 100%;
+  height: ${HEIGHT_BUTTON};
 
   font-weight:  ${({ theme }) => theme.typography.FONT_WEIGHTS.bold};
 
@@ -11,8 +14,6 @@ export const BASE_STYLE = styled.button<{ $maxWidth?: number }>`
   background: none;
 
   cursor: pointer;
-
-  padding: ${({ theme }) => theme.spacing[4]};
 
   &:disabled {
     opacity: 0.5;

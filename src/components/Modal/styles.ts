@@ -1,24 +1,33 @@
 import styled from "styled-components";
+import { BASE_STYLE, WIDTH_CONFIRMATION_MODAL } from "./stylesUtils";
 
-export const ModalSC = styled.div`
+export const ButtonsContainerSC = styled.div`
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: ${({ theme }) => theme.spacing[7]};
-  font-size: 1.2rem;
-  border-radius: 1rem;
-  background-color: ${({ theme }) => theme.colors.white[100]};
-  margin: auto;
+  justify-content: space-between;
 `;
 
-export const BackdropSC = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
+export const ChildrenContainerSC = styled.div`
+  margin: ${({ theme }) => theme.spacing[8]} 0;
+  text-align: center;
+`;
+
+export const HeaderSC = styled.div`
   width: 100%;
-  height: 100%;
-  background: #000000e1;
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: ${({ theme }) => theme.spacing[8]};
+`;
+
+export const ConfirmationModalSC = styled(BASE_STYLE)`
+  background-color: white;
+  width: 100%;
+  max-width: ${WIDTH_CONFIRMATION_MODAL};
+  overflow: auto;
+`;
+
+export const FormModalSC = styled(BASE_STYLE)`
+  background-color: white;
+  max-width: ${WIDTH_CONFIRMATION_MODAL};
 `;

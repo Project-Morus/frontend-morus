@@ -1,7 +1,7 @@
 import { ButtonPrimarySC } from "../../styles";
 import { IButtonProps } from "../../types";
 
-const ButtonPrimary = ({ text, maxWidth, ...props }: Omit<IButtonProps, 'variant'>) => {
+export const ButtonPrimary = ({ text, maxWidth, ...props }: Omit<IButtonProps, 'variant'>) => {
   return (
     <ButtonPrimarySC
       $maxWidth={maxWidth}
@@ -11,5 +11,3 @@ const ButtonPrimary = ({ text, maxWidth, ...props }: Omit<IButtonProps, 'variant
     </ButtonPrimarySC>
   );
 }
-
-export default ButtonPrimary;
