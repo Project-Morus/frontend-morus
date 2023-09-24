@@ -1,5 +1,5 @@
 import Button from "../../../Button";
-import { ChildrenContainerSC, ButtonsContainerSC, ConfirmationModalSC } from "../../styles";
+import { ChildrenContainerSC, ButtonsContainerSC, ConfirmationModalSC, TitleSC } from "../../styles";
 import { IModalVariantsProps } from "../../types";
 
 export const ConfirmationModal = ({
@@ -10,7 +10,7 @@ export const ConfirmationModal = ({
 }: IModalVariantsProps) => {
   return (
     <ConfirmationModalSC role={role}>
-      <h2>Atenção!</h2>
+      <TitleSC>Atenção!</TitleSC>
 
       <ChildrenContainerSC>{children}</ChildrenContainerSC>
 

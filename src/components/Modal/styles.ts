@@ -11,7 +11,15 @@ export const ButtonsContainerSC = styled.div`
 export const ChildrenContainerSC = styled.div`
   margin: ${({ theme }) => theme.spacing[8]} 0;
   text-align: center;
+
+  color: ${({ theme }) => theme.colors.grey[300]};
+  font-size: ${({ theme }) => theme.typography.TEXT_SIZES.medium};
 `;
+
+export const TitleSC = styled.h2`
+  font-size: ${({ theme }) => theme.typography.HEADERS_SIZES.h2};
+  color: ${({ theme }) => theme.colors.grey[400]};
+`
 
 export const HeaderSC = styled.div`
   width: 100%;
