@@ -1,4 +1,4 @@
-import IconCard from "../../../../components/IconCard";
+import { IconCard } from "../../../../components";
 import { TextSC, TitleSC, WrapperIconSquareSC } from "../styles";
 
 const Header = () => {

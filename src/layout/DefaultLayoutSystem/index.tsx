@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import Menu from "../../components/Menu";
 import { ContainerSC, WrapperSC, InternalWrapperSC } from "./styles";
 import Header from "./parts/Header";
+import { Menu } from "../../components";
 
 const DefaultLayoutSystem = () => {
   return (

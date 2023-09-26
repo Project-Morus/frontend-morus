@@ -1,7 +1,8 @@
 
 import { useTheme } from "styled-components";
-import Icon from "../../../../components/Icon";
+
 import { ContentResidentSC, WrapperIconSC, WrapperInfResidentSC, NameResidentSC, RoleResidentSC } from "./styles";
+import { Icon } from "../../../../components";
 
 const InfoResident = () => {
   const theme = useTheme()

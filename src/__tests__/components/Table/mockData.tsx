@@ -1,5 +1,5 @@
-import Icon from "../../../components/Icon";
-import { ITableHeaderProps } from "../../../components/Table/types";
+import { Icon } from "../../../components"
+import { ITableHeaderProps } from "../../../components/DataDisplay/Table/types"
 
 const IconsSC = () => {
   return (

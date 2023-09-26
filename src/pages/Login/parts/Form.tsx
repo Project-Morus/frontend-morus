@@ -1,8 +1,7 @@
 import { FormEvent } from "react";
-import Button from "../../../components/Button";
-import Input from "../../../components/Input";
 import { ForgotPasswordSC, FormSC, WrapperButtonSC, WrapperInputsSC } from "../styles";
 import { useNavigate } from "react-router-dom";
+import { Button, Input } from "../../../components";
 
 const Form = () => {
   const navigate = useNavigate();

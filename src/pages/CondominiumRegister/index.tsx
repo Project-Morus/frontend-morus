@@ -1,14 +1,12 @@
 import { useState } from "react";
-import Aside from "../../components/Aside";
-import SequencialStepper from "../../components/SequencialStepper";
 import { createArrayWithObjectsKeys } from "../../helpers/createArrayWithObjectsKeys";
-import CondominiumRegisterFirstStep from "./FirstStep";
-import CondominiumRegisterSecondStep from "./SecondStep";
-import CondominiumRegisterThirdStep from "./ThirdStep";
 import { CentralizerSC, WrapperSC } from "./styles";
-import Button from "../../components/Button";
+import { Aside, Button, SequencialStepper } from "../../components";
+import { CondominiumRegisterFirstStep, CondominiumRegisterSecondStep, CondominiumRegisterThirdStep } from "./parts";
+import { useNavigate } from "react-router-dom";
 
 const CondominiumRegister = () => {
+  const navigate = useNavigate()
   const quantitySteps = createArrayWithObjectsKeys(3);
   const [selectedStep, setSelectedStep] = useState(1);
 
@@ -22,7 +20,7 @@ const CondominiumRegister = () => {
         <CentralizerSC>
           <Button
             text={selectedStep < 3 ? "Próxima etapa" : "Finalizar"}
-            onClick={() => selectedStep < 3 && setSelectedStep(selectedStep + 1)}
+            onClick={() => selectedStep < 3 ? setSelectedStep(selectedStep + 1) : navigate('/login')}
             maxWidth={480}
           />
           <SequencialStepper items={quantitySteps} currentStep={selectedStep} />

@@ -1,18 +1,18 @@
-import Button from "../../components/Button";
-import Input from "../../components/Input";
-import Table from "../../components/Table";
+
 import { ButtonContainerSC, HeaderSC, InputAndButtonsContainerSC } from "./styles";
 import { HEADER_TABLE_CELLS, ROW_NAME_CELLS } from "./mockData";
+import { TitleSC, MessageSC, QuantityTotalSC } from "../styles";
+import { Button, Input, Table } from "../../components";
 
 const Residents = () => {
   return (
     <>
       <HeaderSC>
         <div>
-          <h1>Moradores</h1>
-          <p>Essa é a lista de todos os moradores do condomínio Ilha de Capri</p>
+          <TitleSC>Moradores</TitleSC>
+          <MessageSC>Essa é a lista de todos os moradores do condomínio Ilha de Capri</MessageSC>
         </div>
-        <p>Quantidade total de moradores: 124</p>
+        <QuantityTotalSC>Quantidade total de moradores: 124</QuantityTotalSC>
       </HeaderSC>
 
       <InputAndButtonsContainerSC>

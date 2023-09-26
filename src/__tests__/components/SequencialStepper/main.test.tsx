@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { withTheme } from '../../../helpers/withTheme'
-import SequencialStepper from '../../../components/SequencialStepper'
+import { SequencialStepper }from '../../../components'
 import { SEQUENTIAL_STEPPER_DATA } from './mockData'
 
 const SequencialStepperWithTheme = withTheme(SequencialStepper)

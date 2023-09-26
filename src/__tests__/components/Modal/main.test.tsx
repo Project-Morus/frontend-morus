@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Modal from "../../../components/Modal";
+import { Modal } from "../../../components";
 import { withTheme } from "../../../helpers/withTheme";
 
 const ModalWithTheme = withTheme(Modal);

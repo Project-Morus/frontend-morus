@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import { withTheme } from '../../../helpers/withTheme'
-import Icon from '../../../components/Icon'
+import { Icon } from '../../../components'
 
 const IconWithTheme = withTheme(Icon)
 

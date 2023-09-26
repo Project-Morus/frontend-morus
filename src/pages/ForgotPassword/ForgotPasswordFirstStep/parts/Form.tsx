@@ -3,9 +3,7 @@ import { FormEvent } from "react";
 import { FormSC, WrapperButtonSC } from "../styles";
 
 import { useTheme } from "styled-components";
-import Input from "../../../../components/Input";
-import Button from "../../../../components/Button";
-import Divider from "../../../../components/Divider";
+import { Button, Divider, Input } from "../../../../components";
 
 const Form = () => {
   const theme = useTheme()

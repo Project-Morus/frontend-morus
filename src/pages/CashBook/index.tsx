@@ -1,17 +1,18 @@
-import Button from "../../components/Button";
-import Input from "../../components/Input";
-import Table from "../../components/Table";
+
 import { ButtonContainerSC, HeaderSC, InputAndButtonsContainerSC } from "./styles";
 import { HEADER_TABLE_CELLS, ROW_NAME_CELLS } from "./mockData";
+import { TitleSC, MessageSC, QuantityTotalSC } from "../styles";
+import { Button, Input, Table } from "../../components";
 
 const CashBook = () => {
   return (
     <>
       <HeaderSC>
         <div>
-          <h1>Livro Caixa</h1>
-          <p>Essa é a lista de transferências financeiras cadastradas pelo condomínio Ilha de Capri</p>
+          <TitleSC>Livro Caixa</TitleSC>
+          <MessageSC>Essa é a lista de transferências financeiras cadastradas pelo condomínio Ilha de Capri</MessageSC>
         </div>
+        <QuantityTotalSC>Quantidade total de transferências: 124</QuantityTotalSC>
       </HeaderSC>
 
       <InputAndButtonsContainerSC>
@@ -30,4 +31,4 @@ const CashBook = () => {
   );
 };
 
-export default CashBook;
+export default CashBook

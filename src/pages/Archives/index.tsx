@@ -1,9 +1,8 @@
 
-import Button from "../../components/Button";
-import Input from "../../components/Input";
-import Table from "../../components/Table";
+import { Button, Input, Table } from "../../components";
+import { MessageSC, TitleSC, QuantityTotalSC } from "../styles";
 import { HEADER_TABLE_CELLS, ROW_NAME_CELLS } from "./mockData";
-import { HeaderSC, InputAndButtonsContainerSC, ButtonContainerSC, QuantityTotalSC, MessageSC, TitleSC } from "./styles";
+import { HeaderSC, InputAndButtonsContainerSC, ButtonContainerSC } from "./styles";
 
 const Archives = () => {
   return (

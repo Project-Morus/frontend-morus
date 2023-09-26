@@ -2,7 +2,26 @@
 
 exports[`Table component Snapshot Table 1`] = `
 <DocumentFragment>
-  .c0 {
+  .c4 {
+  color: #0353A4;
+}
+
+.c6 {
+  color: #CE323B;
+}
+
+.c5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  width: fit-content;
+  width: -moz-fit-content;
+  height: fit-content;
+  height: -moz-fit-content;
+}
+
+.c0 {
   width: 100%;
   border-spacing: 0 0.75rem;
   border-radius: 5px;
@@ -33,25 +52,6 @@ exports[`Table component Snapshot Table 1`] = `
 .c2 {
   box-shadow: 0px 4px 4px 0px rgba(0, 74, 173, 0.15);
   border-radius: 5px;
-}
-
-.c4 {
-  color: #0353A4;
-}
-
-.c6 {
-  color: #CE323B;
-}
-
-.c5 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
-  width: fit-content;
-  width: -moz-fit-content;
-  height: fit-content;
-  height: -moz-fit-content;
 }
 
 <table

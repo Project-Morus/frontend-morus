@@ -1,15 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import Login from "../pages/Login";
 import DefaultLayoutAuth from "../layout/DefaultLayoutAuth";
-import LandingPage from "../pages/LandingPage";
-import ForgotPasswordFirstStep from "../pages/ForgotPassword/ForgotPasswordFirstStep";
-import ForgotPasswordSecondStep from "../pages/ForgotPassword/ForgotPasswordSecondStep";
-import CondominiumRegister from "../pages/CondominiumRegister";
 import DefaultLayoutSystem from "../layout/DefaultLayoutSystem";
-import Home from "../pages/Home";
-import Residents from "../pages/Residents";
-import Archives from "../pages/Archives";
-import CashBook from "../pages/CashBook";
+import { CondominiumRegister, ForgotPasswordFirstStep,  ForgotPasswordSecondStep,LandingPage, Home, Residents, Archives, CashBook } from "../pages";
 
 const Router = () => {
   return (
