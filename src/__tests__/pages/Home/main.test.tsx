@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import Login from '../../../pages/Login';
+import { Login } from '../../../pages';
 import { withTheme } from '../../../helpers/withTheme';
 import { MemoryRouter } from 'react-router';
 

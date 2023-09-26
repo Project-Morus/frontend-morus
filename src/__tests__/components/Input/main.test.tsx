@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Input from "../../../components/Input";
+import { Input } from "../../../components";
 import { withTheme } from "../../../helpers/withTheme";
 
 const InputWithTheme = withTheme(Input);

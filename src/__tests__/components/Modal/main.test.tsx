@@ -1,26 +1,20 @@
-
-import ReactDOM from "react-dom/client";
-import { render, screen, fireEvent, getByRole } from "@testing-library/react";
-import Modal from "../../../components/Modal";
+import { render, screen } from "@testing-library/react";
+import { Modal } from "../../../components";
 import { withTheme } from "../../../helpers/withTheme";
-import { unmountComponentAtNode } from "react-dom";
-import { act } from "react-dom/test-utils";
 
 const ModalWithTheme = withTheme(Modal);
 const modalElement = "modal";
 const modalChildrenText = "Teste";
 
-const closeModalFn = jest.fn()
-const confirmModalFn = jest.fn()
-
-
+const closeModalFn = jest.fn();
+const confirmModalFn = jest.fn();
 
 describe("Modal Component", () => {
   let container: HTMLElement;
 
   beforeEach(() => {
-    container = document.createElement('div');
-    container.id = 'portal';
+    container = document.createElement("div");
+    container.id = "portal";
     document.body.appendChild(container);
   });
 
@@ -66,8 +60,8 @@ describe("Modal Component", () => {
     const { asFragment } = render(
       <ModalWithTheme
         open
-        closeModal={() => { }}
-        onConfirmModal={() => { }}
+        closeModal={() => {}}
+        onConfirmModal={() => {}}
         role="modal"
         variant="form"
         iconName="ph-user"

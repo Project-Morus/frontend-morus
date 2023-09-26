@@ -1,14 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import Login from "../pages/Login";
 import DefaultLayoutAuth from "../layout/DefaultLayoutAuth";
-import LandingPage from "../pages/LandingPage";
-import ForgotPasswordFirstStep from "../pages/ForgotPassword/ForgotPasswordFirstStep";
-import ForgotPasswordSecondStep from "../pages/ForgotPassword/ForgotPasswordSecondStep";
-import CondominiumRegister from "../pages/CondominiumRegister";
 import DefaultLayoutSystem from "../layout/DefaultLayoutSystem";
-import Home from "../pages/Home";
-import Residents from "../pages/Residents";
-import Archives from "../pages/Archives";
+import { CondominiumRegister, ForgotPasswordFirstStep,  ForgotPasswordSecondStep,LandingPage, Home, Residents, Archives, CashBook } from "../pages";
 
 const Router = () => {
   return (
@@ -29,7 +23,7 @@ const Router = () => {
         <Route path="home" element={<Home />} />
         <Route path="residents" element={<Residents />} />
         <Route path="archives" element={<Archives />} />
-
+        <Route path="cashBook" element={<CashBook />} />
       </Route>
     </Routes>
   );

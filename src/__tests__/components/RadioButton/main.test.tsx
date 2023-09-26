@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import RadioButton from "../../../components/RadioButton";
+import { RadioButton } from "../../../components";
 import { withTheme } from "../../../helpers/withTheme";
 
 const RadioButtonWithTheme = withTheme(RadioButton);

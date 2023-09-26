@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { withTheme } from '../../../helpers/withTheme'
-import Table from '../../../components/Table'
 import { HEADER_TABLE_CELLS, ROW_NAME_CELLS } from './mockData'
+import { Table } from '../../../components'
 
 const TableWithTheme = withTheme(Table)
 
