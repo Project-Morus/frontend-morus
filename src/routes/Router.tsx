@@ -1,8 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import Login from "../pages/Login";
 import DefaultLayoutAuth from "../layout/DefaultLayoutAuth";
 import DefaultLayoutSystem from "../layout/DefaultLayoutSystem";
-import { CondominiumRegister, ForgotPasswordFirstStep,  ForgotPasswordSecondStep,LandingPage, Home, Residents, Archives, CashBook } from "../pages";
+import { Login, CondominiumRegister, ForgotPasswordFirstStep,  ForgotPasswordSecondStep,LandingPage, Home, Residents, Archives, CashBook, Occurrences } from "../pages";
 
 const Router = () => {
   return (
@@ -24,6 +23,7 @@ const Router = () => {
         <Route path="residents" element={<Residents />} />
         <Route path="archives" element={<Archives />} />
         <Route path="cashBook" element={<CashBook />} />
+        <Route path="occurrences" element={<Occurrences />} />
       </Route>
     </Routes>
   );
