@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Aside from "../../../components/Aside";
+import { Aside }from "../../../components";
 import { withTheme } from "../../../helpers/withTheme";
 
 const AsideWithTheme = withTheme(Aside);

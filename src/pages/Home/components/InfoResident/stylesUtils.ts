@@ -1,0 +1,1 @@
+export const DIAMETER_CIRCLE = '48px'

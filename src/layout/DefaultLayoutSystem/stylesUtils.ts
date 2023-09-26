@@ -1,0 +1,1 @@
+export const MAX_MARGIN_LEFT = '16.6rem'

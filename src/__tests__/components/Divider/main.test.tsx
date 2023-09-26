@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { withTheme } from '../../../helpers/withTheme'
-import Divider from '../../../components/Divider'
+import { Divider } from '../../../components'
 
 const DividerWithTheme = withTheme(Divider)
 describe('Divider Component', () => {

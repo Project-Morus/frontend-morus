@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import RadioButtonGroup from "../../../components/RadioButtonGroup";
+import { RadioButtonGroup } from "../../../components";
 import { withTheme } from "../../../helpers/withTheme";
 import { RADIO_BUTTON_GROUP_DATA } from "./mockData";
 

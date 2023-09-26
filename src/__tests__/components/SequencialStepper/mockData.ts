@@ -1,4 +1,5 @@
-import { ISequencialStepperProps } from "../../../components/SequencialStepper/types";
+import { ISequencialStepperProps } from "../../../components/DataDisplay/SequencialStepper/types";
+
 
 export const SEQUENTIAL_STEPPER_DATA: ISequencialStepperProps['items'] = [
   {

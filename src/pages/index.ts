@@ -1,0 +1,8 @@
+export { default as Archives} from './Archives'
+export { default as CashBook} from './CashBook'
+export { default as CondominiumRegister} from './CondominiumRegister'
+export { ForgotPasswordFirstStep, ForgotPasswordSecondStep} from './ForgotPassword'
+export { default as Home} from './Home'
+export { default as LandingPage} from './LandingPage'
+export { default as Login} from './Login'
+export { default as Residents} from './Residents'

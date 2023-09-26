@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { withTheme } from '../../../helpers/withTheme'
-import IconCard from '../../../components/IconCard'
+import {IconCard }from '../../../components'
 
 const IconCardWithTheme = withTheme(IconCard)
 

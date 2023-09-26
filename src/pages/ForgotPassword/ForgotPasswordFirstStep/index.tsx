@@ -1,11 +1,11 @@
-import Aside from "../../../components/Aside";
-import Icon from "../../../components/Icon";
+
+import { Aside, Icon } from "../../../components";
 import Footer from "./parts/Footer";
 import Form from "./parts/Form";
 import Header from "./parts/Header";
 import { BackToLoginButtonSC, ContentSC, WrapperSC } from "./styles";
 
-const ForgotPasswordFirstStep = () => {
+export const ForgotPasswordFirstStep = () => {
   return (
     <main>
       <Aside>
@@ -24,5 +24,3 @@ const ForgotPasswordFirstStep = () => {
     </main>
   );
 };
-
-export default ForgotPasswordFirstStep;
