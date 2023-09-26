@@ -1,0 +1,1 @@
+export const MIN_HEIGHT_MESSAGE = '400px'

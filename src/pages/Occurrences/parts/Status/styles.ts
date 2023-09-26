@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { StatusTypes } from "./types";
+import { MAX_WIDTH_CARD } from "./stylesUtils";
 
 export const CardSC = styled.div<{$type: StatusTypes }>`
-  max-width: 100px;
+  max-width: ${MAX_WIDTH_CARD};
 
   display: flex;
   align-items: center;
