@@ -1,8 +1,8 @@
 
 import { ButtonContainerSC, HeaderSC, InputAndButtonsContainerSC } from "./styles";
 import { TitleSC, MessageSC, QuantityTotalSC } from "../styles";
-import { Button, Input, Table } from "../../components";
-import { HEADER_TABLE_CELLS, ROW_NAME_CELLS } from "./mockData";
+import { Button, Input } from "../../components";
+import CustomTable from "./parts/CustomTable";
 
 const Occurrences = () => {
   return (
@@ -22,11 +22,7 @@ const Occurrences = () => {
         </ButtonContainerSC>
       </InputAndButtonsContainerSC>
 
-      <Table
-        headerCells={HEADER_TABLE_CELLS}
-        rowCells={ROW_NAME_CELLS}
-        emptyMessage="A tabela está vazia no momento. Espere o síndico ou um morador adicionar novas ocorrências!"
-      />
+      <CustomTable />
     </>
   );
 };
