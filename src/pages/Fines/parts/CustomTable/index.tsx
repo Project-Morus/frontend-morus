@@ -38,7 +38,7 @@ const ROW_NAME_CELLS = [
   },
 ];
   return ( 
-    <CustomTableSC headerCells={HEADER_TABLE_CELLS} rowCells={ROW_NAME_CELLS} emptyMessage="A tabela está vazia no momento. Espere o síndico adicionar novas ocorrências!"/>
+    <CustomTableSC headerCells={HEADER_TABLE_CELLS} rowCells={ROW_NAME_CELLS} emptyMessage="A tabela está vazia no momento :(! Espere o síndico adicionar novas multas!"/>
    );
 }
  
