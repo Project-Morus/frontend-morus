@@ -27,6 +27,7 @@ exports[`Table component Snapshot Table 1`] = `
   border-radius: 5px;
   background-color: #F8F8F8;
   padding: 0.75rem;
+  overflow-x: auto;
 }
 
 .c0 thead {
