@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MIN_HEIGHT_MESSAGE } from "./stylesUtils";
 
 export const TableSC = styled.table`
   width: 100%;
@@ -47,7 +48,7 @@ export const WrapperMessageSC = styled.div`
   width: 100%;
   height: 100%;
 
-  min-height: 400px;
+  min-height: ${MIN_HEIGHT_MESSAGE};
 
   font-weight: ${({ theme }) => theme.typography.FONT_WEIGHTS.bold};
   color: ${({ theme }) => theme.colors.primary[500]};

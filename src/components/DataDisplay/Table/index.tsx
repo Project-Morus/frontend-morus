@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import { TBodySC, TableSC, TdSC, TrSC, WrapperMessageSC } from "./styles";
 import { ITableProps } from "./types";
 

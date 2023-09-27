@@ -17,8 +17,14 @@ export const MENU_LIST: IMenuDataProps[] = [
     icon: 'ph-files'
   },
   {
+    title: 'Ocorrências',
+    link: 'occurrences',
+    icon: 'ph-clipboard-text'
+  },
+  {
     title: 'Livro Caixa',
     link: 'cashBook',
     icon: 'ph-book-bookmark'
   },
+
 ]
