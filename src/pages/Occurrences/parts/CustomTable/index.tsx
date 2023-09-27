@@ -12,7 +12,7 @@ const ROW_NAME_CELLS = [
   { reason: "Portão da garagem enguiçou", date: "01/11/2023", status: <Status type="pending"/> },
 ];
   return ( 
-    <CustomTableSC headerCells={HEADER_TABLE_CELLS} rowCells={ROW_NAME_CELLS} />
+    <CustomTableSC headerCells={HEADER_TABLE_CELLS} rowCells={ROW_NAME_CELLS} emptyMessage="A tabela está vazia no momento. Espere o síndico adicionar novas ocorrências!"/>
    );
 }
  
