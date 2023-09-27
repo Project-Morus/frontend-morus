@@ -8,8 +8,6 @@ const Form = () => {
 
   const handleSubmitNewPassword = (e: FormEvent) => {
     e.preventDefault();
-
-    console.log("Submit Login Sucess");
   };
 
   return (

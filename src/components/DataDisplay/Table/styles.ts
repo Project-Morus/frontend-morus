@@ -11,6 +11,8 @@ export const TableSC = styled.table`
   
   padding: ${({ theme }) => theme.spacing[4]};
 
+  overflow-x: auto;
+
   thead {
     text-align: left;
     color: ${({ theme }) => theme.colors.grey[200]};

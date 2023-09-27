@@ -18,4 +18,5 @@ export const InternalWrapperSC = styled.div`
   background-color: ${({ theme }) => theme.colors.white[50]};
   border-radius: ${({ theme }) => theme.border.radius.large};
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+  overflow-x: auto;
 `;

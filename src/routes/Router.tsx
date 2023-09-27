@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import DefaultLayoutAuth from "../layout/DefaultLayoutAuth";
 import DefaultLayoutSystem from "../layout/DefaultLayoutSystem";
-import { Login, CondominiumRegister, ForgotPasswordFirstStep,  ForgotPasswordSecondStep,LandingPage, Home, Residents, Archives, CashBook, Occurrences } from "../pages";
+import { Login, CondominiumRegister, ForgotPasswordFirstStep,  ForgotPasswordSecondStep,LandingPage, Home, Residents, Archives, CashBook, Occurrences, Fines } from "../pages";
 
 const Router = () => {
   return (
@@ -19,8 +19,9 @@ const Router = () => {
       </Route>
 
       <Route path="system" element={<DefaultLayoutSystem />}>
-        <Route path="home" element={<Home />} />
+        <Route path="" element={<Home />} />
         <Route path="residents" element={<Residents />} />
+        <Route path="fines" element={<Fines />} />
         <Route path="archives" element={<Archives />} />
         <Route path="cashBook" element={<CashBook />} />
         <Route path="occurrences" element={<Occurrences />} />
