@@ -3,7 +3,7 @@ import { IMenuDataProps } from "./types";
 export const MENU_LIST: IMenuDataProps[] = [
   {
     title: 'Tela Inicial',
-    link: 'home',
+    link: '',
     icon: 'ph-house'
   },
   {
@@ -15,6 +15,11 @@ export const MENU_LIST: IMenuDataProps[] = [
     title: 'Arquivos',
     link: 'archives',
     icon: 'ph-files'
+  },
+  {
+    title: 'Multas',
+    link: 'fines',
+    icon: 'ph-money'
   },
   {
     title: 'Ocorrências',

@@ -264,6 +264,7 @@ exports[`Login Component Snapshot Login 1`] = `
                   Senha
                 </label>
                 <input
+                  autocomplete="on"
                   class="c10"
                   id="passaword"
                   placeholder="Insira a sua senha"

@@ -1,0 +1,1 @@
+export const MAX_WIDTH_CARD = '100px';

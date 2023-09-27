@@ -801,6 +801,7 @@ const PhosphorIconsMap = {
     'ph-rainbow': Icon.Rainbow,
     'ph-rainbow-cloud': Icon.RainbowCloud,
     'ph-receipt': Icon.Receipt,
+    'ph-receipt-x': Icon.ReceiptX,
     'ph-record': Icon.Record,
     'ph-rectangle': Icon.Rectangle,
     'ph-recycle': Icon.Recycle,
