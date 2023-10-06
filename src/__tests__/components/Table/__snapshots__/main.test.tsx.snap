@@ -51,6 +51,7 @@ exports[`Table component Snapshot Table 1`] = `
 }
 
 .c2 {
+  position: relative;
   box-shadow: 0px 4px 4px 0px rgba(0, 74, 173, 0.15);
   border-radius: 5px;
 }

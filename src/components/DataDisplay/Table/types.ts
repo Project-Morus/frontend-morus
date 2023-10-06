@@ -6,6 +6,8 @@ export interface ITableProps<T extends Record<string, any>> extends TableHTMLAtt
   headerCells: ITableHeaderProps[]
   rowCells: T[]
   emptyMessage?: ReactNode | string,
+  expanse?: boolean,
+  expanseChildren?: ReactNode,
 }
 
 export interface ITableHeaderProps {
