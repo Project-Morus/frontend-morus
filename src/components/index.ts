@@ -8,8 +8,7 @@ export { default as Icon } from "./DataDisplay/Icon";
 export { default as IconCard } from "./DataDisplay/IconCard";
 export { default as SequencialStepper } from "./DataDisplay/SequencialStepper";
 export { default as Table } from "./DataDisplay/Table";
-
-//export { default as Archive } from "./DataDisplay/Archive";
+export { default as Archive } from "./DataDisplay/Archive";
 
 // Feedback
 export { default as Aside } from "./Feedback/Aside";

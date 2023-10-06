@@ -7,6 +7,7 @@ import { useTheme } from "styled-components";
 function Dropdown({ label, options }: DropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const theme = useTheme();
+
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -17,7 +18,7 @@ function Dropdown({ label, options }: DropdownProps) {
         <LabelContainer>
           {label}
           {isOpen ? (
-            <Icon name="ph-caret-up" size="16px" color={theme.colors.primary[500]} />
+            <Icon name="ph-caret-up" size="16px" stroke="bold" color={theme.colors.primary[500]} />
           ) : (
             <Icon name="ph-caret-down" size="16px" color={theme.colors.primary[500]} />
           )}
