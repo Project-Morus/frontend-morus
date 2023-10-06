@@ -17,7 +17,7 @@ export const DropdownButton = styled.button`
   padding: 10px 20px;
   cursor: pointer;
   border: solid 1px ${({ theme }) => theme.colors.primary[500]};
-  border-radius: 8px;
+  border-radius: 6px;
 `;
 
 export const DropdownMenu = styled.div`
@@ -28,7 +28,7 @@ export const DropdownMenu = styled.div`
   background-color: #fff;
   border: 1px solid #ccc;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
+  border-radius: 6px;
 `;
 
 export const DropdownItem = styled.div`
