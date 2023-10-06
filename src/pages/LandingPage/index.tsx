@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Toggle from "../../components/Toggle";
-import { Archive, Modal } from "../../components";
+import { Modal } from "../../components";
+import Dropdown from "../../components/Dropdown";
+import Archive from "../../components/DataDisplay/Archive";
 
 const LandingPage = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -18,6 +20,7 @@ const LandingPage = () => {
   return (
     <>
       <h1>Landing Page</h1>
+      <Dropdown label="teste" options={["teste", "testi"]} />
       <button onClick={handleModal}>Abrir modal</button>
       <Modal
         open={modalOpen}
@@ -30,7 +33,6 @@ const LandingPage = () => {
       >
         <Archive />
       </Modal>
-      {enabled ? <h1>enabled</h1> : <h1>disabled</h1>}
       <Toggle toggled={true} onClick={handleClick} />
     </>
   );

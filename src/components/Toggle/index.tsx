@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ToggleProps } from "./types";
 import { Input, Span, ToggleWrapper } from "./styles";
 
-export const Toggle = ({ toggled, onClick }: ToggleProps) => {
+const Toggle = ({ toggled, onClick }: ToggleProps) => {
   const [isToggled, toggle] = useState(toggled);
 
   const callback = () => {

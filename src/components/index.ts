@@ -9,7 +9,7 @@ export { default as IconCard } from "./DataDisplay/IconCard";
 export { default as SequencialStepper } from "./DataDisplay/SequencialStepper";
 export { default as Table } from "./DataDisplay/Table";
 
-export { default as Archive } from "./DataDisplay/Archive";
+//export { default as Archive } from "./DataDisplay/Archive";
 
 // Feedback
 export { default as Aside } from "./Feedback/Aside";
@@ -18,6 +18,7 @@ export { default as Modal } from "./Feedback/Modal";
 
 // Inputs
 export { default as Input } from "./Inputs/Input";
+export { default as Dropdown } from "./Dropdown";
 
 // Navigations
 export { default as Menu } from "./Navigation/Menu";
