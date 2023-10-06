@@ -17,28 +17,10 @@ exports[`Archive Component Snapshot Archive with variant default 1`] = `
   height: -moz-fit-content;
 }
 
-.c0 {
-  width: 800px;
-  max-width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 1.5rem;
-  border: 2px dashed #568CC2;
-  padding: 3.5rem;
-}
-
 .c4 {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-}
-
-.c3 {
-  font-size: 1.8125rem;
-  font-weight: 700;
-  color: #999999;
 }
 
 .c5 {
@@ -52,6 +34,25 @@ exports[`Archive Component Snapshot Archive with variant default 1`] = `
 
 .c6 {
   color: #023B74;
+}
+
+.c0 {
+  width: 800px;
+  padding: 3.5rem;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  border: 2px dashed #568CC2;
+}
+
+.c3 {
+  font-size: 1.8125rem;
+  text-align: center;
+  font-weight: 700;
+  color: #999999;
 }
 
 <main
@@ -134,29 +135,10 @@ exports[`Archive Component Snapshot Archive with variant small 1`] = `
   height: -moz-fit-content;
 }
 
-.c0 {
-  width: 600px;
-  max-width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 1.5rem;
-  border: 2px dashed #568CC2;
-  padding: 2.25rem;
-}
-
 .c4 {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-}
-
-.c3 {
-  font-size: 1.5rem;
-  text-align: center;
-  font-weight: 700;
-  color: #999999;
 }
 
 .c5 {
@@ -170,6 +152,25 @@ exports[`Archive Component Snapshot Archive with variant small 1`] = `
 
 .c6 {
   color: #023B74;
+}
+
+.c0 {
+  width: 600px;
+  padding: 2.25rem;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  border: 2px dashed #568CC2;
+}
+
+.c3 {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  color: #999999;
 }
 
 <main
