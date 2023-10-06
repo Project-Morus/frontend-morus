@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Modal } from "../../components";
+import { Archive, Modal } from "../../components";
 
 
 const LandingPage = () => {
@@ -16,16 +16,13 @@ const LandingPage = () => {
       <Modal
         open={modalOpen}
         variant="form"
-        onConfirmModal={() => {}}
+        onConfirmModal={() => { }}
         closeModal={() => setModalOpen(false)}
-        iconName="ph-user"
-        modalTitle="Funcionou  :)"
+        iconName="ph-money"
+        modalTitle="Cadastro Multa  :)"
         buttonLabel="Aceitar"
       >
-        <p>
-          Tem certeza que deseja aceitar a reserva do morador Eduardo Simon da área comum da cobertura? Esta ação não
-          poderá ser desfeita.
-        </p>
+        <Archive />
       </Modal>
     </>
   );

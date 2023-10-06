@@ -1,9 +1,10 @@
 import { useTheme } from "styled-components";
 import Icon from "../../../Icon";
-import { ArchiveTextSC, ContainerSC, SizeTextSC, TextSC, TitleSC, WrapperTextsSC } from "./styles";
+import { ContainerSC, TitleSC } from "./styles";
 import { IArchiveProps } from "../../types";
+import { ArchiveTextSC, SizeTextSC, TextSC, WrapperTextsSC } from "../styles";
 
-export const ArchiveSmall = (props: IArchiveProps) => {
+export const ArchiveSmall = (props: Omit<IArchiveProps, 'variants'>) => {
   const theme = useTheme()
   return (
     <ContainerSC role={props.role}>
