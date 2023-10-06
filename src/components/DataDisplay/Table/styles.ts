@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { MIN_HEIGHT_MESSAGE } from "./stylesUtils";
+import Icon from "../Icon";
 
 export const TableSC = styled.table`
   width: 100%;
@@ -23,14 +24,13 @@ export const TableSC = styled.table`
   }
 `
 
-export const TdSC = styled.td`
+export const TdSC = styled.td<{ $expanse?: boolean }>`
 padding: ${({ theme }) => theme.spacing[5]};
 
 font-size: ${({ theme }) => theme.typography.TEXT_SIZES.medium};
 font-weight: ${({ theme }) => theme.typography.FONT_WEIGHTS.bold};
 
 color: ${({ theme }) => theme.colors.grey[400]};
-
 `
 
 export const TBodySC = styled.tbody`
@@ -38,8 +38,21 @@ export const TBodySC = styled.tbody`
 `
 
 export const TrSC = styled.tr`
+  position: relative;
   box-shadow: 0px 4px 4px 0px rgba(0, 74, 173, 0.15);
   border-radius: ${({ theme }) => theme.border.radius.regular};
+`
+
+export const TrExpanseSC = styled.tr`
+  margin-top: 2rem;
+  border-radius: ${({ theme }) => theme.border.radius.regular};
+`
+
+export const IconSC = styled(Icon)`
+  position: absolute;
+  cursor: pointer;
+  right: 16px;
+  top: 16px;
 `
 
 export const WrapperMessageSC = styled.div`

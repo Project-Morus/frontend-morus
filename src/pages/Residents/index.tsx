@@ -26,6 +26,8 @@ const Residents = () => {
         headerCells={HEADER_TABLE_CELLS}
         rowCells={ROW_NAME_CELLS}
         emptyMessage="A tabela está vazia no momento. Espere o síndico adicionar novos moradores!"
+        expanse
+        expanseChildren={<h1>oi</h1>}
       />
     </>
   );
