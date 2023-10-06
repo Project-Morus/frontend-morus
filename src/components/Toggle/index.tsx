@@ -1,11 +1,19 @@
-import { ToggleWrapper } from "./styles";
+import { useState } from "react";
 import { ToggleProps } from "./types";
+import { Input, Span, ToggleWrapper } from "./styles";
 
-const Toggle = ({ onClick, isChecked }: ToggleProps) => {
+export const Toggle = ({ toggled, onClick }: ToggleProps) => {
+  const [isToggled, toggle] = useState(toggled);
+
+  const callback = () => {
+    toggle(!isToggled);
+    onClick(!isToggled);
+  };
+
   return (
     <ToggleWrapper>
-      <input type="checkbox" defaultChecked={isChecked} onClick={onClick} />
-      <span />
+      <Input type="checkbox" defaultChecked={isToggled} onClick={callback} />
+      <Span />
     </ToggleWrapper>
   );
 };

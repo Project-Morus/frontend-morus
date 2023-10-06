@@ -1,35 +1,46 @@
 import styled from "styled-components";
 
 export const ToggleWrapper = styled.label`
-  background: ${({ theme }) => theme.colors.white[50]};
-  width: 4rem;
-  height: 2rem;
-  border-radius: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+`;
 
-  input {
-    height: 100%;
-    width: 100%;
-    opacity: 0;
+export const Input = styled.input`
+  opacity: 0;
+  width: 0;
+  height: 0;
+
+  &:checked + span {
+    background-color: ${({ theme }) => theme.colors.primary[500]};
   }
 
-  input:cheked + span {
-    left: 50%;
-    background: blue;
+  &:checked + span:before {
+    transform: translateX(29px);
   }
+`;
 
-  span {
+export const Span = styled.span`
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: ${({ theme }) => theme.colors.grey[100]};
+  transition: 0.3s;
+  border-radius: 30px;
+
+  &:before {
     position: absolute;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 100%;
-    background-color: ${({ theme }) => theme.colors.white[100]};
-    left: 0;
-    cursor: pointer;
-    box-shadow: 2px 2px 4px gray;
-    transition: 0.25s;
+    content: "";
+    height: 25px;
+    width: 25px;
+    left: 3px;
+    bottom: 2.6px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: 0.3s;
   }
 `;

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Modal } from "../../components";
 import Toggle from "../../components/Toggle";
+import { Archive, Modal } from "../../components";
 
 const LandingPage = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -24,16 +24,14 @@ const LandingPage = () => {
         variant="form"
         onConfirmModal={() => {}}
         closeModal={() => setModalOpen(false)}
-        iconName="ph-user"
-        modalTitle="Funcionou  :)"
+        iconName="ph-money"
+        modalTitle="Cadastro Multa  :)"
         buttonLabel="Aceitar"
       >
-        <p>
-          Tem certeza que deseja aceitar a reserva do morador Eduardo Simon da área comum da cobertura? Esta ação não
-          poderá ser desfeita.
-        </p>
+        <Archive />
       </Modal>
-      <Toggle isChecked={enabled} onClick={handleClick} />
+      {enabled ? <h1>enabled</h1> : <h1>disabled</h1>}
+      <Toggle toggled={true} onClick={handleClick} />
     </>
   );
 };
