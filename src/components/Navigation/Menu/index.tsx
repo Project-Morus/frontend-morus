@@ -1,12 +1,12 @@
-
 import LogoBlueSVG from "../../../assets/svg/LogoBlue";
-import {Icon} from '../../';
+import { Icon } from "../../";
 import { MENU_LIST } from "./menu";
 import { ContainerSC, FooterSC, LiSC, MenuSC, LinkSC, WrapperMenuSC } from "./styles";
 
 import { useState } from "react";
+import Toggle from "../../Toggle";
 const Menu = () => {
-  const [navs] = useState(MENU_LIST)
+  const [navs] = useState(MENU_LIST);
 
   return (
     <ContainerSC>
@@ -26,6 +26,6 @@ const Menu = () => {
       <FooterSC>Todos os direitos reservados Morus Company 2023 | Versão 1.0.0</FooterSC>
     </ContainerSC>
   );
-}
+};
 
 export default Menu;
