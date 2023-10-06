@@ -69,6 +69,18 @@ export const IconSC = styled(Icon)`
   top: 16px;
 `;
 
+export const TrExpanseSC = styled.tr`
+  margin-top: 2rem;
+  border-radius: ${({ theme }) => theme.border.radius.regular};
+`;
+
+export const IconSC = styled(Icon)`
+  position: absolute;
+  cursor: pointer;
+  right: 16px;
+  top: 16px;
+`;
+
 export const WrapperMessageSC = styled.div`
   display: flex;
   align-items: center;
