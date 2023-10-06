@@ -245,7 +245,6 @@ exports[`Modal Component Snapshot Modal with variant form 1`] = `
 
 .c2 {
   background-color: white;
-  max-width: 620px;
 }
 
 <div

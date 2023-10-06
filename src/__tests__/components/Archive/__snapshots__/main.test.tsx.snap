@@ -1,0 +1,236 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Archive Component Snapshot Archive with variant default 1`] = `
+<DocumentFragment>
+  .c1 {
+  color: #3575B6;
+}
+
+.c2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  width: fit-content;
+  width: -moz-fit-content;
+  height: fit-content;
+  height: -moz-fit-content;
+}
+
+.c0 {
+  width: 800px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  border: 2px dashed #568CC2;
+  padding: 3.5rem;
+}
+
+.c4 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.c3 {
+  font-size: 1.8125rem;
+  font-weight: 700;
+  color: #999999;
+}
+
+.c5 {
+  font-weight: 700;
+  color: #999999;
+}
+
+.c7 {
+  color: #F58317;
+}
+
+.c6 {
+  color: #023B74;
+}
+
+<main
+    class="c0"
+    role="archive"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+        data-testid="ph-file-arrow-down"
+      >
+        <svg
+          fill="currentColor"
+          height="70px"
+          viewBox="0 0 256 256"
+          width="70px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-42.34-61.66a8,8,0,0,1,0,11.32l-24,24a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L120,164.69V120a8,8,0,0,1,16,0v44.69l10.34-10.35A8,8,0,0,1,157.66,154.34Z"
+          />
+        </svg>
+      </div>
+    </div>
+    <h1
+      class="c3"
+    >
+      Arraste e Solte ou Faça Upload dos Arquivos
+    </h1>
+    <div
+      class="c4"
+    >
+      <span
+        class="c5"
+      >
+        Suporta somente os formatos 
+        <strong
+          class="c6"
+        >
+          PDF
+        </strong>
+         e 
+        <strong
+          class="c6"
+        >
+          PNG
+        </strong>
+      </span>
+      <span
+        class="c5"
+      >
+        O tamanho limite dos arquivos é de 
+        <strong
+          class="c7"
+        >
+          50MB
+        </strong>
+      </span>
+    </div>
+  </main>
+</DocumentFragment>
+`;
+
+exports[`Archive Component Snapshot Archive with variant small 1`] = `
+<DocumentFragment>
+  .c1 {
+  color: #3575B6;
+}
+
+.c2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  width: fit-content;
+  width: -moz-fit-content;
+  height: fit-content;
+  height: -moz-fit-content;
+}
+
+.c0 {
+  width: 600px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  border: 2px dashed #568CC2;
+  padding: 2.25rem;
+}
+
+.c4 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.c3 {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  color: #999999;
+}
+
+.c5 {
+  font-weight: 700;
+  color: #999999;
+}
+
+.c7 {
+  color: #F58317;
+}
+
+.c6 {
+  color: #023B74;
+}
+
+<main
+    class="c0"
+    role="archive"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+        data-testid="ph-file-arrow-down"
+      >
+        <svg
+          fill="currentColor"
+          height="60px"
+          viewBox="0 0 256 256"
+          width="60px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-42.34-61.66a8,8,0,0,1,0,11.32l-24,24a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L120,164.69V120a8,8,0,0,1,16,0v44.69l10.34-10.35A8,8,0,0,1,157.66,154.34Z"
+          />
+        </svg>
+      </div>
+    </div>
+    <h3
+      class="c3"
+    >
+      Arraste e Solte ou Faça Upload dos Arquivos
+    </h3>
+    <div
+      class="c4"
+    >
+      <span
+        class="c5"
+      >
+         Suporta somente os formatos 
+        <strong
+          class="c6"
+        >
+          PDF
+        </strong>
+         e 
+        <strong
+          class="c6"
+        >
+          PNG
+        </strong>
+      </span>
+      <span
+        class="c5"
+      >
+        O tamanho limite dos arquivos é de 
+        <strong
+          class="c7"
+        >
+          50MB
+        </strong>
+      </span>
+    </div>
+  </main>
+</DocumentFragment>
+`;

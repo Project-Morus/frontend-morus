@@ -37,5 +37,4 @@ export const ConfirmationModalSC = styled(BASE_STYLE)`
 
 export const FormModalSC = styled(BASE_STYLE)`
   background-color: white;
-  max-width: ${WIDTH_CONFIRMATION_MODAL};
 `;
