@@ -1,12 +1,18 @@
 import { useState } from "react";
 import { Modal } from "../../components";
-
+import Toggle from "../../components/Toggle";
 
 const LandingPage = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleModal = () => {
     setModalOpen(!modalOpen);
+  };
+
+  const [enabled, setEnabled] = useState(false);
+
+  const handleClick = () => {
+    setEnabled(!enabled);
   };
 
   return (
@@ -27,6 +33,7 @@ const LandingPage = () => {
           poderá ser desfeita.
         </p>
       </Modal>
+      <Toggle isChecked={enabled} onClick={handleClick} />
     </>
   );
 };
