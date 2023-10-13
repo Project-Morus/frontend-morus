@@ -1,7 +1,20 @@
 import { Routes, Route } from "react-router-dom";
 import DefaultLayoutAuth from "../layout/DefaultLayoutAuth";
 import DefaultLayoutSystem from "../layout/DefaultLayoutSystem";
-import { Login, CondominiumRegister, ForgotPasswordFirstStep,  ForgotPasswordSecondStep,LandingPage, Home, Residents, Archives, CashBook, Occurrences, Fines } from "../pages";
+import {
+  Login,
+  CondominiumRegister,
+  ForgotPasswordFirstStep,
+  ForgotPasswordSecondStep,
+  LandingPage,
+  Home,
+  Residents,
+  Archives,
+  CashBook,
+  Occurrences,
+  Fines,
+  InformationsMural,
+} from "../pages";
 
 const Router = () => {
   return (
@@ -25,6 +38,7 @@ const Router = () => {
         <Route path="archives" element={<Archives />} />
         <Route path="cashBook" element={<CashBook />} />
         <Route path="occurrences" element={<Occurrences />} />
+        <Route path="informations-mural" element={<InformationsMural />} />
       </Route>
     </Routes>
   );
