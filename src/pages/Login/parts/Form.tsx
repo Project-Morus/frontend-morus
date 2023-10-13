@@ -7,7 +7,7 @@ const Form = () => {
   const { register, handleSubmit, errors } = useLoginController()
   const [passwordShown, setPasswordShown] = useState<boolean>(false);
 
-  const handlePasswordShow = () => {
+  const togglePassword = () => {
     setPasswordShown(!passwordShown);
   }
 
@@ -28,7 +28,7 @@ const Form = () => {
           label="Senha"
           placeholder="Insira a sua senha"
           type={passwordShown ? 'text' : 'password'}
-          onClick={handlePasswordShow}
+          onClick={togglePassword}
           iconName={passwordShown ? 'ph-eye-slash' : 'ph-eye'}
           autoComplete="on"
           hasError={!!errors.senha}
