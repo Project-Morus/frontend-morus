@@ -77,7 +77,7 @@ export const FormSC = styled.form`
   margin: ${({ theme }) => theme.spacing[10]} 0;
 `;
 
-export const ForgotPasswordSC = styled.span`
+export const CustomLinkSC = styled.span`
   display: block;
 
   text-align: right;

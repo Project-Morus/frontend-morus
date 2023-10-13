@@ -1,9 +1,15 @@
-import { ForgotPasswordSC, FormSC, WrapperButtonSC, WrapperInputsSC } from "../styles";
-import { Button, Input } from "../../../components";
+import { useState } from "react";
 import { useLoginController } from "../useLoginController";
+import { CustomBoxSC, CustomLinkSC, FormSC, WrapperButtonSC, WrapperInputsSC } from "../styles";
+import { Button, Input } from "../../../components";
 
 const Form = () => {
   const { register, handleSubmit, errors } = useLoginController()
+  const [passwordShown, setPasswordShown] = useState<boolean>(false);
+
+  const handlePasswordShow = () => {
+    setPasswordShown(!passwordShown);
+  }
 
   return (
     <FormSC onSubmit={handleSubmit}>
@@ -15,12 +21,15 @@ const Form = () => {
           hasError={!!errors.email}
           errorText={errors.email?.message}
           {...register('email')}
+          iconName="ph-at"
         />
         <Input
           id="passaword"
           label="Senha"
           placeholder="Insira a sua senha"
-          type="password"
+          type={passwordShown ? 'text' : 'password'}
+          onClick={handlePasswordShow}
+          iconName={passwordShown ? 'ph-eye-slash' : 'ph-eye'}
           autoComplete="on"
           hasError={!!errors.senha}
           errorText={errors.senha?.message}
@@ -28,7 +37,11 @@ const Form = () => {
         />
       </WrapperInputsSC>
 
-      <ForgotPasswordSC to='/forgotPassword/sendEmail'>Esqueci a minha senha</ForgotPasswordSC>
+      <CustomBoxSC>
+        <CustomLinkSC to='/forgotPassword/sendEmail'>
+          Esqueci a minha senha
+        </CustomLinkSC>
+      </CustomBoxSC>
 
       <WrapperButtonSC>
         <Button type="submit" text="Entrar" maxWidth={370} />
