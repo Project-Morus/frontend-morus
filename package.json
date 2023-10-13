@@ -11,6 +11,7 @@
     "test": "jest --runInBand"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.2",
     "@phosphor-icons/react": "^2.0.10",
     "axios": "^1.5.1",
     "jest-environment-jsdom": "^29.6.4",
