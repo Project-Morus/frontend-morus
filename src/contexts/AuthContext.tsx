@@ -1,5 +1,6 @@
 import { ReactNode, createContext, useCallback, useState } from "react";
 import { localStorageKey } from "../configs/localStorageKeys";
+import httpClient from "../services/httpClient";
 
 interface AuthContextValue {
   signedIn?: boolean;
@@ -18,6 +19,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const signIn = useCallback((token: string) => {
     localStorage.setItem(localStorageKey.ACCESS_TOKEN, token)
+    httpClient.defaults.headers.Authorization = `Bearer ${token}`
 
     setSignedIn(true)
   }, [])

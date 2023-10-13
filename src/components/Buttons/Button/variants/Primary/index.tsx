@@ -9,8 +9,7 @@ export const ButtonPrimary = ({ text, maxWidth, isLoading, disabled, ...props }:
       disabled={disabled || isLoading}
       {...props}
     >
-      {!isLoading && <span>{text}</span>}
-      {isLoading && <Spinner />}
+      {isLoading ? <Spinner /> : <span>{text}</span>}
     </ButtonPrimarySC>
   );
 }
