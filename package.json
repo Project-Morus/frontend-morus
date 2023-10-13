@@ -13,6 +13,7 @@
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
     "@phosphor-icons/react": "^2.0.10",
+    "@tanstack/react-query": "^4.36.1",
     "axios": "^1.5.1",
     "jest-environment-jsdom": "^29.6.4",
     "jest-styled-components": "^7.1.1",
