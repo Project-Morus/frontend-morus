@@ -3,6 +3,7 @@ import CardInformations from "./parts/CardInformations";
 
 import { CardInformationProps } from "./parts/types";
 import httpClient from "../../services/httpClient";
+import { ContainerSC } from "./styles";
 
 
 const Home = () => {
@@ -32,7 +33,7 @@ const Home = () => {
       return <CardInformations titulo={item.titulo} descricao={item.descricao} />;
     });
 
-  return <>{renderList()}</>;
+  return <ContainerSC>{renderList()}</ContainerSC>;
 };
 
 export default Home;
