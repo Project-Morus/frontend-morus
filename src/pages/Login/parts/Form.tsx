@@ -4,7 +4,7 @@ import { CustomBoxSC, CustomLinkSC, FormSC, WrapperButtonSC, WrapperInputsSC } f
 import { Button, Input } from "../../../components";
 
 const Form = () => {
-  const { register, handleSubmit, errors } = useLoginController()
+  const { register, handleSubmit, errors, isLoading } = useLoginController()
   const [passwordShown, setPasswordShown] = useState<boolean>(false);
 
   const togglePassword = () => {
@@ -45,7 +45,7 @@ const Form = () => {
       </CustomBoxSC>
 
       <WrapperButtonSC>
-        <Button type="submit" text="Entrar" maxWidth={370} />
+        <Button type="submit" text='Entrar' maxWidth={370} isLoading={isLoading} />
       </WrapperButtonSC>
     </FormSC>
   );

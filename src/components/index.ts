@@ -14,6 +14,7 @@ export { default as Archive } from "./DataDisplay/Archive";
 export { default as Aside } from "./Feedback/Aside";
 export { default as Divider } from "./Feedback/Divider";
 export { default as Modal } from "./Feedback/Modal";
+export { default as Spinner } from "./Feedback/Spinner";
 
 // Inputs
 export { default as Input } from "./Inputs/Input";

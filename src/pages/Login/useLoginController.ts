@@ -1,6 +1,14 @@
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { useMutation } from "@tanstack/react-query";
 import { z } from 'zod';
 import { zodResolver } from "@hookform/resolvers/zod"
+
+import { authService } from "../../services/authService";
+import { SignInParams } from "../../services/authService/signIn";
+import { useAuth } from "../../hooks/useAuth";
+import { redirect } from "react-router-dom";
+
 
 const schema = z.object({
   email: z.string()
@@ -16,15 +24,33 @@ type FormData = z.infer<typeof schema>
 export function useLoginController() {
   const {
     register,
-    handleSubmit: hookHandleSubmit,
-    formState: { errors }
+    handleSubmit: hookFormSubmit,
+    formState: { errors },
   } = useForm<FormData>({
     resolver: zodResolver(schema)
   })
 
-  const handleSubmit = hookHandleSubmit((data) => {
-    console.log(data)
+  const { mutateAsync, isLoading } = useMutation({
+    mutationFn: (data: SignInParams) => {
+      return authService.signIn(data)
+    }
   })
 
-  return { register, handleSubmit, errors }
+  const { signIn } = useAuth()
+
+  const handleSubmit = hookFormSubmit(async (data) => {
+
+    try {
+      const { token } = await mutateAsync(data)
+      toast.success('Logado com sucesso!')
+
+      signIn(token)
+
+      redirect('/system')
+    } catch (error) {
+      toast.error('Usuário inválido!')
+    }
+  })
+
+  return { register, handleSubmit, errors, isLoading }
 }
