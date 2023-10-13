@@ -45,8 +45,6 @@ export function useLoginController() {
       toast.success('Logado com sucesso!')
 
       signIn(token)
-
-      redirect('/system')
     } catch (error) {
       toast.error('Usuário inválido!')
     }
