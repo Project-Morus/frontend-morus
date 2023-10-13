@@ -6,7 +6,7 @@ const Input = forwardRef<HTMLInputElement, IInputProps>(
   ({ id, maxWidth, hasError, label, errorText, disabled, ...props }, ref) => {
     return (
       <ContainerSC $maxWidth={maxWidth}>
-        <LabelSC $disabled={disabled} htmlFor={id}>
+        <LabelSC $hasError={hasError} $disabled={disabled} htmlFor={id}>
           {label}
         </LabelSC>
         <InputSC disabled={disabled} $hasError={hasError} id={id} ref={ref} {...props} />

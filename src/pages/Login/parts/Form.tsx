@@ -3,8 +3,7 @@ import { Button, Input } from "../../../components";
 import { useLoginController } from "../useLoginController";
 
 const Form = () => {
-  // const navigate = useNavigate();
-  const { register, handleSubmit } = useLoginController()
+  const { register, handleSubmit, errors } = useLoginController()
 
   return (
     <FormSC onSubmit={handleSubmit}>
@@ -13,6 +12,8 @@ const Form = () => {
           id="e-mail"
           label="E-mail"
           placeholder="Insira o seu e-mail"
+          hasError={!!errors.email}
+          errorText={errors.email?.message}
           {...register('email')}
         />
         <Input
@@ -21,6 +22,8 @@ const Form = () => {
           placeholder="Insira a sua senha"
           type="password"
           autoComplete="on"
+          hasError={!!errors.senha}
+          errorText={errors.senha?.message}
           {...register('senha')}
         />
       </WrapperInputsSC>

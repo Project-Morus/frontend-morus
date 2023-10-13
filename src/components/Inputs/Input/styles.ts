@@ -12,8 +12,8 @@ export const ContainerSC = styled.div<{ $maxWidth?: number }>`
     `}
 `;
 
-export const LabelSC = styled.label<{ $disabled?: boolean }>`
-  color: ${({ theme }) => theme.colors.grey[400]};
+export const LabelSC = styled.label<{ $hasError?: boolean, $disabled?: boolean }>`
+  color: ${({ theme, $hasError }) => $hasError ? theme.colors.red[500] : theme.colors.grey[400]};
   margin-bottom: ${({ theme }) => theme.spacing[2]};
 
   ${({ $disabled }) =>
