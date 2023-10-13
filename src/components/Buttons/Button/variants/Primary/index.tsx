@@ -1,13 +1,15 @@
+import Spinner from "../../../../Feedback/Spinner";
 import { ButtonPrimarySC } from "../../styles";
 import { IButtonProps } from "../../types";
 
-export const ButtonPrimary = ({ text, maxWidth, ...props }: Omit<IButtonProps, 'variant'>) => {
+export const ButtonPrimary = ({ text, maxWidth, isLoading, disabled, ...props }: Omit<IButtonProps, 'variant'>) => {
   return (
     <ButtonPrimarySC
       $maxWidth={maxWidth}
+      disabled={disabled || isLoading}
       {...props}
     >
-      <span>{text}</span>
+      {isLoading ? <Spinner /> : <span>{text}</span>}
     </ButtonPrimarySC>
   );
 }

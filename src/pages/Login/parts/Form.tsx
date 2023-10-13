@@ -1,27 +1,51 @@
-import { FormEvent } from "react";
-import { ForgotPasswordSC, FormSC, WrapperButtonSC, WrapperInputsSC } from "../styles";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useLoginController } from "../useLoginController";
+import { CustomBoxSC, CustomLinkSC, FormSC, WrapperButtonSC, WrapperInputsSC } from "../styles";
 import { Button, Input } from "../../../components";
 
 const Form = () => {
-  const navigate = useNavigate();
+  const { register, handleSubmit, errors, isLoading } = useLoginController()
+  const [passwordShown, setPasswordShown] = useState<boolean>(false);
 
-  const handleSubmitAuth = (e: FormEvent) => {
-    e.preventDefault()
-
-    console.log('Submit Login Sucess')
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
   }
+
   return (
-    <FormSC onSubmit={handleSubmitAuth}>
+    <FormSC onSubmit={handleSubmit}>
       <WrapperInputsSC>
-        <Input id="e-mail" label="E-mail" placeholder="Insira o seu e-mail" />
-        <Input id="passaword" label="Senha" placeholder="Insira a sua senha" type="password" autoComplete="on" />
+        <Input
+          id="e-mail"
+          label="E-mail"
+          placeholder="Insira o seu e-mail"
+          hasError={!!errors.email}
+          errorText={errors.email?.message}
+          {...register('email')}
+          iconName="ph-at"
+        />
+
+        <Input
+          id="passaword"
+          label="Senha"
+          placeholder="Insira a sua senha"
+          type={passwordShown ? 'text' : 'password'}
+          onClick={togglePassword}
+          iconName={passwordShown ? 'ph-eye-slash' : 'ph-eye'}
+          autoComplete="on"
+          hasError={!!errors.senha}
+          errorText={errors.senha?.message}
+          {...register('senha')}
+        />
       </WrapperInputsSC>
 
-      <ForgotPasswordSC to='/forgotPassword/sendEmail'>Esqueci a minha senha</ForgotPasswordSC>
+      <CustomBoxSC>
+        <CustomLinkSC to='/forgotPassword/sendEmail'>
+          Esqueci a minha senha
+        </CustomLinkSC>
+      </CustomBoxSC>
 
       <WrapperButtonSC>
-        <Button text="Entrar" maxWidth={370} onClick={() => navigate('/system')} />
+        <Button type="submit" text='Entrar' maxWidth={370} isLoading={isLoading} />
       </WrapperButtonSC>
     </FormSC>
   );
