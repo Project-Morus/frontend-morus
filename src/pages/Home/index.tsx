@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import CardInformations from "./parts/CardInformations";
-
-import { CardInformationProps } from "./parts/types";
-import httpClient from "../../services/httpClient";
-import { ContainerSC } from "./styles";
 import toast from "react-hot-toast";
+
+import { httpClient } from "../../services/httpClient";
+
+import CardInformations from "./parts/CardInformations";
+import { CardInformationProps } from "./parts/types";
+
+import { ContainerSC } from "./styles";
 
 
 const Home = () => {

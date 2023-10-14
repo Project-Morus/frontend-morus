@@ -1,6 +1,5 @@
 import { sleep } from "../../helpers/sleep";
-import httpClient from "../httpClient";
-
+import { httpClient } from "../httpClient";
 export interface SignInParams {
   email: string,
   senha: string,

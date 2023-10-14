@@ -1,7 +1,16 @@
 import axios from "axios";
+import { localStorageKey } from "../configs/localStorageKeys";
 
-const httpClient = axios.create({
+export const httpClient = axios.create({
   baseURL: import.meta.env.VITE_APP_API_URL,
 });
 
-export default httpClient;
+httpClient.interceptors.request.use(config => {
+  const token = localStorage.getItem(localStorageKey.ACCESS_TOKEN)
+
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`
+  }
+
+  return config;
+})
