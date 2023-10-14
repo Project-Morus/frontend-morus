@@ -4,6 +4,7 @@ import { TitleSC, MessageSC, QuantityTotalSC } from "../styles";
 import { Button, Input, NewTable } from "../../components";
 import { useGetOcurrences } from "./controller/useGetOccurences";
 import { formatDate } from "../../helpers/date";
+import { HEADER_TABLE_CELLS } from "./mockData";
 
 const Occurrences = () => {
   const { data, isError, hasData, count } = useGetOcurrences()
@@ -28,21 +29,23 @@ const Occurrences = () => {
       <NewTable.Container>
         <NewTable.Head>
           <NewTable.Row>
-            <NewTable.CellHeader>Oi</NewTable.CellHeader>
-            <NewTable.CellHeader>Oi</NewTable.CellHeader>
-            <NewTable.CellHeader>Oi</NewTable.CellHeader>
+            {HEADER_TABLE_CELLS.map(header => (
+              <NewTable.CellHeader>{header.colName}</NewTable.CellHeader>
+            ))}
           </NewTable.Row>
         </NewTable.Head>
 
         <NewTable.Body>
-          <NewTable.Row>
-            <NewTable.Cell>Oi</NewTable.Cell>
-            <NewTable.Cell>Oi</NewTable.Cell>
-            <NewTable.Cell>Oi</NewTable.Cell>
-          </NewTable.Row>
+          {data?.map(item => (
+            <NewTable.Row key={item.id}>
+              <NewTable.Cell>{item.titulo}</NewTable.Cell>
+              <NewTable.Cell>{item.descricao}</NewTable.Cell>
+              <NewTable.Cell>{formatDate(item.dataCadastro)}</NewTable.Cell>
+            </NewTable.Row>
+          ))}
         </NewTable.Body>
       </NewTable.Container>
-  
+
     </>
   );
 };

@@ -19,7 +19,7 @@ export const CustomTable = styled.table`
 
 export const CustomTableBody = styled.tbody`
   background-color: ${({ theme }) => theme.colors.white[50]};
-
+  color: ${({ theme }) => theme.colors.grey[400]};
   tr {
     box-shadow: 0px 4px 4px 0px rgba(0, 74, 173, 0.15);
     border-radius: ${({ theme }) => theme.border.radius.regular}
