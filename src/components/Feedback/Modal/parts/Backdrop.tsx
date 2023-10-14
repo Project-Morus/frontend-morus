@@ -6,9 +6,7 @@ const Backdrop = ({ children, closeModal, role, open }: IBackdropProps) => {
   return (
     open &&
     ReactDOM.createPortal(
-      <BackdropSC role={role} onClick={closeModal}>
-        {children}
-      </BackdropSC>,
+      <BackdropSC role={role}>{children}</BackdropSC>,
       document.getElementById("portal") as HTMLElement
     )
   );

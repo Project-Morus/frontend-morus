@@ -14,11 +14,13 @@ export interface IModalProps extends IFormModalProps {
   children?: ReactNode;
   closeModal: () => void;
   onConfirmModal: () => void;
+  onCancelModal: () => void;
 }
 
 export interface IModalVariantsProps extends IBaseProps {
   children?: ReactNode;
   onConfirmModal: () => void;
+  onCancelModal: () => void;
   confirmButtonName?: string;
   buttonLabel?: string;
 }

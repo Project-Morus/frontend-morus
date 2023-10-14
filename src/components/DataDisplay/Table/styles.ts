@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { MIN_HEIGHT_MESSAGE } from "./stylesUtils";
 import Icon from "../Icon";
 
@@ -9,7 +9,7 @@ export const TableSC = styled.table`
   border-radius: ${({ theme }) => theme.border.radius.regular};
 
   background-color: ${({ theme }) => theme.colors.white[100]};
-  
+
   padding: ${({ theme }) => theme.spacing[4]};
 
   overflow-x: auto;
@@ -22,38 +22,52 @@ export const TableSC = styled.table`
       padding-left: ${({ theme }) => theme.spacing[4]};
     }
   }
-`
+`;
 
 export const TdSC = styled.td<{ $expanse?: boolean }>`
-padding: ${({ theme }) => theme.spacing[5]};
+  padding: ${({ theme }) => theme.spacing[5]};
 
-font-size: ${({ theme }) => theme.typography.TEXT_SIZES.medium};
-font-weight: ${({ theme }) => theme.typography.FONT_WEIGHTS.bold};
+  font-size: ${({ theme }) => theme.typography.TEXT_SIZES.medium};
+  font-weight: ${({ theme }) => theme.typography.FONT_WEIGHTS.bold};
 
-color: ${({ theme }) => theme.colors.grey[400]};
-`
+  color: ${({ theme }) => theme.colors.grey[400]};
+`;
 
 export const TBodySC = styled.tbody`
   background-color: ${({ theme }) => theme.colors.white[50]};
-`
+`;
 
-export const TrSC = styled.tr`
+export const TrSC = styled.tr<{ $expanse?: boolean }>`
   position: relative;
   box-shadow: 0px 4px 4px 0px rgba(0, 74, 173, 0.15);
   border-radius: ${({ theme }) => theme.border.radius.regular};
-`
+
+  :nth-child(2) {
+    max-width: 250px;
+  }
+
+  ${({ $expanse }) =>
+    $expanse &&
+    css`
+      :nth-child(2) {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    `}
+`;
 
 export const TrExpanseSC = styled.tr`
   margin-top: 2rem;
   border-radius: ${({ theme }) => theme.border.radius.regular};
-`
+`;
 
 export const IconSC = styled(Icon)`
   position: absolute;
   cursor: pointer;
   right: 16px;
   top: 16px;
-`
+`;
 
 export const WrapperMessageSC = styled.div`
   display: flex;
@@ -71,4 +85,4 @@ export const WrapperMessageSC = styled.div`
   background-color: ${({ theme }) => theme.colors.white[100]};
 
   border-radius: ${({ theme }) => theme.border.radius.regular};
-`
+`;

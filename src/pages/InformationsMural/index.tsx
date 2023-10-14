@@ -1,6 +1,7 @@
 import { ButtonContainerSC, HeaderSC, InputAndButtonsContainerSC, NotificationEmailSC } from "./styles";
 import { TitleSC, MessageSC, QuantityTotalSC } from "../styles";
 import { Button, Input } from "../../components";
+import CustomTable from "./parts/CustomTable";
 //import CustomTable from "./parts/CustomTable";
 
 const InformationsMural = () => {
@@ -29,7 +30,7 @@ const InformationsMural = () => {
         </ButtonContainerSC>
       </InputAndButtonsContainerSC>
 
-      {/* <CustomTable /> */}
+      <CustomTable />
     </>
   );
 };

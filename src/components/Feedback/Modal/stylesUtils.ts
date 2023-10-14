@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-export const WIDTH_CONFIRMATION_MODAL = '620px'
+export const WIDTH_CONFIRMATION_MODAL = "620px";
 
 export const BASE_STYLE = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: ${({ theme }) => theme.spacing[7]};
   font-size: ${({ theme }) => theme.typography.TEXT_SIZES.large};
   border-radius: ${({ theme }) => theme.border.radius.large};

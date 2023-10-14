@@ -1,4 +1,3 @@
-
 import { ButtonContainerSC, HeaderSC, InputAndButtonsContainerSC } from "./styles";
 import { HEADER_TABLE_CELLS, ROW_NAME_CELLS } from "./mockData";
 import { TitleSC, MessageSC, QuantityTotalSC } from "../styles";
@@ -31,4 +30,4 @@ const CashBook = () => {
   );
 };
 
-export default CashBook
+export default CashBook;

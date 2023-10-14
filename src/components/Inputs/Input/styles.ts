@@ -5,7 +5,7 @@ export const ContainerSC = styled.div<{ $maxWidth?: number }>`
   width: 100%;
   display: flex;
   flex-direction: column;
-
+  align-items: flex-start;
 
   ${({ $maxWidth }) =>
     $maxWidth &&
@@ -14,8 +14,8 @@ export const ContainerSC = styled.div<{ $maxWidth?: number }>`
     `}
 `;
 
-export const LabelSC = styled.label<{ $hasError?: boolean, $disabled?: boolean }>`
-  color: ${({ theme, $hasError }) => $hasError ? theme.colors.red[500] : theme.colors.grey[400]};
+export const LabelSC = styled.label<{ $hasError?: boolean; $disabled?: boolean }>`
+  color: ${({ theme, $hasError }) => ($hasError ? theme.colors.red[500] : theme.colors.grey[400])};
   margin-bottom: ${({ theme }) => theme.spacing[2]};
 
   ${({ $disabled }) =>
@@ -27,9 +27,11 @@ export const LabelSC = styled.label<{ $hasError?: boolean, $disabled?: boolean }
 
 export const ContentSC = styled.div`
   position: relative;
-`
+  width: 100%;
+  gap: ${({ theme }) => theme.spacing[4]};
+`;
 
-export const InputSC = styled.input<{ $hasError?: boolean, $iconName?: boolean }>`
+export const InputSC = styled.input<{ $hasError?: boolean; $iconName?: boolean }>`
   width: 100%;
   color: ${({ theme }) => theme.colors.grey[400]};
   padding: ${({ theme }) => theme.spacing[3]};
@@ -72,13 +74,10 @@ export const CustomIconSC = styled(Icon)`
   position: absolute;
   top: 8px;
   right: 8px;
-`
-
+`;
 
 export const ErrorTextSC = styled.p`
   color: ${({ theme }) => theme.colors.red[500]};
   font-size: ${({ theme }) => theme.typography.TEXT_SIZES.xsmall};
   margin-top: ${({ theme }) => theme.spacing[3]};
 `;
-
-

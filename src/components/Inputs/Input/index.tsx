@@ -3,7 +3,7 @@ import { ContainerSC, InputSC, LabelSC, ErrorTextSC, CustomIconSC, ContentSC } f
 import { IInputProps } from "./types";
 
 const Input = forwardRef<HTMLInputElement, IInputProps>(
-  ({ id, maxWidth, hasError, label, errorText, disabled, iconName, onClick, ...props }, ref) => {
+  ({ id, maxWidth, hasError, label, errorText, disabled, iconName, onClick, onChange, ...props }, ref) => {
     return (
       <ContainerSC $maxWidth={maxWidth}>
         <LabelSC $hasError={hasError} $disabled={disabled} htmlFor={id}>
@@ -16,7 +16,9 @@ const Input = forwardRef<HTMLInputElement, IInputProps>(
             $iconName={!!iconName}
             id={id}
             ref={ref}
-            {...props} />
+            onChange={onChange}
+            {...props}
+          />
           {!!iconName && <CustomIconSC name={iconName} onClick={onClick} />}
         </ContentSC>
 
