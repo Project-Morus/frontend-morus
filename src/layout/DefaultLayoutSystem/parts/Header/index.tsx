@@ -1,5 +1,4 @@
 import { Button } from "../../../../components";
-import { useAuth } from "../../../../hooks/useAuth";
 import {
   HeaderSC,
   ContentResidentSC,
@@ -12,7 +11,6 @@ import {
 } from "./styles";
 
 const Header = () => {
-  const { signOut } = useAuth()
   return (
     <HeaderSC>
       <ContentResidentSC>
@@ -25,7 +23,7 @@ const Header = () => {
       </ContentResidentSC>
       <WrapperActionsSC>
         <InfoResidentSC>Ilha de Capri | Torre A | Apartamento 1103 </InfoResidentSC>
-        <Button text="Logout" maxWidth={198} onClick={signOut} />
+        <Button text="Logout" maxWidth={198} />
       </WrapperActionsSC>
     </HeaderSC>
   );

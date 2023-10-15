@@ -1,51 +1,27 @@
-import { useState } from "react";
-import { useLoginController } from "../useLoginController";
-import { CustomBoxSC, CustomLinkSC, FormSC, WrapperButtonSC, WrapperInputsSC } from "../styles";
+import { FormEvent } from "react";
+import { ForgotPasswordSC, FormSC, WrapperButtonSC, WrapperInputsSC } from "../styles";
+import { useNavigate } from "react-router-dom";
 import { Button, Input } from "../../../components";
 
 const Form = () => {
-  const { register, handleSubmit, errors, isLoading } = useLoginController()
-  const [passwordShown, setPasswordShown] = useState<boolean>(false);
+  const navigate = useNavigate();
 
-  const togglePassword = () => {
-    setPasswordShown(!passwordShown);
+  const handleSubmitAuth = (e: FormEvent) => {
+    e.preventDefault()
+
+    console.log('Submit Login Sucess')
   }
-
   return (
-    <FormSC onSubmit={handleSubmit}>
+    <FormSC onSubmit={handleSubmitAuth}>
       <WrapperInputsSC>
-        <Input
-          id="e-mail"
-          label="E-mail"
-          placeholder="Insira o seu e-mail"
-          hasError={!!errors.email}
-          errorText={errors.email?.message}
-          {...register('email')}
-          iconName="ph-at"
-        />
-
-        <Input
-          id="passaword"
-          label="Senha"
-          placeholder="Insira a sua senha"
-          type={passwordShown ? 'text' : 'password'}
-          onClick={togglePassword}
-          iconName={passwordShown ? 'ph-eye-slash' : 'ph-eye'}
-          autoComplete="on"
-          hasError={!!errors.senha}
-          errorText={errors.senha?.message}
-          {...register('senha')}
-        />
+        <Input id="e-mail" label="E-mail" placeholder="Insira o seu e-mail" />
+        <Input id="passaword" label="Senha" placeholder="Insira a sua senha" type="password" autoComplete="on" />
       </WrapperInputsSC>
 
-      <CustomBoxSC>
-        <CustomLinkSC to='/forgotPassword/sendEmail'>
-          Esqueci a minha senha
-        </CustomLinkSC>
-      </CustomBoxSC>
+      <ForgotPasswordSC to='/forgotPassword/sendEmail'>Esqueci a minha senha</ForgotPasswordSC>
 
       <WrapperButtonSC>
-        <Button type="submit" text='Entrar' maxWidth={370} isLoading={isLoading} />
+        <Button text="Entrar" maxWidth={370} onClick={() => navigate('/system')} />
       </WrapperButtonSC>
     </FormSC>
   );

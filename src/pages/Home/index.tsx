@@ -1,13 +1,7 @@
 import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
-
-import { httpClient } from "../../services/httpClient";
-
 import CardInformations from "./parts/CardInformations";
+import api from "../../services/api/api";
 import { CardInformationProps } from "./parts/types";
-
-import { ContainerSC } from "./styles";
-
 
 const Home = () => {
   const [data, setData] = useState<CardInformationProps[]>([]);
@@ -16,11 +10,14 @@ const Home = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await httpClient.get("api/ListarInformacao");
-        setData(response.data.data);
+        console.log("entrou no try");
+        const response = await api.get("api/ListarInformacao");
+        setData(response.data);
         setIsLoading(false);
+        console.log(response.data);
       } catch (error) {
-        toast.error("Erro ao buscar dados!");
+        console.log("entrou no catch");
+        console.error("Erro ao buscar dados da API:", error);
         setIsLoading(false);
       }
     }
@@ -33,7 +30,7 @@ const Home = () => {
       return <CardInformations titulo={item.titulo} descricao={item.descricao} />;
     });
 
-  return <ContainerSC>{renderList()}</ContainerSC>;
+  return <>{renderList()}</>;
 };
 
 export default Home;

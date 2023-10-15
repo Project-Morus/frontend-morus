@@ -6,10 +6,6 @@ export const BASE_STYLE = styled.button<{ $maxWidth?: number }>`
   width: 100%;
   height: ${HEIGHT_BUTTON};
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   font-weight:  ${({ theme }) => theme.typography.FONT_WEIGHTS.bold};
 
   border: none;

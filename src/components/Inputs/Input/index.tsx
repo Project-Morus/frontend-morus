@@ -1,24 +1,15 @@
 import { forwardRef } from "react";
-import { ContainerSC, InputSC, LabelSC, ErrorTextSC, CustomIconSC, ContentSC } from "./styles";
+import { ContainerSC, InputSC, LabelSC, ErrorTextSC } from "./styles";
 import { IInputProps } from "./types";
 
 const Input = forwardRef<HTMLInputElement, IInputProps>(
-  ({ id, maxWidth, hasError, label, errorText, disabled, iconName, onClick, ...props }, ref) => {
+  ({ id, maxWidth, hasError, label, errorText, disabled, ...props }, ref) => {
     return (
       <ContainerSC $maxWidth={maxWidth}>
-        <LabelSC $hasError={hasError} $disabled={disabled} htmlFor={id}>
+        <LabelSC $disabled={disabled} htmlFor={id}>
           {label}
         </LabelSC>
-        <ContentSC>
-          <InputSC
-            disabled={disabled}
-            $hasError={hasError}
-            $iconName={!!iconName}
-            id={id}
-            ref={ref}
-            {...props} />
-          {!!iconName && <CustomIconSC name={iconName} onClick={onClick} />}
-        </ContentSC>
+        <InputSC disabled={disabled} $hasError={hasError} id={id} ref={ref} {...props} />
 
         {hasError && <ErrorTextSC>{errorText}</ErrorTextSC>}
       </ContainerSC>

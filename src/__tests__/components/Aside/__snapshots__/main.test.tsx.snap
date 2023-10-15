@@ -19,6 +19,14 @@ exports[`Aside Component Snapshot Aside with position left 1`] = `
   margin: 0.75rem 0 0.75rem 0.75rem;
 }
 
+.c2 {
+  position: absolute;
+  bottom: 12px;
+  color: #6B6B6B;
+  font-size: 0.75rem;
+  right: 15px;
+}
+
 <section
     class="c0"
     role="asideWithLogo"
@@ -63,6 +71,11 @@ exports[`Aside Component Snapshot Aside with position left 1`] = `
       </svg>
     </aside>
     Aside
+    <footer
+      class="c2"
+    >
+      Todos os direitos reservados Morus Company 2023 | Versão 1.0.0
+    </footer>
   </section>
 </DocumentFragment>
 `;
@@ -86,6 +99,14 @@ exports[`Aside Component Snapshot Aside with position right (default) 1`] = `
   margin: 0.75rem 0.75rem 0.75rem 0;
 }
 
+.c2 {
+  position: absolute;
+  bottom: 12px;
+  color: #6B6B6B;
+  font-size: 0.75rem;
+  left: 15px;
+}
+
 <section
     class="c0"
     role="asideWithLogo"
@@ -130,6 +151,11 @@ exports[`Aside Component Snapshot Aside with position right (default) 1`] = `
       </svg>
     </aside>
     Aside
+    <footer
+      class="c2"
+    >
+      Todos os direitos reservados Morus Company 2023 | Versão 1.0.0
+    </footer>
   </section>
 </DocumentFragment>
 `;
