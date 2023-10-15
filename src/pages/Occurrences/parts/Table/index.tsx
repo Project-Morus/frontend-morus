@@ -1,10 +1,13 @@
-import { NewTable } from "../../../../components";
+import { Loader, NewTable } from "../../../../components";
 import { formatDate } from "../../../../helpers/date";
 import { useGetOcurrences } from "../../controller/useGetOccurences";
 import { HEADER_TABLE_CELLS } from "../../mockData";
+import { ContentLoaderSC } from "../../styles";
 
 function TableOcurrence() {
-  const { data, isError, emptyData } = useGetOcurrences()
+  const { data, isError, isLoading, emptyData } = useGetOcurrences()
+
+  if (isLoading) return <ContentLoaderSC><Loader /></ContentLoaderSC>
 
   return (
     <NewTable.Container empty={isError || emptyData}>

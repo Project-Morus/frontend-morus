@@ -1,12 +1,12 @@
 
-import { ButtonContainerSC, ContentLoaderSC, HeaderSC, InputAndButtonsContainerSC } from "./styles";
+import { ButtonContainerSC, HeaderSC, InputAndButtonsContainerSC } from "./styles";
 import { TitleSC, MessageSC, QuantityTotalSC } from "../styles";
-import { Button, Input, Loader } from "../../components";
+import { Button, Input } from "../../components";
 import { useGetOcurrences } from "./controller/useGetOccurences";
 import TableOcurrence from "./parts/Table";
 
 const Occurrences = () => {
-  const { count, emptyData, isLoading } = useGetOcurrences()
+  const { count, isLoading, emptyData } = useGetOcurrences()
 
   const messageCount = emptyData ? 'Sem ocorrências!' : `Quantidade total de ocorrências: ${count}`
 
@@ -29,12 +29,7 @@ const Occurrences = () => {
         </ButtonContainerSC>
       </InputAndButtonsContainerSC>
 
-      {isLoading ?
-        <ContentLoaderSC>
-          <Loader />
-        </ContentLoaderSC>
-        : <TableOcurrence />
-      }
+      <TableOcurrence />
     </>
   );
 };

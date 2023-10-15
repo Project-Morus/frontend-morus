@@ -11,10 +11,12 @@ export function useGetOcurrences() {
     },
   })
 
-  if (isError) toast.error('Ops! Ocorreu um erro ao carregar os dados!')
-
   const emptyData = !data || data.length === 0;
   const count = data?.length
+
+  if (isError) {
+    toast.error('Ops! Ocorreu um erro ao carregar os dados!', { id: 'ocurrence-list' })
+  }
 
   return { data, isError, isLoading, emptyData, count }
 }

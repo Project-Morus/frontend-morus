@@ -10,7 +10,14 @@ import { GlobalStyle } from './styles/themes/global';
 import Router from './routes/Router';
 import { AuthProvider } from "./contexts/AuthContext";
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+      refetchOnWindowFocus: false,
+    }
+  },
+})
 
 function App() {
 
@@ -23,7 +30,6 @@ function App() {
           <Toaster position="top-right" />
         </QueryClientProvider>
       </AuthProvider>
-
     </ThemeProvider>
   )
 }
