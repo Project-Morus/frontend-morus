@@ -1,11 +1,13 @@
 import styled, { css } from "styled-components";
-import Icon from "../../DataDisplay/Icon";
 
 export const ContainerSC = styled.div<{ $maxWidth?: number }>`
-  width: 100%;
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   align-items: flex-start;
+=======
+  width: 100%;
+>>>>>>> b83e02e (Revert "Merge branch 'main' of https://github.com/Project-Morus/frontend-morus")
 
   ${({ $maxWidth }) =>
     $maxWidth &&
@@ -14,8 +16,13 @@ export const ContainerSC = styled.div<{ $maxWidth?: number }>`
     `}
 `;
 
+<<<<<<< HEAD
 export const LabelSC = styled.label<{ $hasError?: boolean; $disabled?: boolean }>`
   color: ${({ theme, $hasError }) => ($hasError ? theme.colors.red[500] : theme.colors.grey[400])};
+=======
+export const LabelSC = styled.label<{ $disabled?: boolean }>`
+  color: ${({ theme }) => theme.colors.grey[400]};
+>>>>>>> b83e02e (Revert "Merge branch 'main' of https://github.com/Project-Morus/frontend-morus")
   margin-bottom: ${({ theme }) => theme.spacing[2]};
 
   ${({ $disabled }) =>
@@ -25,6 +32,7 @@ export const LabelSC = styled.label<{ $hasError?: boolean; $disabled?: boolean }
     `}
 `;
 
+<<<<<<< HEAD
 export const ContentSC = styled.div`
   position: relative;
   width: 100%;
@@ -33,6 +41,9 @@ export const ContentSC = styled.div`
 
 export const InputSC = styled.input<{ $hasError?: boolean; $iconName?: boolean }>`
   width: 100%;
+=======
+export const InputSC = styled.input<{ $hasError?: boolean }>`
+>>>>>>> b83e02e (Revert "Merge branch 'main' of https://github.com/Project-Morus/frontend-morus")
   color: ${({ theme }) => theme.colors.grey[400]};
   padding: ${({ theme }) => theme.spacing[3]};
   border: ${({ theme }) => theme.border.width.regular} solid ${({ theme }) => theme.colors.grey[100]};
@@ -56,12 +67,6 @@ export const InputSC = styled.input<{ $hasError?: boolean; $iconName?: boolean }
     opacity: 0.5;
   }
 
-  ${({ theme, $iconName }) =>
-    $iconName &&
-    css`
-      padding-right: ${theme.spacing[11]};
-    `}
-
   ${({ $hasError }) =>
     $hasError &&
     css`
@@ -70,12 +75,15 @@ export const InputSC = styled.input<{ $hasError?: boolean; $iconName?: boolean }
     `}
 `;
 
+<<<<<<< HEAD
 export const CustomIconSC = styled(Icon)`
   position: absolute;
   top: 8px;
   right: 8px;
 `;
 
+=======
+>>>>>>> b83e02e (Revert "Merge branch 'main' of https://github.com/Project-Morus/frontend-morus")
 export const ErrorTextSC = styled.p`
   color: ${({ theme }) => theme.colors.red[500]};
   font-size: ${({ theme }) => theme.typography.TEXT_SIZES.xsmall};

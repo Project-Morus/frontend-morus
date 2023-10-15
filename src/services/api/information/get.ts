@@ -1,5 +1,5 @@
 export async function GetInformation(api) {
-  const response = await api.get("/api/ListarInformacao");
+  const ret = await api.get("/api/ListarInformacao");
 
-  return response.data;
+  return ret.data;
 }

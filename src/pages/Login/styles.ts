@@ -36,17 +36,13 @@ export const WrapperInputsSC = styled.div`
 `
 
 export const FormSC = styled.form`
-  width: 100%;
   margin: ${({ theme }) => theme.spacing[10]} 0;
 `
 
-export const CustomBoxSC = styled.div`
-  text-align: end;
-`
+export const ForgotPasswordSC = styled(Link)`
+  display: block;
 
-export const CustomLinkSC = styled(Link)`
-  display: inline-block;
-  max-width: 200px;
+  text-align: right;
 
   cursor: pointer;
 
@@ -55,7 +51,7 @@ export const CustomLinkSC = styled(Link)`
   font-size: ${({ theme }) => theme.typography.TEXT_SIZES.small};
   font-weight: ${({ theme }) => theme.typography.FONT_WEIGHTS.bold};
 
-  margin-top: ${({ theme }) => theme.spacing[5]};
+  margin-top: ${({ theme }) => theme.spacing[10]};
 
   user-select: none;  
 
