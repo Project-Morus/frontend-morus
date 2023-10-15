@@ -1,10 +1,15 @@
 
-import { ButtonContainerSC, HeaderSC, InputAndButtonsContainerSC } from "./styles";
+import { ButtonContainerSC, ContentLoaderSC, HeaderSC, InputAndButtonsContainerSC } from "./styles";
 import { TitleSC, MessageSC, QuantityTotalSC } from "../styles";
-import { Button, Input } from "../../components";
-import CustomTable from "./parts/CustomTable";
+import { Button, Input, Loader } from "../../components";
+import { useGetOcurrences } from "./controller/useGetOccurences";
+import TableOcurrence from "./parts/Table";
 
 const Occurrences = () => {
+  const { count, emptyData, isLoading } = useGetOcurrences()
+
+  const messageCount = emptyData ? 'Sem ocorrências!' : `Quantidade total de ocorrências: ${count}`
+
   return (
     <>
       <HeaderSC>
@@ -12,7 +17,9 @@ const Occurrences = () => {
           <TitleSC>Ocorrências</TitleSC>
           <MessageSC>Essa é a lista de todas as ocorrência cadastradas dos morados do condomínio Ilha de Capri. Busque ou adicione ocorrências!</MessageSC>
         </div>
-        <QuantityTotalSC>Quantidade total de ocorrências: 54</QuantityTotalSC>
+        <QuantityTotalSC>
+          {isLoading ? 'Carregando...' : messageCount}
+        </QuantityTotalSC>
       </HeaderSC>
 
       <InputAndButtonsContainerSC>
@@ -22,7 +29,12 @@ const Occurrences = () => {
         </ButtonContainerSC>
       </InputAndButtonsContainerSC>
 
-      <CustomTable />
+      {isLoading ?
+        <ContentLoaderSC>
+          <Loader />
+        </ContentLoaderSC>
+        : <TableOcurrence />
+      }
     </>
   );
 };
