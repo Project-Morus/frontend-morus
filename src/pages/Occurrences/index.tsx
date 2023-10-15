@@ -26,6 +26,7 @@ const Occurrences = () => {
         <Input maxWidth={300} id={"search"} label={"Buscar"} />
         <ButtonContainerSC>
           <Button maxWidth={200} text={"Todos"} variant="secondary" />
+          <Button maxWidth={200} text={"Nova Ocorrência"} variant="primary" />
         </ButtonContainerSC>
       </InputAndButtonsContainerSC>
 
