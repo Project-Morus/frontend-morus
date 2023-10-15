@@ -12,9 +12,9 @@ const Home = () => {
       try {
         console.log("entrou no try");
         const response = await api.get("api/ListarInformacao");
-        setData(response.data);
+        setData(response.data.data);
         setIsLoading(false);
-        console.log(response.data);
+        console.log(response.data.data);
       } catch (error) {
         console.log("entrou no catch");
         console.error("Erro ao buscar dados da API:", error);
