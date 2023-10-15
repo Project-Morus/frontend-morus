@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ITableHeaderProps } from "../../types";
 import { IconsSC } from "../../parts/Icons";
 import { CustomTableSC } from "./styles";
-import httpClient from "../../../../services/httpClient";
+import { httpClient } from "../../../../services/httpClient";
 import { CardInformationProps, CardInformationsProps } from "../../../Home/parts/types";
 
 const CustomTable = () => {

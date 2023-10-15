@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Icon, Input, Modal } from "../../../../components";
 import { InputContainerSC } from "./styles";
 import { CardInformationProps } from "../../../Home/parts/types";
-import httpClient from "../../../../services/httpClient";
+import { httpClient } from "../../../../services/httpClient";
 
 export const IconsSC = (data: CardInformationProps) => {
   const [openedDeleteModal, setOpenedDeleteModal] = useState<boolean>(false);

@@ -1,4 +1,3 @@
-
 import { Aside } from "../../components";
 import Footer from "./parts/Footer";
 import Form from "./parts/Form";

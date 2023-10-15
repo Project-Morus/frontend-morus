@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-
 import { httpClient } from "../../services/httpClient";
 
 import CardInformations from "./parts/CardInformations";
 import { CardInformationProps } from "./parts/types";
 
 import { ContainerSC } from "./styles";
-
 
 const Home = () => {
   const [data, setData] = useState<CardInformationProps[]>([]);
