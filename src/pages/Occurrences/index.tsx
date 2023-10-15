@@ -1,13 +1,14 @@
 
-import { ButtonContainerSC, HeaderSC, InputAndButtonsContainerSC } from "./styles";
+import { ButtonContainerSC, ContentLoaderSC, HeaderSC, InputAndButtonsContainerSC } from "./styles";
 import { TitleSC, MessageSC, QuantityTotalSC } from "../styles";
-import { Button, Input, NewTable } from "../../components";
+import { Button, Input, Loader } from "../../components";
 import { useGetOcurrences } from "./controller/useGetOccurences";
-import { formatDate } from "../../helpers/date";
-import { HEADER_TABLE_CELLS } from "./mockData";
+import TableOcurrence from "./parts/Table";
 
 const Occurrences = () => {
-  const { data, isError, hasData, count } = useGetOcurrences()
+  const { count, emptyData, isLoading } = useGetOcurrences()
+
+  const messageCount = emptyData ? 'Sem ocorrências!' : `Quantidade total de ocorrências: ${count}`
 
   return (
     <>
@@ -16,7 +17,9 @@ const Occurrences = () => {
           <TitleSC>Ocorrências</TitleSC>
           <MessageSC>Essa é a lista de todas as ocorrência cadastradas dos morados do condomínio Ilha de Capri. Busque ou adicione ocorrências!</MessageSC>
         </div>
-        <QuantityTotalSC>Quantidade total de ocorrências: {count}</QuantityTotalSC>
+        <QuantityTotalSC>
+          {isLoading ? 'Carregando...' : messageCount}
+        </QuantityTotalSC>
       </HeaderSC>
 
       <InputAndButtonsContainerSC>
@@ -26,26 +29,12 @@ const Occurrences = () => {
         </ButtonContainerSC>
       </InputAndButtonsContainerSC>
 
-      <NewTable.Container>
-        <NewTable.Head>
-          <NewTable.Row>
-            {HEADER_TABLE_CELLS.map(header => (
-              <NewTable.CellHeader>{header.colName}</NewTable.CellHeader>
-            ))}
-          </NewTable.Row>
-        </NewTable.Head>
-
-        <NewTable.Body>
-          {data?.map(item => (
-            <NewTable.Row key={item.id}>
-              <NewTable.Cell>{item.titulo}</NewTable.Cell>
-              <NewTable.Cell>{item.descricao}</NewTable.Cell>
-              <NewTable.Cell>{formatDate(item.dataCadastro)}</NewTable.Cell>
-            </NewTable.Row>
-          ))}
-        </NewTable.Body>
-      </NewTable.Container>
-
+      {isLoading ?
+        <ContentLoaderSC>
+          <Loader />
+        </ContentLoaderSC>
+        : <TableOcurrence />
+      }
     </>
   );
 };

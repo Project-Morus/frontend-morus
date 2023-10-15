@@ -7,13 +7,18 @@ import {
   CustomTableCellHeader,
   CustomTableHeader,
   CustomTableRow,
+  EmptyMessageSC,
 } from './styles';
 
 const Container = forwardRef(function Container(
-  { children, ...props }: TableProps,
+  { children, empty, ...props }: TableProps,
   ref: TableRef
 ) {
-  return (
+  return empty ? (
+    <CustomTable>
+      <EmptyMessageSC>A tabela está vazia no momento. Espere o síndico adicionar novos dados!</EmptyMessageSC>
+    </CustomTable>
+  ) : (
     <CustomTable {...props} ref={ref}>
       {children}
     </CustomTable>

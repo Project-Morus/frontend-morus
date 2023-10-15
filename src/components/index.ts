@@ -16,6 +16,7 @@ export { default as Aside } from "./Feedback/Aside";
 export { default as Divider } from "./Feedback/Divider";
 export { default as Modal } from "./Feedback/Modal";
 export { default as Spinner } from "./Feedback/Spinner";
+export { default as Loader } from "./Feedback/Loader";
 
 // Inputs
 export { default as Input } from "./Inputs/Input";

@@ -39,3 +39,10 @@ export const CustomTableCell = styled.td`
 export const CustomTableCellHeader = styled.th`
   padding-left: ${({ theme }) => theme.spacing[4]};
 `
+
+export const EmptyMessageSC = styled.h3`
+  
+  font-size: ${({ theme }) => theme.typography.TEXT_SIZES.large};
+  color: ${({ theme }) => theme.colors.primary[500]};
+  text-align: center;
+`
