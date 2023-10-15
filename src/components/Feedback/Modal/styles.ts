@@ -9,6 +9,7 @@ export const ButtonsContainerSC = styled.div`
 `;
 
 export const ChildrenContainerSC = styled.div`
+  width: 100%;
   margin: ${({ theme }) => theme.spacing[8]} 0;
   text-align: center;
 

@@ -1,4 +1,4 @@
-const date = new Date()
+export const date = new Date()
 
 export function formatDate(date: string) {
   const convertDate = new Date(date)
