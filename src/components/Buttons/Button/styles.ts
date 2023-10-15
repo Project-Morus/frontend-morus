@@ -44,3 +44,5 @@ export const ButtonGreenSC = styled(BASE_STYLE)`
     color: ${({ theme }) => theme.colors.white[50]};
   }
 `;
+
+

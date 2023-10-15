@@ -1,4 +1,4 @@
-import { ContainerSC, ContentSC, FooterSC } from "./styles";
+import { ContainerSC, ContentSC } from "./styles";
 import { IAsideProps } from "./types";
 import LogoWhiteSvg from "../../../assets/svg/LogoWhite";
 
@@ -10,8 +10,6 @@ const Aside = ({ position = 'right', ...props }: IAsideProps) => {
       </ContentSC>
 
       {props.children}
-
-      <FooterSC $position={position}>Todos os direitos reservados Morus Company 2023 | Versão 1.0.0</FooterSC>
     </ContainerSC>
   );
 }
