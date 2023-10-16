@@ -1,22 +1,24 @@
 import { useEffect, useState } from "react";
-import { ITableHeaderProps } from "../../types";
-import { IconsSC } from "../../parts/Icons";
+import { CashBookProps, ITableHeaderProps } from "../../types";
+import { IconsSC } from "../../Icons";
 import { CustomTableSC } from "./styles";
 import { httpClient } from "../../../../services/httpClient";
-import { CardInformationProps, CardInformationsProps } from "../../../Home/parts/types";
 
 const CustomTable = () => {
-  const [rows, setRows] = useState<CardInformationsProps[]>([]);
+  const [rows, setRows] = useState<CashBookProps[]>([]);
 
   useEffect(() => {
     async function fetchData() {
       try {
         console.log("entrou no try");
-        const response = await httpClient.get("api/ListarInformacao");
+        const response = await httpClient.get("api/ListarLivroCaixa");
 
-        const dataRows = response.data.data.map((info: CardInformationProps) => ({
-          title: info.titulo,
-          description: info.descricao,
+        const dataRows = response.data.data.map((info: CashBookProps) => ({
+          tower: info.torre,
+          description: info.descricaoTransacao,
+          value: info.valorTransacao,
+          trasactionDate: info.descricaoTransacao,
+          category: info.categoria,
           actions: <IconsSC data={info} />,
         }));
 
@@ -26,20 +28,20 @@ const CustomTable = () => {
         console.error("Erro ao buscar dados da API:", error);
       }
     }
-
     fetchData();
   }, []);
 
   const HEADER_TABLE_CELLS: ITableHeaderProps[] = [
-    { colName: "Título" },
+    { colName: "Torre" },
     { colName: "Descrição" },
+    { colName: "Valor" },
+    { colName: "Data" },
+    { colName: "Categoria" },
     { colName: "Ações" },
   ];
 
   return (
     <CustomTableSC
-      expanse
-      expanseChildren
       headerCells={HEADER_TABLE_CELLS}
       rowCells={rows}
       emptyMessage="A tabela está vazia no momento. Espere o síndico adicionar novas informações!"

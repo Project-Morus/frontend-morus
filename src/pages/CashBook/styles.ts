@@ -18,3 +18,9 @@ export const ButtonContainerSC = styled.div`
   height: 50px;
   align-self: last baseline;
 `;
+
+export const ModalButtonContainerSC = styled.div`
+  display: flex;
+  width: 100%;
+  gap: ${({ theme }) => theme.spacing[4]};
+`;

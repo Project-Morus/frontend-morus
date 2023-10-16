@@ -1,21 +1,20 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import toast from "react-hot-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
-import { ocurrenceService } from "../../../services/ocurrenceService";
 import { currentDateFormatted } from "../../../helpers/date";
 
 const schema = z.object({
-  titulo: z.string().nonempty("Titulo é obrigatório"),
-  descricao: z.string().max(300).nonempty("Descrição é obrigatório"),
-  dataCadastro: z.string(),
-  idUsuario: z.number().int().min(0),
+  valor: z.string().nonempty("Valor é obrigatório"),
+  categoria: z.string().max(300).nonempty("Categoria é obrigatória"),
+  tipo: z.boolean(),
+  torre: z.string().nonempty("Torre é obrigatória"),
+  descricao: z.string().nonempty("Descrição é obrigatória"),
+  dataTransacao: z.string(),
 });
 
 type FormData = z.infer<typeof schema>;
 
-export function usePostOcurrences() {
+export function usePostCashBook() {
   const {
     register,
     handleSubmit: hookFormSubmit,
@@ -23,14 +22,7 @@ export function usePostOcurrences() {
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: {
-      dataCadastro: currentDateFormatted(),
-      idUsuario: 2,
-    },
-  });
-
-  const { mutateAsync } = useMutation({
-    mutationFn: (data: FormData) => {
-      return ocurrenceService.postOcurrences(data);
+      dataTransacao: currentDateFormatted(),
     },
   });
 

@@ -1,14 +1,12 @@
 import { useState } from "react";
-import { Icon, Input, Modal } from "../../../components";
+import { Icon, Modal } from "../../../components";
 import { InputContainerSC } from "./styles";
 import { CardInformationProps } from "../../Home/parts/types";
+import PostForm from "../parts/PostForm";
 
 export const IconsSC = (data: CardInformationProps) => {
   const [openedDeleteModal, setOpenedDeleteModal] = useState<boolean>(false);
   const [openedEditModal, setOpenedEditModal] = useState<boolean>(false);
-
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState(data.descricao);
 
   const handleOpenDeleteModal = () => {
     setOpenedDeleteModal(true);
@@ -24,7 +22,6 @@ export const IconsSC = (data: CardInformationProps) => {
   };
 
   const handleCloseEditModal = () => {
-    console.log(data);
     setOpenedEditModal(false);
   };
 
@@ -52,15 +49,14 @@ export const IconsSC = (data: CardInformationProps) => {
         open={openedEditModal}
         closeModal={handleCloseEditModal}
         variant="form"
-        iconName="ph-newspaper"
-        modalTitle="Editar Informação"
+        iconName="ph-book-bookmark"
+        modalTitle="Editar Transação"
         buttonLabel="Confirmar Edição"
         onConfirmModal={handleCloseEditModal}
         onCancelModal={handleCloseEditModal}
       >
         <InputContainerSC>
-          <Input id={"titleInput"} label={"Título"} onChange={handleTitleChange} />
-          <Input id={"descriptionInput"} label={"Descrição"} onChange={handleDescriptionChange} />
+          <PostForm />
         </InputContainerSC>
       </Modal>
     </>

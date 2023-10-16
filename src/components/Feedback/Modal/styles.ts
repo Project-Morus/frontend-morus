@@ -6,6 +6,7 @@ export const ButtonsContainerSC = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: ${({ theme }) => theme.spacing[4]};
 `;
 
 export const ChildrenContainerSC = styled.div`
@@ -20,7 +21,7 @@ export const ChildrenContainerSC = styled.div`
 export const TitleSC = styled.h2`
   font-size: ${({ theme }) => theme.typography.HEADERS_SIZES.h2};
   color: ${({ theme }) => theme.colors.grey[400]};
-`
+`;
 
 export const HeaderSC = styled.div`
   width: 100%;
