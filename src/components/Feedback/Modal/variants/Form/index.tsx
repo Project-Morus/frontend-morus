@@ -1,4 +1,6 @@
-import {Button, IconCard} from "../../../../";
+
+import Button from "../../../../Buttons/Button";
+import IconCard from "../../../../DataDisplay/IconCard";
 import { ButtonsContainerSC, ChildrenContainerSC, FormModalSC, HeaderSC, TitleSC } from "../../styles";
 import { IFormModalProps } from "../../types";
 
