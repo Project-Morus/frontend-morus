@@ -14,7 +14,7 @@ type SiginInResponse = {
 }
 
 export async function signIn(params: SignInParams) {
-  await sleep(1500)
+  await sleep()
 
   const { data } = await httpClient.post<SignInPostProps>('/api/Login', params)
 

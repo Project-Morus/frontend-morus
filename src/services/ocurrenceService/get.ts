@@ -4,14 +4,15 @@ import { httpClient } from "../httpClient";
 
 export type OcurrenceResponse = {
   id: number,
-  id_usuario: number,
+  idUsuario: number,
   titulo: string,
   descricao: string,
   dataCadastro: string,
+  resolvido: boolean,
 }
 
 export async function getOcurrences() {
-  await sleep(1500)
+  await sleep()
 
   const response = await httpClient.get('/api/ListarOcorrencias')
 

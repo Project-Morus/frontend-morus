@@ -10,7 +10,8 @@ const schema = z.object({
   titulo: z.string().nonempty('Titulo é obrigatório'),
   descricao: z.string().max(300).nonempty('Descrição é obrigatório'),
   dataCadastro: z.string(),
-  id_usuario: z.number().int().min(0)
+  idUsuario: z.number().int().min(0),
+  resolvido: z.boolean()
 })
 
 type FormData = z.infer<typeof schema>
@@ -24,7 +25,8 @@ export function usePostOcurrences() {
     resolver: zodResolver(schema),
     defaultValues: {
       dataCadastro: currentDateFormatted(),
-      id_usuario: 2,
+      idUsuario: 2,
+      resolvido: true,
     }
   })
 
