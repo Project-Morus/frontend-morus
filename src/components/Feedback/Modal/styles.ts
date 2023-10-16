@@ -11,7 +11,6 @@ export const ButtonsContainerSC = styled.div`
 export const ChildrenContainerSC = styled.div`
   width: 100%;
   margin: ${({ theme }) => theme.spacing[8]} 0;
-  text-align: center;
 
   color: ${({ theme }) => theme.colors.grey[300]};
   font-size: ${({ theme }) => theme.typography.TEXT_SIZES.medium};

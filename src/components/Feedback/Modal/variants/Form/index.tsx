@@ -14,7 +14,7 @@ export const FormModal = ({
     <FormModalSC role={role}>
       <HeaderSC>
         <IconCard variant="primary" icon={iconName} />
-        <h1>{modalTitle}</h1>
+        <h2>{modalTitle}</h2>
       </HeaderSC>
 
       <ChildrenContainerSC>{children}</ChildrenContainerSC>
