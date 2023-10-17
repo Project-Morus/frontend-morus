@@ -9,14 +9,16 @@ const Input = forwardRef<HTMLInputElement, IInputProps>(
         <LabelSC $disabled={disabled} htmlFor={id}>
           {label}
         </LabelSC>
-<<<<<<< HEAD
         <ContentSC>
-          <InputSC disabled={disabled} $hasError={hasError} $iconName={!!iconName} id={id} ref={ref} {...props} />
+          <InputSC
+            disabled={disabled}
+            $hasError={hasError}
+            $iconName={!!iconName}
+            id={id}
+            ref={ref}
+            {...props} />
           {!!iconName && <CustomIconSC name={iconName} onClick={onClick} />}
         </ContentSC>
-=======
-        <InputSC disabled={disabled} $hasError={hasError} id={id} ref={ref} {...props} />
->>>>>>> b83e02e (Revert "Merge branch 'main' of https://github.com/Project-Morus/frontend-morus")
 
         {hasError && <ErrorTextSC>{errorText}</ErrorTextSC>}
       </ContainerSC>

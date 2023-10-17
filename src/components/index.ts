@@ -15,11 +15,9 @@ export { default as Archive } from "./DataDisplay/Archive";
 export { default as Aside } from "./Feedback/Aside";
 export { default as Divider } from "./Feedback/Divider";
 export { default as Modal } from "./Feedback/Modal";
-<<<<<<< HEAD
 export { default as Spinner } from "./Feedback/Spinner";
 export { default as Loader } from "./Feedback/Loader";
-=======
->>>>>>> b83e02e (Revert "Merge branch 'main' of https://github.com/Project-Morus/frontend-morus")
+
 
 // Inputs
 export { default as Input } from "./Inputs/Input";

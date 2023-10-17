@@ -1,19 +1,13 @@
 import { useEffect, useState } from "react";
-<<<<<<< HEAD
 import toast from "react-hot-toast";
 import { httpClient } from "../../services/httpClient";
 
-=======
->>>>>>> b83e02e (Revert "Merge branch 'main' of https://github.com/Project-Morus/frontend-morus")
 import CardInformations from "./parts/CardInformations";
 import api from "../../services/api/api";
 import { CardInformationProps } from "./parts/types";
 
-<<<<<<< HEAD
 import { ContainerSC } from "./styles";
 
-=======
->>>>>>> b83e02e (Revert "Merge branch 'main' of https://github.com/Project-Morus/frontend-morus")
 const Home = () => {
   const [data, setData] = useState<CardInformationProps[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
