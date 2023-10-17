@@ -5,7 +5,8 @@ export interface PostParams {
   titulo: string,
   descricao: string,
   dataCadastro: string,
-  id_usuario: number,
+  idUsuario: number,
+  resolvido: boolean,
 }
 
 interface PostOcurrenceProps {

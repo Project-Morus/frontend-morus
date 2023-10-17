@@ -3,6 +3,7 @@ import { formatDate } from "../../../../helpers/date";
 import { useGetOcurrences } from "../../controller/useGetOccurences";
 import { HEADER_TABLE_CELLS } from "../../mockData";
 import { ContentLoaderSC } from "../../styles";
+import Status from "../Status";
 
 function TableOcurrence() {
   const { data, isError, isLoading, emptyData } = useGetOcurrences()
@@ -25,6 +26,7 @@ function TableOcurrence() {
             <NewTable.Cell>{item.titulo}</NewTable.Cell>
             <NewTable.Cell>{item.descricao}</NewTable.Cell>
             <NewTable.Cell>{formatDate(item.dataCadastro)}</NewTable.Cell>
+            <NewTable.Cell><Status resolved={item.resolvido}/></NewTable.Cell>
           </NewTable.Row>
         ))}
       </NewTable.Body>

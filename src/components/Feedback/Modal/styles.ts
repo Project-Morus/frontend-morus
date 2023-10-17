@@ -12,7 +12,6 @@ export const ButtonsContainerSC = styled.div`
 export const ChildrenContainerSC = styled.div`
   width: 100%;
   margin: ${({ theme }) => theme.spacing[8]} 0;
-  text-align: center;
 
   color: ${({ theme }) => theme.colors.grey[300]};
   font-size: ${({ theme }) => theme.typography.TEXT_SIZES.medium};
@@ -37,6 +36,13 @@ export const ConfirmationModalSC = styled(BASE_STYLE)`
   overflow: auto;
 `;
 
-export const FormModalSC = styled(BASE_STYLE)`
-  background-color: white;
+export const FormModalSC = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: ${({ theme }) => theme.spacing[7]};
+  font-size: ${({ theme }) => theme.typography.TEXT_SIZES.large};
+  border-radius: ${({ theme }) => theme.border.radius.large};
+  background-color: ${({ theme }) => theme.colors.white[100]};
+  margin: auto;
 `;

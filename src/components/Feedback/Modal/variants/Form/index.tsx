@@ -1,5 +1,5 @@
 import { Button, IconCard } from "../../../../";
-import { ButtonsContainerSC, ChildrenContainerSC, FormModalSC, HeaderSC } from "../../styles";
+import { ButtonsContainerSC, ChildrenContainerSC, FormModalSC, HeaderSC, TitleSC } from "../../styles";
 import { IFormModalProps } from "../../types";
 
 export const FormModal = ({
@@ -15,7 +15,7 @@ export const FormModal = ({
     <FormModalSC role={role}>
       <HeaderSC>
         <IconCard variant="primary" icon={iconName} />
-        <h1>{modalTitle}</h1>
+        <TitleSC>{modalTitle}</TitleSC>
       </HeaderSC>
 
       <ChildrenContainerSC>{children}</ChildrenContainerSC>

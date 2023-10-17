@@ -1,18 +1,18 @@
 import { CardSC, TextSC } from "./styles";
-import { StatusProps, StatusTypes } from "./types";
+import { StatusProps } from "./types";
 
-const Status = ({type}: StatusProps) => {
-  const renderText = (type: StatusTypes) => {
-    if(type === 'solved') return 'Resolvido';
+const Status = ({ resolved }: StatusProps) => {
+  const renderText = (resolved: boolean) => {
+    if (resolved) return 'Resolvido';
 
     return 'Pendente'
   }
 
-  return (  
-    <CardSC $type={type}>
-      <TextSC>{`${renderText(type)}`}</TextSC>
+  return (
+    <CardSC $resolved={resolved}>
+      <TextSC>{`${renderText(resolved)}`}</TextSC>
     </CardSC>
   );
 }
- 
+
 export default Status;
