@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useMutation } from "@tanstack/react-query";
 import { ocurrenceService } from "../../../services/ocurrenceService";
-import { currentDateFormatted } from "../../../helpers/date";
+import { completedDate } from "../../../helpers/date";
 
 const schema = z.object({
   titulo: z.string().nonempty('Titulo é obrigatório'),
@@ -21,10 +21,12 @@ export function usePostOcurrences() {
     register,
     handleSubmit: hookFormSubmit,
     formState: { errors },
+    control,
+    watch
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: {
-      dataCadastro: currentDateFormatted(),
+      dataCadastro: completedDate,
       idUsuario: 2,
       resolvido: true,
     }
@@ -37,18 +39,17 @@ export function usePostOcurrences() {
   });
 
 
-  const handeSubmit = hookFormSubmit(async (data) => {
-
+  const handleSubmit = hookFormSubmit(async (data) => {
     console.log(data)
-    // try {
-    //   await mutateAsync(data)
+    try {
+      await mutateAsync(data)
 
-    //   toast.success('Ocorrência cadastrada com sucesso!')
-    // } catch (error) {
-    //   console.log(error)
-    //   toast.error('Verifique os seus campos!')
-    // }
+      toast.success('Ocorrência cadastrada com sucesso!')
+    } catch (error) {
+      console.log(error)
+      toast.error('Verifique os seus campos!')
+    }
   })
 
-  return { register, handeSubmit, errors }
+  return { register, handleSubmit, control, errors, watch }
 }
