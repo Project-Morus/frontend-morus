@@ -1,6 +1,3 @@
 export interface StatusProps {
-  type: StatusTypes
+  resolved: boolean
 }
-
-export type StatusTypes = 'solved' | 'pending'
-

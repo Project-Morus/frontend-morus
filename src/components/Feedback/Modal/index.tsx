@@ -8,6 +8,7 @@ const Modal = ({
   closeModal,
   children,
   onConfirmModal,
+  onCancelModal,
   iconName,
   modalTitle,
   confirmButtonName,
@@ -19,6 +20,7 @@ const Modal = ({
       <ConfirmationModal
         role="modal"
         onConfirmModal={onConfirmModal}
+        onCancelModal={onCancelModal}
         confirmButtonName={confirmButtonName}
         buttonLabel={buttonLabel}
       >
@@ -27,6 +29,7 @@ const Modal = ({
     ),
     warning: (
       <WarningModal
+        onCancelModal={onCancelModal}
         role="modal"
         onConfirmModal={onConfirmModal}
         confirmButtonName={confirmButtonName}
@@ -37,6 +40,7 @@ const Modal = ({
     ),
     form: (
       <FormModal
+        onCancelModal={onCancelModal}
         role="modal"
         onConfirmModal={onConfirmModal}
         iconName={iconName}

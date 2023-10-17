@@ -4,7 +4,7 @@ import { MENU_LIST } from "./menu";
 import { ContainerSC, FooterSC, LiSC, MenuSC, LinkSC, WrapperMenuSC } from "./styles";
 
 import { useState } from "react";
-import Toggle from "../../Toggle";
+
 const Menu = () => {
   const [navs] = useState(MENU_LIST);
 

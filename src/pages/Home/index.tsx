@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import { httpClient } from "../../services/httpClient";
+
 import CardInformations from "./parts/CardInformations";
-import api from "../../services/api/api";
 import { CardInformationProps } from "./parts/types";
 
 const Home = () => {
@@ -11,7 +12,7 @@ const Home = () => {
     async function fetchData() {
       try {
         console.log("entrou no try");
-        const response = await api.get("api/ListarInformacao");
+        const response = await httpClient.get("api/ListarInformacao");
         setData(response.data.data);
         setIsLoading(false);
         console.log(response.data.data);
