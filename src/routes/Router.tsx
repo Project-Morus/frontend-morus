@@ -1,44 +1,25 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import DefaultLayoutAuth from "../layout/DefaultLayoutAuth";
 import DefaultLayoutSystem from "../layout/DefaultLayoutSystem";
-import {
-  Login,
-  CondominiumRegister,
-  ForgotPasswordFirstStep,
-  ForgotPasswordSecondStep,
-  LandingPage,
-  Home,
-  Residents,
-  Archives,
-  CashBook,
-  Occurrences,
-  Fines,
-  InformationsMural,
-} from "../pages";
+import { Login, CondominiumRegister, ForgotPasswordFirstStep, ForgotPasswordSecondStep, LandingPage, Home, Residents, Archives, CashBook, Occurrences, Fines, InformationsMural } from "../pages";
 import { AuthGuard } from "./AuthGuard";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route element={<AuthGuard isPrivate={false} />}>
+          <Route path="/" element={<LandingPage />} />
 
-        <Route element={<DefaultLayoutAuth />}>
-          <Route path="login" element={<Login />} />
-          <Route path="condominium-register" element={<CondominiumRegister />} />
-        </Route>
-        <Route element={<DefaultLayoutAuth />}>
-          <Route path="login" element={<Login />} />
-          <Route path="condominium-register" element={<CondominiumRegister />} />
-        </Route>
+          <Route element={<DefaultLayoutAuth />}>
+            <Route path="login" element={<Login />} />
+            <Route path="condominium-register" element={<CondominiumRegister />} />
+          </Route>
 
-        <Route path="forgotPassword">
-          <Route path="sendEmail" element={<ForgotPasswordFirstStep />} />
-          <Route path="newPassword" element={<ForgotPasswordSecondStep />} />
-        </Route>
-        <Route path="forgotPassword">
-          <Route path="sendEmail" element={<ForgotPasswordFirstStep />} />
-          <Route path="newPassword" element={<ForgotPasswordSecondStep />} />
+          <Route path="forgotPassword">
+            <Route path="sendEmail" element={<ForgotPasswordFirstStep />} />
+            <Route path="newPassword" element={<ForgotPasswordSecondStep />} />
+          </Route>
         </Route>
 
         <Route element={<AuthGuard isPrivate />}>

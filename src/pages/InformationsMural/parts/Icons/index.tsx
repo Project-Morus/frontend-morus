@@ -53,11 +53,11 @@ export const IconsSC = (data: CardInformationProps) => {
         iconName="ph-newspaper"
         modalTitle="Editar Informação"
         buttonLabel="Confirmar Edição"
-        onConfirmModal={handleConfirmEditInfo}
+        onConfirmModal={() => console.log('Algo aqui')}
         onCancelModal={handleCloseEditModal}
       >
         <InputContainerSC>
-          <PostForm data={data} />
+          <PostForm />
         </InputContainerSC>
       </Modal>
     </>

@@ -7,20 +7,20 @@ import { usePostInformation } from "../../controller/usePostInformation";
 const EditForm = (data: CardInformationProps) => {
   const { register, errors } = usePostInformation();
 
-  const [title, setTitle] = useState(data.data.titulo);
-  const [description, setDescription] = useState(data.data.descricao);
+  const [title, setTitle] = useState(data.titulo);
+  const [description, setDescription] = useState(data.descricao);
 
   const handleConfirmEditInfo = () => {
     async function fetchData() {
       try {
         console.log("entrou no try");
         await httpClient.put("api/AtualizarInformacao", {
-          id: data.data.id,
+          id: data.id,
           titulo: title,
           descricao: description,
-          ativo: data.data.ativo,
-          dataCadastro: data.data.dataCadastro,
-          dataAlteracao: data.data.dataAlteracao,
+          ativo: data.ativo,
+          dataCadastro: data.dataCadastro,
+          dataAlteracao: data.dataAlteracao,
         });
       } catch (error) {
         console.log("entrou no catch");
