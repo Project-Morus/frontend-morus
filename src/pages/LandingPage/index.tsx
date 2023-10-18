@@ -12,7 +12,23 @@ import {
   InformationSectionSC,
   BlueTitleSC,
   CardsRowSC,
+  CommonAreaSectionSC,
+  CommonAreaSVGContainer,
+  CommonAreaTitleSC,
+  MuralSectionSC,
+  MuralImageContainerSC,
+  CustomersSectionSC,
+  CustomersRowSC,
+  CustomerNameSC,
+  CustomerCardContainerSC,
+  CustomerImageSC,
+  FooterSectionSC,
+  RightSideSC,
+  LeftSideSC,
+  FooterTextContainerSC,
+  CopyrightTextSC,
 } from "./styles";
+import CommonAreaScreenSVG from "../../assets/svg/CommonAreaScreen";
 
 const LandingPage = () => {
   return (
@@ -25,7 +41,7 @@ const LandingPage = () => {
             <NavButtonSC href="#sobre">Sobre</NavButtonSC>
             <NavButtonSC href="#plataforma">A Plataforma</NavButtonSC>
             <NavButtonSC href="#contatos">Contatos</NavButtonSC>
-            <LoginButtonSC>Login</LoginButtonSC>
+            <LoginButtonSC to="login">Login</LoginButtonSC>
           </NavButtonContainerSC>
         </NavigationHeaderSC>
         <HeroSectionTitleContainerSC>
@@ -59,6 +75,64 @@ const LandingPage = () => {
           />
         </CardsRowSC>
       </InformationSectionSC>
+
+      <CommonAreaSectionSC>
+        <CommonAreaSVGContainer>
+          <CommonAreaScreenSVG />
+        </CommonAreaSVGContainer>
+        <CommonAreaTitleSC>Agende as áreas comuns através da plataforma</CommonAreaTitleSC>
+      </CommonAreaSectionSC>
+
+      <MuralSectionSC>
+        <BlueTitleSC>Mantenha os moradores sempre informados</BlueTitleSC>
+        <MuralImageContainerSC />
+      </MuralSectionSC>
+
+      <CustomersSectionSC>
+        <BlueTitleSC>Alguns de nossos clientes</BlueTitleSC>
+        <CustomersRowSC>
+          <CustomerCardContainerSC>
+            <CustomerImageSC src="src/assets/png/customer1.png" alt="Condomínio Sol Nascente" />
+            <CustomerNameSC>Sol Nascente</CustomerNameSC>
+          </CustomerCardContainerSC>
+
+          <CustomerCardContainerSC>
+            <CustomerImageSC src="src/assets/png/customer2.png" alt="Condomínio Praia Serena" />
+            <CustomerNameSC>Praia Serena</CustomerNameSC>
+          </CustomerCardContainerSC>
+
+          <CustomerCardContainerSC>
+            <CustomerImageSC src="src/assets/png/customer3.png" alt="Condomínio Vista Jardim" />
+            <CustomerNameSC>Vista Jardim</CustomerNameSC>
+          </CustomerCardContainerSC>
+
+          <CustomerCardContainerSC>
+            <CustomerImageSC src="src/assets/png/customer4.png" alt="Condomínio Lagoa Azul Residence" />
+            <CustomerNameSC>Lagoa Azul Residence</CustomerNameSC>
+          </CustomerCardContainerSC>
+        </CustomersRowSC>
+      </CustomersSectionSC>
+
+      <FooterSectionSC>
+        <FooterTextContainerSC>
+          <LeftSideSC>
+            <div>
+              <p>Endereço:</p>
+              <p>Rua das Flores, nº 130, Bairro Primavera, Cidade Imaginária, Estado dos Sonhos, CEP: 12345-678</p>
+            </div>
+            <div>
+              <p>Horário de funcionamento:</p>
+              <p>Rua das Flores, nº 130, Bairro Primavera, Cidade Imaginária, Estado dos Sonhos, CEP: 12345-678</p>
+            </div>
+          </LeftSideSC>
+          <RightSideSC>
+            <p>Contatos:</p>
+            <p>WhatsApp: (11) 98765-4321</p>
+            <p>Telefone: (11) 1234-5678</p>
+          </RightSideSC>
+        </FooterTextContainerSC>
+        <CopyrightTextSC>Copyright © 2023 Morus - Todos os direitos reservados</CopyrightTextSC>
+      </FooterSectionSC>
     </>
   );
 };
