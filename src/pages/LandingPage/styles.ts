@@ -131,12 +131,8 @@ export const MuralSectionSC = styled.div`
   margin: 4rem 0;
 `;
 
-export const MuralImageContainerSC = styled.div`
+export const MuralImageSC = styled.img`
   margin-top: 3rem;
-  background-image: url("src/assets/png/InformationsMural.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
   border-radius: 16px;
   height: 650px;
   width: 1150px;

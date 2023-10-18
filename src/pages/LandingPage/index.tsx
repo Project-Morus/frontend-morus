@@ -16,7 +16,7 @@ import {
   CommonAreaSVGContainer,
   CommonAreaTitleSC,
   MuralSectionSC,
-  MuralImageContainerSC,
+  MuralImageSC,
   CustomersSectionSC,
   CustomersRowSC,
   CustomerNameSC,
@@ -85,7 +85,7 @@ const LandingPage = () => {
 
       <MuralSectionSC>
         <BlueTitleSC>Mantenha os moradores sempre informados</BlueTitleSC>
-        <MuralImageContainerSC />
+        <MuralImageSC src="src/assets/png/InformationsMural.png" />
       </MuralSectionSC>
 
       <CustomersSectionSC>
