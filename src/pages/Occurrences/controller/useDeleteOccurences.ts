@@ -1,9 +1,15 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { ocurrenceService } from "../../../services/ocurrenceService";
 import toast from "react-hot-toast";
+import { useModal } from "../../../hooks";
 
 export function useDeleteOcurrences() {
   const queryClient = useQueryClient()
+
+  const {
+    isShowing: isShowingDelete,
+    handleModalOpened: deleteOpened,
+    handleModalClose: deleteClosed } = useModal()
 
   const { mutateAsync } = useMutation({
     mutationFn: (id: number) => {
@@ -19,10 +25,12 @@ export function useDeleteOcurrences() {
       await mutateAsync(id)
 
       toast.success('Ocorrência deletada com sucesso!')
+
+      deleteClosed()
     } catch (error) {
       toast.error('Ops! Tente novamente mais tarde!')
     }
   }
 
-  return { handleDelete }
+  return { handleDelete, isShowingDelete, deleteOpened, deleteClosed }
 }

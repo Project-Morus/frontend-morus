@@ -7,24 +7,21 @@ import { HEADER_TABLE_CELLS } from "../../mockData";
 import { ContentLoaderSC } from "../../styles";
 import Status from "../Status";
 import { WrapperIcons } from "./styles";
-import { useModal } from "../../../../hooks";
 import { useDeleteOcurrences } from "../../controller/useDeleteOccurences";
 
 
 function TableOcurrence() {
-  const { data, isError, isLoading, emptyData } = useGetOcurrences()
-  const { handleDelete } = useDeleteOcurrences();
-
-  const [idOccurence, setIdOcurrence] = useState(null);
-
-  console.log(idOccurence)
-
-  const {
-    isShowing: isShowingDelete,
-    handleModalOpened: deleteOpened,
-    handleModalClose: deleteClosed } = useModal()
-
   const theme = useTheme()
+  const { data, isError, isLoading, emptyData } = useGetOcurrences()
+  const { handleDelete, isShowingDelete, deleteOpened, deleteClosed } = useDeleteOcurrences();
+
+  const [id, setId] = useState<number>(0)
+
+  const initiateDeletionProcess = (idOccurence: number) => {
+    setId(idOccurence)
+
+    deleteOpened()
+  }
 
   if (isLoading) return <ContentLoaderSC><Loader /></ContentLoaderSC>
 
@@ -41,8 +38,6 @@ function TableOcurrence() {
 
         <NewTable.Body>
           {data?.map(item => {
-            setIdOcurrence(item.id)
-
             return (
               <NewTable.Row key={item.id}>
                 <NewTable.Cell>{item.titulo}</NewTable.Cell>
@@ -52,7 +47,7 @@ function TableOcurrence() {
                 <NewTable.Cell>
                   <WrapperIcons>
                     <Icon name="ph-pencil-simple-line" />
-                    <Icon name="ph-trash" color={theme.colors.red[500]} onClick={deleteOpened} />
+                    <Icon name="ph-trash" color={theme.colors.red[500]} onClick={() => initiateDeletionProcess(item.id)} />
                   </WrapperIcons>
                 </NewTable.Cell>
               </NewTable.Row>
@@ -65,7 +60,7 @@ function TableOcurrence() {
         variant="warning"
         open={isShowingDelete}
         closeModal={deleteClosed}
-        onConfirmModal={() => console.log('Delete')}
+        onConfirmModal={() => handleDelete(id)}
       >
         Tem certeza que deseja excluir a ocorrência Carro bateu na pilastra da garagem da lista de ocorrências do condomínio Ilha de Capri? Esta ação não poderá ser desfeita.
       </Modal>
