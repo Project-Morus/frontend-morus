@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 
 import { authService } from "../../services/authService";
 import { SignInParams } from "../../services/authService/signIn";
-import { useAuth } from "../../hooks/useAuth";
+import { useAuth } from "../../hooks";
 
 
 const schema = z.object({

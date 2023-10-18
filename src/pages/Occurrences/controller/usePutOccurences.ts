@@ -6,7 +6,7 @@ const schema = z.object({})
 
 type FormData = z.infer<typeof schema>
 
-export function usePostOcurrences() {
+export function usePutOcurrences() {
   const {
     register,
     handleSubmit: hookFormSubmit,

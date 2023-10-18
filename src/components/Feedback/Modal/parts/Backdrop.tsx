@@ -2,7 +2,7 @@ import ReactDOM from "react-dom";
 import { IBackdropProps } from "../types";
 import { BackdropSC } from "../stylesUtils";
 
-const Backdrop = ({ children, closeModal, role, open }: IBackdropProps) => {
+const Backdrop = ({ children, role, open }: IBackdropProps) => {
   return (
     open &&
     ReactDOM.createPortal(

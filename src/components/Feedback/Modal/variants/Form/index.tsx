@@ -9,20 +9,24 @@ export const FormModal = ({
   modalTitle,
   buttonLabel = "Confirmar",
   role,
-  onCancelModal,
+  closeModal,
+  isLoading,
+
 }: IFormModalProps) => {
   return (
-    <FormModalSC role={role}>
+    <FormModalSC onSubmit={onConfirmModal} role={role}>
       <HeaderSC>
         <IconCard variant="primary" icon={iconName} />
         <TitleSC>{modalTitle}</TitleSC>
       </HeaderSC>
 
-      <ChildrenContainerSC>{children}</ChildrenContainerSC>
+      <ChildrenContainerSC>
+        {children}
+      </ChildrenContainerSC>
 
       <ButtonsContainerSC>
-        <Button text={"Cancelar"} maxWidth={200} variant="secondary" onClick={onCancelModal} />
-        <Button text={buttonLabel} maxWidth={200} variant="primary" onClick={onConfirmModal} />
+        <Button text={"Cancelar"} maxWidth={200} variant="secondary" onClick={closeModal} />
+        <Button type="submit" text={buttonLabel} maxWidth={200} variant="primary" isLoading={isLoading} />
       </ButtonsContainerSC>
     </FormModalSC>
   );
