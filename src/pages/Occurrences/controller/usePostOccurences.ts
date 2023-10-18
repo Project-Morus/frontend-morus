@@ -16,7 +16,11 @@ const schema = z.object({
 
 type FormData = z.infer<typeof schema>;
 
-export function usePostOcurrences() {
+interface PostOccurrencesProps {
+  handleModalClosed: () => void;
+}
+
+export function usePostOcurrences({ handleModalClosed }: PostOccurrencesProps) {
   const queryClient = useQueryClient()
 
   const {
@@ -24,7 +28,8 @@ export function usePostOcurrences() {
     handleSubmit: hookFormSubmit,
     formState: { errors },
     control,
-    watch
+    watch,
+    reset,
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: {
@@ -34,7 +39,7 @@ export function usePostOcurrences() {
     }
   })
 
-  const { mutateAsync, isLoading, isSuccess } = useMutation({
+  const { mutateAsync, isLoading } = useMutation({
     mutationFn: (data: FormData) => {
       return ocurrenceService.postOcurrences(data);
     },
@@ -49,10 +54,14 @@ export function usePostOcurrences() {
       await mutateAsync(data)
 
       toast.success('Ocorrência cadastrada com sucesso!')
+
+      handleModalClosed()
+      
+      reset()
     } catch (error) {
       toast.error('Verifique os seus campos!')
     }
   })
 
-  return { register, handleSubmit, control, errors, watch, isLoading, isSuccess }
+  return { register, handleSubmit, control, errors, watch, isLoading }
 }

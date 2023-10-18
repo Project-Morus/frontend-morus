@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Input, Modal } from "../../../../components";
 import { usePostOcurrences } from "../../controller";
 
@@ -8,13 +7,7 @@ type FormTypes = {
 }
 
 const Form = ({ opened, handleModalClosed }: FormTypes) => {
-  const { handleSubmit, register, errors, isLoading, isSuccess } = usePostOcurrences()
-
-  useEffect(() => {
-    if (isSuccess) {
-      handleModalClosed()
-    }
-  }, [handleModalClosed, isSuccess])
+  const { handleSubmit, register, errors, isLoading } = usePostOcurrences({ handleModalClosed })
 
   return (
     <Modal
