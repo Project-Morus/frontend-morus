@@ -76,7 +76,7 @@ const LandingPage = () => {
         </CardsRowSC>
       </InformationSectionSC>
 
-      <CommonAreaSectionSC>
+      <CommonAreaSectionSC id="plataforma">
         <CommonAreaSVGContainer>
           <CommonAreaScreenSVG />
         </CommonAreaSVGContainer>
@@ -113,7 +113,7 @@ const LandingPage = () => {
         </CustomersRowSC>
       </CustomersSectionSC>
 
-      <FooterSectionSC>
+      <FooterSectionSC id="contatos">
         <FooterTextContainerSC>
           <LeftSideSC>
             <div>
