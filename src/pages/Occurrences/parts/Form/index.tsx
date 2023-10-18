@@ -7,7 +7,7 @@ type FormTypes = {
 }
 
 const Form = ({ opened, handleModalClosed }: FormTypes) => {
-  const { handleSubmit, register, errors, isLoading } = usePostOcurrences({ handleModalClosed })
+  const { handleSubmit, register, errors, isPending } = usePostOcurrences({ handleModalClosed })
 
   return (
     <Modal
@@ -16,7 +16,7 @@ const Form = ({ opened, handleModalClosed }: FormTypes) => {
       open={opened}
       closeModal={handleModalClosed}
       onConfirmModal={handleSubmit}
-      isLoading={isLoading}
+      isLoading={isPending}
     >
       <div style={{ display: 'flex', gap: '1rem', flexDirection: 'column' }}>
         <Input

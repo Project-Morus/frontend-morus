@@ -8,6 +8,7 @@ export const WarningModal = ({
   buttonLabel = "Excluir",
   role,
   closeModal,
+  isLoading,
 }: IModalVariantsProps) => {
   return (
     <ConfirmationModalSC role={role}>
@@ -17,7 +18,7 @@ export const WarningModal = ({
 
       <ButtonsContainerSC>
         <Button text={"Cancelar"} maxWidth={200} variant="secondary" onClick={closeModal} />
-        <Button text={buttonLabel} maxWidth={200} variant="red" onClick={onConfirmModal} />
+        <Button text={buttonLabel} maxWidth={200} variant="red" onClick={onConfirmModal} isLoading={isLoading} />
       </ButtonsContainerSC>
     </ConfirmationModalSC>
   );

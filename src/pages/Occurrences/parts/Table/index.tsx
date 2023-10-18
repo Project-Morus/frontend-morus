@@ -13,7 +13,7 @@ import { useDeleteOcurrences } from "../../controller/useDeleteOccurences";
 function TableOcurrence() {
   const theme = useTheme()
   const { data, isError, isLoading, emptyData } = useGetOcurrences()
-  const { handleDelete, isShowingDelete, deleteOpened, deleteClosed } = useDeleteOcurrences();
+  const { handleDelete, isShowingDelete, deleteOpened, deleteClosed, isPending } = useDeleteOcurrences();
 
   const [id, setId] = useState<number>(0)
 
@@ -61,6 +61,7 @@ function TableOcurrence() {
         open={isShowingDelete}
         closeModal={deleteClosed}
         onConfirmModal={() => handleDelete(id)}
+        isLoading={true}
       >
         Tem certeza que deseja excluir a ocorrência Carro bateu na pilastra da garagem da lista de ocorrências do condomínio Ilha de Capri? Esta ação não poderá ser desfeita.
       </Modal>

@@ -23,6 +23,7 @@ const Modal = ({
         confirmButtonName={confirmButtonName}
         buttonLabel={buttonLabel}
         closeModal={closeModal}
+        isLoading={isLoading}
       >
         {children}
       </ConfirmationModal>
@@ -34,6 +35,7 @@ const Modal = ({
         confirmButtonName={confirmButtonName}
         buttonLabel={buttonLabel}
         closeModal={closeModal}
+        isLoading={isLoading}
       >
         {children}
       </WarningModal>

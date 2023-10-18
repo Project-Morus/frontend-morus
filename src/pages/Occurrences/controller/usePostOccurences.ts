@@ -39,7 +39,7 @@ export function usePostOcurrences({ handleModalClosed }: PostOccurrencesProps) {
     }
   })
 
-  const { mutateAsync, isLoading } = useMutation({
+  const { mutateAsync, isPending } = useMutation({
     mutationFn: (data: FormData) => {
       return ocurrenceService.postOcurrences(data);
     },
@@ -56,12 +56,12 @@ export function usePostOcurrences({ handleModalClosed }: PostOccurrencesProps) {
       toast.success('Ocorrência cadastrada com sucesso!')
 
       handleModalClosed()
-      
+
       reset()
     } catch (error) {
       toast.error('Verifique os seus campos!')
     }
   })
 
-  return { register, handleSubmit, control, errors, watch, isLoading }
+  return { register, handleSubmit, control, errors, watch, isPending }
 }

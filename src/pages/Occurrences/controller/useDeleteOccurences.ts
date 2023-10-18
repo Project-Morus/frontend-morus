@@ -11,7 +11,7 @@ export function useDeleteOcurrences() {
     handleModalOpened: deleteOpened,
     handleModalClose: deleteClosed } = useModal()
 
-  const { mutateAsync } = useMutation({
+  const { mutateAsync, isPending } = useMutation({
     mutationFn: (id: number) => {
       return ocurrenceService.deleteOcurrences({ id });
     },
@@ -32,5 +32,5 @@ export function useDeleteOcurrences() {
     }
   }
 
-  return { handleDelete, isShowingDelete, deleteOpened, deleteClosed }
+  return { handleDelete, isShowingDelete, deleteOpened, deleteClosed, isPending }
 }
