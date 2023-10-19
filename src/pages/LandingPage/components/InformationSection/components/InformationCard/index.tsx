@@ -1,9 +1,9 @@
 import { useTheme } from "styled-components";
-import { Icon } from "../../../../components";
+import { Icon } from "../../../../../../components";
 import { LabelSC, TitleSC, WhiteCard } from "./styles";
 import { IInformationCardProps } from "./types";
 
-const InformationCard = ({ title, label, iconName }: IInformationCardProps) => {
+export const InformationCard = ({ title, label, iconName }: IInformationCardProps) => {
   const theme = useTheme();
   return (
     <WhiteCard>
@@ -13,5 +13,3 @@ const InformationCard = ({ title, label, iconName }: IInformationCardProps) => {
     </WhiteCard>
   );
 };
-
-export default InformationCard;
