@@ -41,4 +41,9 @@ export const MENU_LIST: IMenuDataProps[] = [
     link: "orders",
     icon: "ph-package"
   },
+  {
+    title: "Votação",
+    link: "votes",
+    icon: "ph-gavel"
+  },
 ];

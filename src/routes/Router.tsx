@@ -1,7 +1,7 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import DefaultLayoutAuth from "../layout/DefaultLayoutAuth";
 import DefaultLayoutSystem from "../layout/DefaultLayoutSystem";
-import { Login, CondominiumRegister, ForgotPasswordFirstStep, ForgotPasswordSecondStep, LandingPage, Home, Residents, Archives, CashBook, Occurrences, Fines, InformationsMural, Orders } from "../pages";
+import { Login, CondominiumRegister, ForgotPasswordFirstStep, ForgotPasswordSecondStep, LandingPage, Home, Residents, Archives, CashBook, Occurrences, Fines, InformationsMural, Orders, Votes } from "../pages";
 import { AuthGuard } from "./AuthGuard";
 
 const Router = () => {
@@ -28,6 +28,7 @@ const Router = () => {
             <Route path="residents" element={<Residents />} />
             <Route path="fines" element={<Fines />} />
             <Route path="orders" element={<Orders />} />
+            <Route path="votes" element={<Votes />} />
             <Route path="archives" element={<Archives />} />
             <Route path="cashBook" element={<CashBook />} />
             <Route path="occurrences" element={<Occurrences />} />
