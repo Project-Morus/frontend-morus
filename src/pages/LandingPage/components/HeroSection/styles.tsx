@@ -31,6 +31,8 @@ export const NavButtonSC = styled.a`
   color: ${({ theme }) => theme.colors.white[100]};
   text-decoration: none;
 
+  cursor: pointer;
+
   transition: 0.15s;
 
   &:hover {
