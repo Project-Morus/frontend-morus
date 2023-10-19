@@ -62,7 +62,7 @@ function TableOcurrence() {
         onConfirmModal={() => handleDelete(id)}
         isLoading={isPending}
       >
-        Tem certeza que deseja excluir a ocorrência Carro bateu na pilastra da garagem da lista de ocorrências do condomínio Ilha de Capri? Esta ação não poderá ser desfeita.
+        Tem certeza que deseja excluir a ocorrência do condomínio Ilha de Capri? Esta ação não poderá ser desfeita.
       </Modal>
     </>
   );
