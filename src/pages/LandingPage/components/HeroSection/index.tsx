@@ -32,8 +32,8 @@ export const HeroSection = () => {
       </NavigationHeaderSC>
       <HeroSectionTitleContainerSC>
         <HeroSectionTitleSC>O Futuro da Gestão de Condomínios Começa Aqui</HeroSectionTitleSC>
-        <StartNowButtonSC>Comece agora</StartNowButtonSC>
+        <StartNowButtonSC to="login">Comece agora</StartNowButtonSC>
       </HeroSectionTitleContainerSC>
     </ContainerSC>
   );
-}
+};

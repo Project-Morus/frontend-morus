@@ -15,7 +15,6 @@ export const NavigationHeaderSC = styled.div`
   justify-content: space-between;
 
   padding: 0 ${({ theme }) => theme.spacing[9]};
-
 `;
 
 export const NavButtonContainerSC = styled.div`
@@ -54,7 +53,7 @@ export const LoginButtonSC = styled(Link)`
   padding: ${({ theme }) => theme.spacing[3]} ${({ theme }) => theme.spacing[13]};
 
   transition: background-color 0.2s;
-  
+
   &:hover {
     background-color: ${({ theme }) => theme.colors.primary[100]};
     color: ${({ theme }) => theme.colors.primary[700]};
@@ -77,12 +76,12 @@ export const HeroSectionTitleSC = styled.h1`
 
   color: ${({ theme }) => theme.colors.white[100]};
   margin-bottom: ${({ theme }) => theme.spacing[10]};
-
 `;
 
-export const StartNowButtonSC = styled.button`
+export const StartNowButtonSC = styled(Link)`
   width: ${BUTTON_WIDTH};
-
+  text-decoration: none;
+  text-align: center;
   padding: ${({ theme }) => theme.spacing[5]} ${({ theme }) => theme.spacing[9]};
 
   font-size: ${({ theme }) => theme.typography.HEADERS_SIZES.h3};
