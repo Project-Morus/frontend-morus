@@ -1,0 +1,1 @@
+export const DIAMENTER_CARD = '380px';
