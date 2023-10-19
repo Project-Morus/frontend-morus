@@ -31,5 +31,14 @@ export const MENU_LIST: IMenuDataProps[] = [
     link: "cashBook",
     icon: "ph-book-bookmark",
   },
-  { title: "Mural de Informações", link: "informations-mural", icon: "ph-newspaper" },
+  {
+    title: "Mural de Informações",
+    link: "informations-mural",
+    icon: "ph-newspaper"
+  },
+  {
+    title: "Encomendas",
+    link: "orders",
+    icon: "ph-package"
+  },
 ];
