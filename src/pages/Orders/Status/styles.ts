@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { MAX_WIDTH_CARD } from "./stylesUtils";
 
-export const CardSC = styled.div<{ $collected: boolean }>`
+export const CardSC = styled.div<{ $collected?: boolean }>`
   max-width: ${MAX_WIDTH_CARD};
 
   display: flex;
