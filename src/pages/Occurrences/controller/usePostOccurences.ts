@@ -35,7 +35,7 @@ export function usePostOcurrences({ handleModalClosed }: PostOccurrencesProps) {
     defaultValues: {
       dataCadastro: completedDate,
       idUsuario: 2,
-      resolvido: true,
+      resolvido: false,
     }
   })
 

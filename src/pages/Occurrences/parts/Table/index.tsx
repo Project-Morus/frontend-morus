@@ -2,12 +2,11 @@ import { useState } from "react";
 import { useTheme } from "styled-components";
 import { Loader, NewTable, Icon, Modal } from "../../../../components";
 import { formatDate } from "../../../../helpers/date";
-import { useGetOcurrences } from "../../controller/useGetOccurences";
 import { HEADER_TABLE_CELLS } from "../../mockData";
 import { ContentLoaderSC } from "../../styles";
 import Status from "../Status";
 import { WrapperIcons } from "./styles";
-import { useDeleteOcurrences } from "../../controller/useDeleteOccurences";
+import { useDeleteOcurrences, useGetOcurrences } from "../../controller";
 
 
 function TableOcurrence() {
@@ -46,7 +45,7 @@ function TableOcurrence() {
                 <NewTable.Cell><Status resolved={item.resolvido} /></NewTable.Cell>
                 <NewTable.Cell>
                   <WrapperIcons>
-                    <Icon name="ph-pencil-simple-line" />
+                    {/* <Icon name="ph-pencil-simple-line" /> */}
                     <Icon name="ph-trash" color={theme.colors.red[500]} onClick={() => initiateDeletionProcess(item.id)} />
                   </WrapperIcons>
                 </NewTable.Cell>
