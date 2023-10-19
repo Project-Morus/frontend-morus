@@ -4,7 +4,6 @@ import { IconNamesTypes } from "../../DataDisplay/Icon/types";
 
 export interface IBackdropProps extends IBaseProps {
   children: ReactNode;
-  closeModal: () => void;
   open: boolean;
 }
 
@@ -14,15 +13,15 @@ export interface IModalProps extends IFormModalProps {
   children?: ReactNode;
   closeModal: () => void;
   onConfirmModal: () => void;
-  onCancelModal: () => void;
 }
 
 export interface IModalVariantsProps extends IBaseProps {
   children?: ReactNode;
   onConfirmModal: () => void;
-  onCancelModal: () => void;
   confirmButtonName?: string;
+  closeModal: () => void;
   buttonLabel?: string;
+  isLoading?: boolean;
 }
 
 export interface IFormModalProps extends IModalVariantsProps {

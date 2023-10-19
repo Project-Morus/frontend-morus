@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 
 import { authService } from "../../services/authService";
 import { SignInParams } from "../../services/authService/signIn";
-import { useAuth } from "../../hooks/useAuth";
+import { useAuth } from "../../hooks";
 
 
 const schema = z.object({
@@ -29,7 +29,7 @@ export function useLoginController() {
     resolver: zodResolver(schema)
   })
 
-  const { mutateAsync, isLoading } = useMutation({
+  const { mutateAsync, isPending } = useMutation({
     mutationFn: (data: SignInParams) => {
       return authService.signIn(data)
     }
@@ -49,5 +49,5 @@ export function useLoginController() {
     }
   })
 
-  return { register, handleSubmit, errors, isLoading }
+  return { register, handleSubmit, errors, isPending }
 }

@@ -73,6 +73,7 @@ exports[`Modal Component Snapshot Modal 1`] = `
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
+  margin-top: auto;
 }
 
 .c4 {
@@ -92,6 +93,7 @@ exports[`Modal Component Snapshot Modal 1`] = `
   width: 100%;
   max-width: 620px;
   overflow: auto;
+  text-align: center;
 }
 
 <div
@@ -223,6 +225,7 @@ exports[`Modal Component Snapshot Modal with variant form 1`] = `
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
+  margin-top: auto;
 }
 
 .c7 {
@@ -315,6 +318,7 @@ exports[`Modal Component Snapshot Modal with variant form 1`] = `
         </button>
         <button
           class="c9 c11"
+          type="submit"
         >
           <span>
             Confirmar
@@ -399,6 +403,7 @@ exports[`Modal Component Snapshot Modal with variant warning 1`] = `
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
+  margin-top: auto;
 }
 
 .c3 {
@@ -413,6 +418,7 @@ exports[`Modal Component Snapshot Modal with variant warning 1`] = `
   width: 100%;
   max-width: 620px;
   overflow: auto;
+  text-align: center;
 }
 
 <div

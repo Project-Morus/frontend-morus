@@ -5,9 +5,10 @@ import { IModalVariantsProps } from "../../types";
 export const ConfirmationModal = ({
   children,
   onConfirmModal,
+  closeModal,
   buttonLabel = "Confirmar",
   role,
-  onCancelModal,
+  isLoading,
 }: IModalVariantsProps) => {
   return (
     <ConfirmationModalSC role={role}>
@@ -16,8 +17,8 @@ export const ConfirmationModal = ({
       <ChildrenContainerSC>{children}</ChildrenContainerSC>
 
       <ButtonsContainerSC>
-        <Button text={"Cancelar"} maxWidth={200} variant="secondary" onClick={onCancelModal} />
-        <Button text={buttonLabel} maxWidth={200} variant="green" onClick={onConfirmModal} />
+        <Button text={"Cancelar"} maxWidth={200} variant="secondary" onClick={closeModal} />
+        <Button text={buttonLabel} maxWidth={200} variant="green" onClick={onConfirmModal} isLoading={isLoading} />
       </ButtonsContainerSC>
     </ConfirmationModalSC>
   );

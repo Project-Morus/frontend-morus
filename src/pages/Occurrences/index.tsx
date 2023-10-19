@@ -1,19 +1,17 @@
-import { useState } from "react";
 import { ButtonContainerSC, HeaderSC, InputAndButtonsContainerSC } from "./styles";
 import { TitleSC, MessageSC, QuantityTotalSC } from "../styles";
-import { Button, Input, Modal } from "../../components";
-import { useGetOcurrences } from "./controller/useGetOccurences";
+import { Button, Input } from "../../components";
 import TableOcurrence from "./parts/Table";
 import Form from "./parts/Form";
+import { useGetOcurrences } from "./controller";
+import { useModal } from "../../hooks";
 
 const Occurrences = () => {
   const { count, isLoading, emptyData } = useGetOcurrences()
-  const [opened, setOpened] = useState<boolean>(false);
+
+  const { isShowing, handleModalOpened, handleModalClose } = useModal();
 
   const messageCount = emptyData ? 'Sem ocorrências!' : `Quantidade total de ocorrências: ${count}`
-
-  const handleModalOpened = () => setOpened(true)
-  const handleModalClosed = () => setOpened(false)
 
   return (
     <>
@@ -48,17 +46,9 @@ const Occurrences = () => {
         </ButtonContainerSC>
       </InputAndButtonsContainerSC>
 
-      <Modal
-        variant="form"
-        modalTitle="Cadastrar nova ocorrência"
-        open={opened}
-        closeModal={handleModalClosed}
-        onConfirmModal={() => console.log('oi')}
-      >
-        <Form />
-      </Modal>
-
       <TableOcurrence />
+
+      <Form opened={isShowing} handleModalClosed={handleModalClose} />
     </>
   );
 };

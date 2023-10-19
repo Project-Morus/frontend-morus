@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import toast from "react-hot-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { ocurrenceService } from "../../../services/ocurrenceService";
 import { completedDate } from "../../../helpers/date";
 
@@ -16,40 +16,52 @@ const schema = z.object({
 
 type FormData = z.infer<typeof schema>;
 
-export function usePostOcurrences() {
+interface PostOccurrencesProps {
+  handleModalClosed: () => void;
+}
+
+export function usePostOcurrences({ handleModalClosed }: PostOccurrencesProps) {
+  const queryClient = useQueryClient()
+
   const {
     register,
     handleSubmit: hookFormSubmit,
     formState: { errors },
     control,
-    watch
+    watch,
+    reset,
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: {
       dataCadastro: completedDate,
       idUsuario: 2,
-      resolvido: true,
+      resolvido: false,
     }
   })
 
-  const { mutateAsync } = useMutation({
+  const { mutateAsync, isPending } = useMutation({
     mutationFn: (data: FormData) => {
       return ocurrenceService.postOcurrences(data);
     },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['ocurrence-list'] })
+    }
   });
 
 
   const handleSubmit = hookFormSubmit(async (data) => {
-    console.log(data)
     try {
       await mutateAsync(data)
 
       toast.success('Ocorrência cadastrada com sucesso!')
+
+      handleModalClosed()
+
+      reset()
     } catch (error) {
-      console.log(error)
       toast.error('Verifique os seus campos!')
     }
   })
 
-  return { register, handleSubmit, control, errors, watch }
+  return { register, handleSubmit, control, errors, watch, isPending }
 }

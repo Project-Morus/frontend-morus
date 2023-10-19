@@ -1,5 +1,5 @@
 import { Button } from "../../../../components";
-import { useAuth } from "../../../../hooks/useAuth";
+import { useAuth } from "../../../../hooks";
 import {
   HeaderSC,
   ContentResidentSC,

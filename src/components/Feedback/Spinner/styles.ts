@@ -1,10 +1,12 @@
 import styled from "styled-components";
+import { ColorsTypes } from "./interface";
+import { getColorSpinner } from "./stylesUtils";
 
-export const LoaderSC = styled.span`
+export const LoaderSC = styled.span<{ $color: ColorsTypes }>`
    width: 20px;
     height: 20px;
     border: ${({ theme }) => theme.border.width.extraBold} solid ${({ theme }) => theme.colors.white[50]};
-    border-bottom-color: ${({ theme }) => theme.colors.primary[200]};
+    border-bottom-color: ${({ $color, theme }) => getColorSpinner($color, theme)};
     border-radius: ${({ theme }) => theme.border.radius.circle};
     display: inline-block;
     box-sizing: border-box;
@@ -19,3 +21,6 @@ export const LoaderSC = styled.span`
     }
     } 
 `
+
+
+

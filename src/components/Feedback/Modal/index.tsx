@@ -8,45 +8,48 @@ const Modal = ({
   closeModal,
   children,
   onConfirmModal,
-  onCancelModal,
   iconName,
   modalTitle,
   confirmButtonName,
   buttonLabel,
   open,
+  isLoading,
 }: IModalProps) => {
   const variantType: Record<VariantsTypes, ReactNode> = {
     confirmation: (
       <ConfirmationModal
         role="modal"
         onConfirmModal={onConfirmModal}
-        onCancelModal={onCancelModal}
         confirmButtonName={confirmButtonName}
         buttonLabel={buttonLabel}
+        closeModal={closeModal}
+        isLoading={isLoading}
       >
         {children}
       </ConfirmationModal>
     ),
     warning: (
       <WarningModal
-        onCancelModal={onCancelModal}
         role="modal"
         onConfirmModal={onConfirmModal}
         confirmButtonName={confirmButtonName}
         buttonLabel={buttonLabel}
+        closeModal={closeModal}
+        isLoading={isLoading}
       >
         {children}
       </WarningModal>
     ),
     form: (
       <FormModal
-        onCancelModal={onCancelModal}
         role="modal"
         onConfirmModal={onConfirmModal}
+        closeModal={closeModal}
         iconName={iconName}
         modalTitle={modalTitle}
         confirmButtonName={confirmButtonName}
         buttonLabel={buttonLabel}
+        isLoading={isLoading}
       >
         {children}
       </FormModal>
@@ -54,7 +57,7 @@ const Modal = ({
   };
 
   return (
-    <Backdrop role="backdrop" closeModal={closeModal} open={open}>
+    <Backdrop role="backdrop" open={open}>
       {variantType[variant]}
     </Backdrop>
   );

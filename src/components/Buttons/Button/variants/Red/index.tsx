@@ -5,7 +5,7 @@ import { IButtonProps } from "../../types";
 export const ButtonRed = ({ text, maxWidth, isLoading, disabled, ...props }: Omit<IButtonProps, "variant">) => {
   return (
     <ButtonRedSC $maxWidth={maxWidth} disabled={disabled || isLoading} {...props}>
-      {isLoading ? <Spinner /> : <span>{text}</span>}
+      {isLoading ? <Spinner color="red" /> : <span>{text}</span>}
     </ButtonRedSC>
   );
 };

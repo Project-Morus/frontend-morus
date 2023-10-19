@@ -7,6 +7,8 @@ export const ButtonsContainerSC = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: ${({ theme }) => theme.spacing[4]};
+
+  margin-top: auto;
 `;
 
 export const ChildrenContainerSC = styled.div`
@@ -34,6 +36,7 @@ export const ConfirmationModalSC = styled(BASE_STYLE)`
   width: 100%;
   max-width: ${WIDTH_CONFIRMATION_MODAL};
   overflow: auto;
+  text-align: center;
 `;
 
 export const FormModalSC = styled.form`

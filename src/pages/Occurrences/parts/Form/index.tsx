@@ -1,28 +1,42 @@
-import { Input } from "../../../../components";
-import { usePostOcurrences } from "../../controller/usePostOccurence";
+import { Input, Modal } from "../../../../components";
+import { usePostOcurrences } from "../../controller";
 
-const Form = () => {
-  const { register, errors } = usePostOcurrences()
+type FormTypes = {
+  opened: boolean,
+  handleModalClosed: () => void,
+}
+
+const Form = ({ opened, handleModalClosed }: FormTypes) => {
+  const { handleSubmit, register, errors, isPending } = usePostOcurrences({ handleModalClosed })
 
   return (
-    <form style={{ display: 'flex', gap: '1rem', flexDirection: 'column' }}>
-      <Input
-        id="titulo"
-        label="Motivo"
-        type="text"
-        hasError={!!errors.titulo}
-        errorText={errors.titulo?.message}
-        {...register('titulo')}
-      />
-      <Input
-        id="descricao"
-        label="Descrição"
-        type="text"
-        hasError={!!errors.descricao}
-        errorText={errors.descricao?.message}
-        {...register('descricao')}
-      />
-    </form>
+    <Modal
+      variant="form"
+      modalTitle="Cadastrar nova ocorrência"
+      open={opened}
+      closeModal={handleModalClosed}
+      onConfirmModal={handleSubmit}
+      isLoading={isPending}
+    >
+      <div style={{ display: 'flex', gap: '1rem', flexDirection: 'column' }}>
+        <Input
+          id="titulo"
+          label="Motivo"
+          type="text"
+          hasError={!!errors.titulo}
+          errorText={errors.titulo?.message}
+          {...register('titulo')}
+        />
+        <Input
+          id="descricao"
+          label="Descrição"
+          type="text"
+          hasError={!!errors.descricao}
+          errorText={errors.descricao?.message}
+          {...register('descricao')}
+        />
+      </div>
+    </Modal>
   );
 }
 
