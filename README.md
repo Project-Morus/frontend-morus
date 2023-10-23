@@ -11,10 +11,12 @@ Trata-se de uma aplicação web para a gestão de condôminos, todo o sistema se
 - [TypeScript](https://www.typescriptlang.org)
 - [ReactJS](https://react.dev)
 - [React Hook Form](https://www.react-hook-form.com)
+- [React Query](https://tanstack.com/query/v3/)
 - [Zod (Validações de formulários)](https://zod.dev)
 - [Jest (Testes unitários)](https://jestjs.io/pt-BR/)
 - [Testing Library](https://testing-library.com)
 - [Styled Components](https://styled-components.com)
+- [React Toast](https://react-hot-toast.com)
 - [Axios](https://axios-http.com/ptbr/)
 
 ## 😎 Iniciando 
