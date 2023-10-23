@@ -46,7 +46,7 @@ Repositório Back-end: https://github.com/Project-Morus/backend-morus/
 
 Visualize o layout do projeto através do link a seguir:
 
-- [Layout Web](https://www.figma.com/) 
+- [Layout Web](https://www.figma.com/file/JHxKBWFQDat4oZbAU1b1Dr/Morus---Design?type=design&mode=design&t=Xr2xXqiHC637j1WA-1) 
 
 Você precisa ter uma conta no [Figma](http://figma.com/) para acessá-lo 😉.
 
