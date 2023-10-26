@@ -9,7 +9,12 @@ export const MessageSC = styled.p`
   color: ${({ theme }) => theme.colors.grey[200]};
 `;
 
-export const TitleSC = styled(Link)`
+export const TitleSC = styled.h3`
+  font-size: ${({ theme }) => theme.typography.HEADERS_SIZES.h3};
+  color: ${({ theme }) => theme.colors.grey[400]};
+`;
+
+export const TitleLinkSC = styled(Link)`
   text-decoration: none;
   font-weight: ${({ theme }) => theme.typography.FONT_WEIGHTS.bold};
   font-size: ${({ theme }) => theme.typography.HEADERS_SIZES.h3};

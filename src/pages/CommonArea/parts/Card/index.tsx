@@ -1,6 +1,6 @@
 import { useTheme } from "styled-components";
-import { Button, Icon, Modal } from "../../../../components";
-import { TitleSC } from "../../../styles";
+import { Icon, Modal } from "../../../../components";
+import { TitleLinkSC } from "../../../styles";
 import { CardSC, RowSC } from "./styles";
 import { CardProps } from "./types";
 import { useDeleteCommonArea } from "../../controller";
@@ -21,7 +21,7 @@ const Card = ({ title, peopleLimit, idCard, scheduleNumber, url }: CardProps) =>
     <>
       <CardSC>
         <RowSC>
-          <TitleSC to={url}>{title}</TitleSC>
+          <TitleLinkSC to={url}>{title}</TitleLinkSC>
           <Icon name="ph-trash" color={theme.colors.red[500]} onClick={() => initiateDeletionProcess(idCard)} />
         </RowSC>
         <RowSC>

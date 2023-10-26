@@ -1,4 +1,4 @@
-import { ButtonContainerSC, HeaderSC, InputAndButtonsContainerSC, NotificationEmailSC } from "./styles";
+import { ButtonContainerSC, HeaderSC, InputAndButtonsContainerSC } from "./styles";
 import { TitleSC, MessageSC, QuantityTotalSC } from "../styles";
 import { Button, Input } from "../../components";
 import CustomTable from "./parts/CustomTable";
