@@ -4,16 +4,14 @@ export const ContainerSC = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spacing[3]};
   padding: ${({ theme }) => theme.spacing[4]};
-`
+`;
 
-export const InformationSC = styled.div`
-`
-
+export const InformationSC = styled.div``;
 
 export const CardSC = styled.div`
   width: 100%;
   height: 100%;
-
+  margin: 1rem 0;
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing[5]};
@@ -23,15 +21,15 @@ export const CardSC = styled.div`
   border-radius: ${({ theme }) => theme.border.radius.large};
 
   padding: ${({ theme }) => theme.spacing[4]};
-`
+`;
 
 export const TitleSC = styled.h3`
   color: ${({ theme }) => theme.colors.grey[400]};
 
   font-weight: ${({ theme }) => theme.typography.FONT_WEIGHTS.bold};
-`
+`;
 
 export const ParagraphSC = styled.p`
   font-size: ${({ theme }) => theme.typography.TEXT_SIZES.small};
   margin-top: ${({ theme }) => theme.spacing[4]};
-`
+`;
