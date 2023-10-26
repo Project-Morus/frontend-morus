@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -21,10 +21,9 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased; 
    } 
  
-
   body, input, textarea, button {
     font-family: ${({ theme }) => theme.typography.FONT_FAMILIES.nunito};
     font-weight: ${({ theme }) => theme.typography.FONT_WEIGHTS.regular};
     font-size: ${({ theme }) => theme.typography.TEXT_SIZES.medium}
   }
-`
+`;

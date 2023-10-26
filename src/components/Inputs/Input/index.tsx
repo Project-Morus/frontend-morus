@@ -10,13 +10,7 @@ const Input = forwardRef<HTMLInputElement, IInputProps>(
           {label}
         </LabelSC>
         <ContentSC>
-          <InputSC
-            disabled={disabled}
-            $hasError={hasError}
-            $iconName={!!iconName}
-            id={id}
-            ref={ref}
-            {...props} />
+          <InputSC disabled={disabled} $hasError={hasError} $iconName={!!iconName} id={id} ref={ref} {...props} />
           {!!iconName && <CustomIconSC name={iconName} onClick={onClick} />}
         </ContentSC>
 
