@@ -2,9 +2,13 @@ import { ButtonContainerSC, HeaderSC, InputAndButtonsContainerSC, NotificationEm
 import { TitleSC, MessageSC, QuantityTotalSC } from "../styles";
 import { Button, Input } from "../../components";
 import CustomTable from "./parts/CustomTable";
+import { useModal } from "../../hooks";
+import Form from "./parts/Form";
 //import CustomTable from "./parts/CustomTable";
 
 const InformationsMural = () => {
+  const { isShowing, handleModalOpened, handleModalClose } = useModal();
+
   return (
     <>
       <HeaderSC>
@@ -18,19 +22,22 @@ const InformationsMural = () => {
         <QuantityTotalSC>Quantidade total de informativos: 32</QuantityTotalSC>
       </HeaderSC>
 
-      <NotificationEmailSC>
+      {/* <NotificationEmailSC>
         <Button maxWidth={235} text={"Notificar todos por e-mail"} variant="primary" />
-      </NotificationEmailSC>
+      </NotificationEmailSC> */}
 
       <InputAndButtonsContainerSC>
         <Input maxWidth={300} id={"search"} label={"Buscar"} />
         <ButtonContainerSC>
           <Button text={"Todos"} variant="secondary" />
-          <Button text={"Nova Multa"} variant="primary" />
+
+          <Button text={"Nova Informação"} variant="primary" onClick={handleModalOpened} />
         </ButtonContainerSC>
       </InputAndButtonsContainerSC>
 
       <CustomTable />
+
+      <Form opened={isShowing} handleModalClosed={handleModalClose} />
     </>
   );
 };

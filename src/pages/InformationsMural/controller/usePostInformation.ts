@@ -1,9 +1,13 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import toast from "react-hot-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { currentDateFormatted } from "../../../helpers/date";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { informationService } from "../../../services/informationService";
+import { completedDate } from "../../../helpers/date";
 
 const schema = z.object({
+  id: z.number(),
   titulo: z.string().nonempty("Titulo é obrigatório"),
   descricao: z.string().max(300).nonempty("Descrição é obrigatória"),
   ativo: z.boolean(),
@@ -13,29 +17,52 @@ const schema = z.object({
 
 type FormData = z.infer<typeof schema>;
 
-export function usePostInformation() {
+interface PostInformationProps {
+  handleModalClosed: () => void;
+}
+
+export function usePostInformation({ handleModalClosed }: PostInformationProps) {
+  const queryClient = useQueryClient();
+
   const {
     register,
     handleSubmit: hookFormSubmit,
     formState: { errors },
+    control,
+    watch,
+    reset,
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: {
-      dataCadastro: currentDateFormatted(),
+      id: 1,
+      ativo: true,
+      dataCadastro: completedDate,
+      dataAlteracao: completedDate,
     },
   });
 
-  const handeSubmit = hookFormSubmit(async (data) => {
-    console.log(data);
-    // try {
-    //   await mutateAsync(data)
-
-    //   toast.success('Ocorrência cadastrada com sucesso!')
-    // } catch (error) {
-    //   console.log(error)
-    //   toast.error('Verifique os seus campos!')
-    // }
+  const { mutateAsync, isPending } = useMutation({
+    mutationFn: (data: FormData) => {
+      return informationService.postInformation(data);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["informations-list"] });
+    },
   });
 
-  return { register, handeSubmit, errors };
+  const handleSubmit = hookFormSubmit(async (data) => {
+    try {
+      await mutateAsync(data);
+
+      toast.success("Informação cadastrada com sucesso!");
+
+      handleModalClosed();
+
+      reset();
+    } catch (error) {
+      toast.error("Verifique os seus campos!");
+    }
+  });
+
+  return { register, handleSubmit, control, errors, watch, isPending };
 }
