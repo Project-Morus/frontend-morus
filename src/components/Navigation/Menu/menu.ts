@@ -22,6 +22,11 @@ export const MENU_LIST: IMenuDataProps[] = [
     icon: "ph-money",
   },
   {
+    title: "Áreas Comuns",
+    link: "common-areas",
+    icon: "ph-coffee",
+  },
+  {
     title: "Ocorrências",
     link: "occurrences",
     icon: "ph-clipboard-text",
@@ -34,16 +39,16 @@ export const MENU_LIST: IMenuDataProps[] = [
   {
     title: "Mural de Informações",
     link: "informations-mural",
-    icon: "ph-newspaper"
+    icon: "ph-newspaper",
   },
   {
     title: "Encomendas",
     link: "orders",
-    icon: "ph-package"
+    icon: "ph-package",
   },
   {
     title: "Votação",
     link: "votes",
-    icon: "ph-gavel"
+    icon: "ph-gavel",
   },
 ];

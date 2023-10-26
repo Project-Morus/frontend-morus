@@ -1,8 +1,25 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import DefaultLayoutAuth from "../layout/DefaultLayoutAuth";
 import DefaultLayoutSystem from "../layout/DefaultLayoutSystem";
-import { Login, CondominiumRegister, ForgotPasswordFirstStep, ForgotPasswordSecondStep, LandingPage, Home, Residents, Archives, CashBook, Occurrences, Fines, InformationsMural, Orders, Votes } from "../pages";
+import {
+  Login,
+  CondominiumRegister,
+  ForgotPasswordFirstStep,
+  ForgotPasswordSecondStep,
+  LandingPage,
+  Home,
+  Residents,
+  Archives,
+  CashBook,
+  Occurrences,
+  Fines,
+  InformationsMural,
+  Orders,
+  Votes,
+} from "../pages";
 import { AuthGuard } from "./AuthGuard";
+import CommonArea from "../pages/CommonArea";
+import AreaDetails from "../pages/CommonArea/parts/AreaDetails";
 
 const Router = () => {
   return (
@@ -33,6 +50,8 @@ const Router = () => {
             <Route path="cashBook" element={<CashBook />} />
             <Route path="occurrences" element={<Occurrences />} />
             <Route path="informations-mural" element={<InformationsMural />} />
+            <Route path="common-areas" element={<CommonArea />} />
+            <Route path="common-areas/area" element={<AreaDetails />} />
           </Route>
         </Route>
       </Routes>

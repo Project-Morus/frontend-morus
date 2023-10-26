@@ -1,5 +1,5 @@
 import { ButtonContainerSC, HeaderSC, InputAndButtonsContainerSC } from "./styles";
-import { TitleSC, MessageSC, QuantityTotalSC } from "../styles";
+import { TitleSC, MessageSC } from "../styles";
 import { Button, Input, Modal } from "../../components";
 import CustomTable from "./parts/CustomTable";
 import PostForm from "./parts/PostForm";
@@ -28,7 +28,6 @@ const CashBook = () => {
       </HeaderSC>
 
       <InputAndButtonsContainerSC>
-        <Input maxWidth={300} id={"search"} label={"Buscar"} />
         <ButtonContainerSC>
           <Button maxWidth={200} text={"Nova Transação"} onClick={handleOpenRegisterModal} />
         </ButtonContainerSC>
