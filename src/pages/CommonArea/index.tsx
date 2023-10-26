@@ -1,13 +1,20 @@
-import { Input } from "../../components";
+import { Input, Loader } from "../../components";
 import { TitleSC, MessageSC } from "../styles";
 import { useGetCommonAreas } from "./controller";
 import Card from "./parts/Card";
-import { CardsContainerSC, HeaderSC } from "./styles";
+import { CardsContainerSC, ContentLoaderSC, HeaderSC } from "./styles";
 
 const CommonArea = () => {
-  const { data, isError, isLoading, emptyData } = useGetCommonAreas();
+  const { data, isLoading } = useGetCommonAreas();
 
   console.log(data);
+
+  if (isLoading)
+    return (
+      <ContentLoaderSC>
+        <Loader />
+      </ContentLoaderSC>
+    );
 
   return (
     <>
