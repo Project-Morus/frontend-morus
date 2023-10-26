@@ -10,7 +10,7 @@ export type InformationResponse = {
 };
 
 export async function getInformations() {
-  await sleep(1500);
+  await sleep();
 
   const response = await httpClient.get("/api/ListarInformacao");
 

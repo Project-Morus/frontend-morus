@@ -4,8 +4,9 @@ import { httpClient } from "../httpClient";
 export interface PostParams {
   titulo: string;
   descricao: string;
+  ativo: boolean;
   dataCadastro: string;
-  idUsuario: number;
+  dataAlteracao: string;
 }
 
 interface PostInformationProps {

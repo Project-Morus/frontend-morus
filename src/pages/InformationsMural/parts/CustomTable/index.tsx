@@ -1,34 +1,18 @@
-import { useEffect, useState } from "react";
 import { ITableHeaderProps } from "../../types";
-import { IconsSC } from "../../parts/Icons";
-import { CustomTableSC } from "./styles";
-import { httpClient } from "../../../../services/httpClient";
-import { CardInformationProps, CardInformationsProps } from "../../../Home/parts/types";
+import { CustomTableSC, ContentLoaderSC } from "./styles";
+import { useGetInformations } from "../../controller";
+import { IconsSC } from "../Icons";
+import { Loader } from "../../../../components";
 
 const CustomTable = () => {
-  const [rows, setRows] = useState<CardInformationsProps[]>([]);
+  const { data, isLoading } = useGetInformations();
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        console.log("entrou no try");
-        const response = await httpClient.get("api/ListarInformacao");
-
-        const dataRows = response.data.data.map((info: CardInformationProps) => ({
-          title: info.titulo,
-          description: info.descricao,
-          actions: <IconsSC data={info} />,
-        }));
-
-        setRows(dataRows);
-      } catch (error) {
-        console.log("entrou no catch");
-        console.error("Erro ao buscar dados da API:", error);
-      }
-    }
-
-    fetchData();
-  }, []);
+  if (isLoading)
+    return (
+      <ContentLoaderSC>
+        <Loader />
+      </ContentLoaderSC>
+    );
 
   const HEADER_TABLE_CELLS: ITableHeaderProps[] = [
     { colName: "Título" },
@@ -36,12 +20,19 @@ const CustomTable = () => {
     { colName: "Ações" },
   ];
 
+  const rowData = data?.map((info) => {
+    const [title, description] = Object.values(info).slice(1, 3);
+    return { title, description, actions: <IconsSC data={info} /> };
+  });
+
+  console.log(rowData);
+
   return (
     <CustomTableSC
       expanse
       expanseChildren
       headerCells={HEADER_TABLE_CELLS}
-      rowCells={rows}
+      rowCells={rowData}
       emptyMessage="A tabela está vazia no momento. Espere o síndico adicionar novas informações!"
     />
   );
