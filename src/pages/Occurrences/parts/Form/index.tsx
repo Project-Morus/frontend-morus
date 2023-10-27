@@ -1,5 +1,6 @@
 import { Input, Modal } from "../../../../components";
 import { usePostOcurrences } from "../../controller";
+import { Checkbox, Label } from "./styles";
 
 type FormTypes = {
   opened: boolean,
@@ -8,6 +9,7 @@ type FormTypes = {
 
 const Form = ({ opened, handleModalClosed }: FormTypes) => {
   const { handleSubmit, register, errors, isPending } = usePostOcurrences({ handleModalClosed })
+
 
   return (
     <Modal
@@ -35,6 +37,11 @@ const Form = ({ opened, handleModalClosed }: FormTypes) => {
           errorText={errors.descricao?.message}
           {...register('descricao')}
         />
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <Label htmlFor="isResolved">A ocorrência foi resolvida?</Label>
+          <Checkbox type="checkbox" {...register('resolvido')} id='isResolved' />
+        </div>
       </div>
     </Modal>
   );

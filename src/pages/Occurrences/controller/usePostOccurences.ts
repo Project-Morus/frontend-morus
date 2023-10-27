@@ -7,8 +7,8 @@ import { ocurrenceService } from "../../../services/ocurrenceService";
 import { completedDate } from "../../../helpers/date";
 
 const schema = z.object({
-  titulo: z.string().nonempty("Titulo é obrigatório"),
-  descricao: z.string().max(300).nonempty("Descrição é obrigatório"),
+  titulo: z.string().min(1, "Titulo é obrigatório"),
+  descricao: z.string().min(1, "Descrição é obrigatório").max(300),
   dataCadastro: z.string(),
   idUsuario: z.number().int().min(0),
   resolvido: z.boolean()
