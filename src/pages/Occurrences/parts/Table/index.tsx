@@ -18,7 +18,7 @@ function TableOcurrence() {
   const { handleSubmit, register, errors, isPending: isPendingEdit, isShowingEdit, handleModalOpenedEdit, handleModalClosedEdit, reset } = usePutOcurrences()
 
   const [id, setId] = useState<number>(0)
-  const [test, setTest] = useState<PutParams>({
+  const [ocurrenceValue, setOcurrenceValue] = useState<PutParams>({
     idUsuario: 0,
     id: 0,
     resolvido: false,
@@ -35,7 +35,7 @@ function TableOcurrence() {
   }
 
   const initiateTestProcess = async (item: PutParams) => {
-    setTest(item)
+    setOcurrenceValue(item)
 
     handleModalOpenedEdit()
   }
@@ -43,15 +43,15 @@ function TableOcurrence() {
   useEffect(() => {
     const initialValues = {
       idUsuario: 2,
-      id: test.id,
-      resolvido: test.resolvido,
-      titulo: test.titulo,
-      descricao: test.descricao,
-      dataCadastro: test.dataCadastro,
+      id: ocurrenceValue.id,
+      resolvido: ocurrenceValue.resolvido,
+      titulo: ocurrenceValue.titulo,
+      descricao: ocurrenceValue.descricao,
+      dataCadastro: ocurrenceValue.dataCadastro,
     };
 
     reset(initialValues);
-  }, [test, reset]);
+  }, [ocurrenceValue, reset]);
 
   if (isLoading) return <ContentLoaderSC><Loader /></ContentLoaderSC>
 
