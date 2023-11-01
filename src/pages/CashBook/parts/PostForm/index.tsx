@@ -19,7 +19,7 @@ const PostForm = ({ opened, handleModalClosed }: FormTypes) => {
       isLoading={isPending}
       iconName="ph-money"
     >
-      <form style={{ display: "flex", gap: "1rem", flexDirection: "column" }}>
+      <div style={{ display: "flex", gap: "1rem", flexDirection: "column" }}>
         <Input
           id="valorTransacao"
           label={"Valor"}
@@ -54,7 +54,7 @@ const PostForm = ({ opened, handleModalClosed }: FormTypes) => {
           errorText={errors.descricaoTransacao?.message}
           {...register("descricaoTransacao")}
         />
-      </form>
+      </div>
     </Modal>
   );
 };
