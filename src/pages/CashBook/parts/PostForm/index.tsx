@@ -7,7 +7,9 @@ type FormTypes = {
 };
 
 const PostForm = ({ opened, handleModalClosed }: FormTypes) => {
-  const { handleSubmit, register, errors, isPending } = usePostCashBook({ handleModalClosed });
+  const { handleSubmit, register, errors, isPending, watch } = usePostCashBook({ handleModalClosed });
+
+  console.log(watch('valorTransacao'))
 
   return (
     <Modal
@@ -21,12 +23,13 @@ const PostForm = ({ opened, handleModalClosed }: FormTypes) => {
     >
       <form style={{ display: "flex", gap: "1rem", flexDirection: "column" }}>
         <Input
-          id={"valor"}
+          id="valorTransacao"
           label={"Valor"}
-          type="text"
-          hasError={!!errors.descricaoTransacao}
-          errorText={errors.descricaoTransacao?.message}
-          {...register("valorTransacao")}
+          type="number"
+          min={1}
+          hasError={!!errors.valorTransacao}
+          errorText={errors.valorTransacao?.message}
+          {...register("valorTransacao", { valueAsNumber: true })}
         />
         <Input
           id={"categoria"}

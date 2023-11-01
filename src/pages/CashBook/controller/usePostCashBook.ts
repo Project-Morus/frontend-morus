@@ -6,11 +6,11 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { cashBookService } from "../../../services/cashBookService";
 
 const schema = z.object({
-  descricaoTransacao: z.string().max(300).nonempty("Descrição é obrigatória"),
-  categoria: z.string().max(300).nonempty("Caregoria é obrigatória"),
+  descricaoTransacao: z.string().max(300).min(1, "Descrição é obrigatória"),
+  categoria: z.string().max(300).min(1, "Categoria é obrigatória"),
   torre: z.string(),
-  valorTransacao: z.number(),
-  tipoTransacao: z.number(),
+  valorTransacao: z.number().int(),
+  tipoTransacao: z.number().int(),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -33,6 +33,7 @@ export function usePostCashBook({ handleModalClosed }: PostCashBookProps) {
     resolver: zodResolver(schema),
     defaultValues: {
       tipoTransacao: 0,
+      valorTransacao: 0,
     },
   });
 
@@ -47,6 +48,7 @@ export function usePostCashBook({ handleModalClosed }: PostCashBookProps) {
 
   const handleSubmit = hookFormSubmit(async (data) => {
     try {
+      console.log(data)
       await mutateAsync(data);
 
       toast.success("Transação cadastrada com sucesso!");
@@ -55,6 +57,7 @@ export function usePostCashBook({ handleModalClosed }: PostCashBookProps) {
 
       reset();
     } catch (error) {
+      console.log(data)
       toast.error("Verifique os seus campos!");
     }
   });
