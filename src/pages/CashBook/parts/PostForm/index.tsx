@@ -7,9 +7,7 @@ type FormTypes = {
 };
 
 const PostForm = ({ opened, handleModalClosed }: FormTypes) => {
-  const { handleSubmit, register, errors, isPending, watch } = usePostCashBook({ handleModalClosed });
-
-  console.log(watch('valorTransacao'))
+  const { handleSubmit, register, errors, isPending } = usePostCashBook({ handleModalClosed });
 
   return (
     <Modal
