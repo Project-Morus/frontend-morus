@@ -11,8 +11,8 @@ const schema = z.object({
   descricao: z.string().min(1, "Descrição é obrigatório").max(300),
   dataCadastro: z.string(),
   idUsuario: z.number().int().min(0),
-  resolvido: z.boolean()
-})
+  resolvido: z.boolean(),
+});
 
 type FormData = z.infer<typeof schema>;
 
@@ -21,7 +21,7 @@ interface PostOccurrencesProps {
 }
 
 export function usePostOcurrences({ handleModalClosed }: PostOccurrencesProps) {
-  const queryClient = useQueryClient()
+  const queryClient = useQueryClient();
 
   const {
     register,
@@ -36,32 +36,31 @@ export function usePostOcurrences({ handleModalClosed }: PostOccurrencesProps) {
       dataCadastro: completedDate,
       idUsuario: 2,
       resolvido: false,
-    }
-  })
+    },
+  });
 
   const { mutateAsync, isPending } = useMutation({
     mutationFn: (data: FormData) => {
       return ocurrenceService.postOcurrences(data);
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['ocurrence-list'] })
-    }
+      queryClient.invalidateQueries({ queryKey: ["ocurrence-list"] });
+    },
   });
-
 
   const handleSubmit = hookFormSubmit(async (data) => {
     try {
-      await mutateAsync(data)
+      await mutateAsync(data);
 
-      toast.success('Ocorrência cadastrada com sucesso!')
+      toast.success("Ocorrência cadastrada com sucesso!");
 
-      handleModalClosed()
+      handleModalClosed();
 
-      reset()
+      reset();
     } catch (error) {
-      toast.error('Verifique os seus campos!')
+      toast.error("Verifique os seus campos!");
     }
-  })
+  });
 
-  return { register, handleSubmit, control, errors, watch, isPending }
+  return { register, handleSubmit, control, errors, watch, isPending };
 }

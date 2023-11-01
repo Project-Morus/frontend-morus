@@ -5,8 +5,6 @@ export interface PostParams {
   titulo: string;
   descricao: string;
   ativo: boolean;
-  dataCadastro: string;
-  dataAlteracao: string;
 }
 
 interface PostInformationProps {

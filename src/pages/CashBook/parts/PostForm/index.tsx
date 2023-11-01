@@ -1,51 +1,60 @@
-import { Button, Input } from "../../../../components";
-import { usePostCashBook } from "../../controller/usePostInformation";
-import { ModalButtonContainerSC } from "../../styles";
+import { Input, Modal } from "../../../../components";
+import { usePostCashBook } from "../../controller";
 
-const PostForm = () => {
-  const { register, errors } = usePostCashBook();
+type FormTypes = {
+  opened: boolean;
+  handleModalClosed: () => void;
+};
+
+const PostForm = ({ opened, handleModalClosed }: FormTypes) => {
+  const { handleSubmit, register, errors, isPending } = usePostCashBook({ handleModalClosed });
 
   return (
-    <form style={{ display: "flex", gap: "1rem", flexDirection: "column" }}>
-      <Input
-        id={"valor"}
-        label={"Valor"}
-        type="text"
-        hasError={!!errors.descricao}
-        errorText={errors.descricao?.message}
-        {...register("valor")}
-      />
-      <Input
-        id={"categoria"}
-        label={"Categoria"}
-        type="text"
-        hasError={!!errors.descricao}
-        errorText={errors.descricao?.message}
-        {...register("categoria")}
-      />
+    <Modal
+      variant="form"
+      modalTitle="Cadastrar transação"
+      open={opened}
+      closeModal={handleModalClosed}
+      onConfirmModal={handleSubmit}
+      isLoading={isPending}
+      iconName="ph-money"
+    >
+      <form style={{ display: "flex", gap: "1rem", flexDirection: "column" }}>
+        <Input
+          id={"valor"}
+          label={"Valor"}
+          type="text"
+          hasError={!!errors.descricaoTransacao}
+          errorText={errors.descricaoTransacao?.message}
+          {...register("valorTransacao")}
+        />
+        <Input
+          id={"categoria"}
+          label={"Categoria"}
+          type="text"
+          hasError={!!errors.descricaoTransacao}
+          errorText={errors.descricaoTransacao?.message}
+          {...register("categoria")}
+        />
 
-      <ModalButtonContainerSC>
-        <Button text="Entrada" variant="green" />
-        <Button text="Saída" variant="red" />
-      </ModalButtonContainerSC>
-
-      <Input
-        id={"torre"}
-        label={"Torre"}
-        type="text"
-        hasError={!!errors.descricao}
-        errorText={errors.descricao?.message}
-        {...register("torre")}
-      />
-      <Input
-        id={"descricao"}
-        label={"Descrição"}
-        type="text"
-        hasError={!!errors.descricao}
-        errorText={errors.descricao?.message}
-        {...register("descricao")}
-      />
-    </form>
+        <Input
+          id={"torre"}
+          label={"Torre"}
+          type="text"
+          hasError={!!errors.descricaoTransacao}
+          errorText={errors.descricaoTransacao?.message}
+          {...register("torre")}
+        />
+        <Input
+          id={"descricao"}
+          label={"Descrição"}
+          type="text"
+          hasError={!!errors.descricaoTransacao}
+          errorText={errors.descricaoTransacao?.message}
+          {...register("descricaoTransacao")}
+        />
+      </form>
+    </Modal>
   );
 };
 

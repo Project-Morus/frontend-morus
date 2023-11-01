@@ -3,6 +3,7 @@ import { httpClient } from "../../services/httpClient";
 
 import CardInformations from "./parts/CardInformations";
 import { CardInformationProps } from "./parts/types";
+import { VictoryArea } from "victory";
 
 const Home = () => {
   const [data, setData] = useState<CardInformationProps[]>([]);
@@ -31,7 +32,12 @@ const Home = () => {
       return <CardInformations titulo={item.titulo} descricao={item.descricao} />;
     });
 
-  return <>{renderList()}</>;
+  return (
+    <>
+      {renderList()}
+      <VictoryArea data={[{ x: 2, y: 35 }]} />
+    </>
+  );
 };
 
 export default Home;

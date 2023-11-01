@@ -2,13 +2,11 @@ import { sleep } from "../../helpers/sleep";
 import { httpClient } from "../httpClient";
 
 export interface PostParams {
-  id: number;
   descricaoTransacao: string;
   categoria: string;
   torre: string;
-  numeroConta: string;
   valorTransacao: number;
-  dataTransacao: string;
+  tipoTransacao: number;
 }
 
 interface PostCashBookProps {

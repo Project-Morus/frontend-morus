@@ -3,22 +3,23 @@ import { z } from "zod";
 import toast from "react-hot-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { informationService } from "../../../services/informationService";
-import { useGetInformations } from "./useGetInformations";
+import { cashBookService } from "../../../services/cashBookService";
 
 const schema = z.object({
-  titulo: z.string().nonempty("Titulo é obrigatório"),
-  descricao: z.string().max(300).nonempty("Descrição é obrigatória"),
-  ativo: z.boolean(),
+  descricaoTransacao: z.string().max(300).nonempty("Descrição é obrigatória"),
+  categoria: z.string().max(300).nonempty("Caregoria é obrigatória"),
+  torre: z.string(),
+  valorTransacao: z.number(),
+  tipoTransacao: z.number(),
 });
 
 type FormData = z.infer<typeof schema>;
 
-interface PostInformationProps {
+interface PostCashBookProps {
   handleModalClosed: () => void;
 }
 
-export function usePostInformation({ handleModalClosed }: PostInformationProps) {
+export function usePostCashBook({ handleModalClosed }: PostCashBookProps) {
   const queryClient = useQueryClient();
 
   const {
@@ -31,16 +32,16 @@ export function usePostInformation({ handleModalClosed }: PostInformationProps) 
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: {
-      ativo: true,
+      tipoTransacao: 0,
     },
   });
 
   const { mutateAsync, isPending } = useMutation({
     mutationFn: (data: FormData) => {
-      return informationService.postInformation(data);
+      return cashBookService.postCashBook(data);
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["informations-list"] });
+      queryClient.invalidateQueries({ queryKey: ["cash-book-list"] });
     },
   });
 
@@ -48,7 +49,7 @@ export function usePostInformation({ handleModalClosed }: PostInformationProps) 
     try {
       await mutateAsync(data);
 
-      toast.success("Informação cadastrada com sucesso!");
+      toast.success("Transação cadastrada com sucesso!");
 
       handleModalClosed();
 

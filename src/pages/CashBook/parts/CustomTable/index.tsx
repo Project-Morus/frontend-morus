@@ -1,35 +1,24 @@
-import { useEffect, useState } from "react";
-import { CashBookProps, ITableHeaderProps } from "../../types";
+import { ITableHeaderProps } from "../../types";
 import { IconsSC } from "../../Icons";
-import { CustomTableSC } from "./styles";
-import { httpClient } from "../../../../services/httpClient";
+import { ContentLoaderSC, CustomTableSC } from "./styles";
+import { useGetCashBook } from "../../controller";
+import { Loader } from "../../../../components";
+import { formatDate } from "../../../../helpers/date";
 
 const CustomTable = () => {
-  const [rows, setRows] = useState<CashBookProps[]>([]);
+  const { data, isLoading, emptyData } = useGetCashBook();
+  if (isLoading)
+    return (
+      <ContentLoaderSC>
+        <Loader />
+      </ContentLoaderSC>
+    );
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        console.log("entrou no try");
-        const response = await httpClient.get("api/ListarLivroCaixa");
-
-        const dataRows = response.data.data.map((info: CashBookProps) => ({
-          tower: info.torre,
-          description: info.descricaoTransacao,
-          value: info.valorTransacao,
-          trasactionDate: info.descricaoTransacao,
-          category: info.categoria,
-          actions: <IconsSC data={info} />,
-        }));
-
-        setRows(dataRows);
-      } catch (error) {
-        console.log("entrou no catch");
-        console.error("Erro ao buscar dados da API:", error);
-      }
-    }
-    fetchData();
-  }, []);
+  const rowData = data?.map((info) => {
+    const [description, category, tower, value, transactionDate] = Object.values(info).slice(1, 6);
+    const formatedTransactionDate = formatDate(transactionDate);
+    return { tower, description, value, formatedTransactionDate, category, actions: <IconsSC data={info} /> };
+  });
 
   const HEADER_TABLE_CELLS: ITableHeaderProps[] = [
     { colName: "Torre" },
@@ -43,7 +32,7 @@ const CustomTable = () => {
   return (
     <CustomTableSC
       headerCells={HEADER_TABLE_CELLS}
-      rowCells={rows}
+      rowCells={rowData}
       emptyMessage="A tabela está vazia no momento. Espere o síndico adicionar novas informações!"
     />
   );

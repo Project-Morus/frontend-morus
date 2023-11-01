@@ -1,6 +1,6 @@
 import { ButtonContainerSC, HeaderSC, InputAndButtonsContainerSC } from "./styles";
 import { TitleSC, MessageSC } from "../styles";
-import { Button, Input, Modal } from "../../components";
+import { Button, Modal } from "../../components";
 import CustomTable from "./parts/CustomTable";
 import PostForm from "./parts/PostForm";
 import { InputContainerSC } from "./Icons/styles";
@@ -35,20 +35,7 @@ const CashBook = () => {
 
       <CustomTable />
 
-      <Modal
-        open={openedRegisterModal}
-        closeModal={handleCloseRegisterModal}
-        variant="form"
-        iconName="ph-book-bookmark"
-        modalTitle="Nova Transação"
-        buttonLabel="Cadastrar"
-        onConfirmModal={handleCloseRegisterModal}
-        onCancelModal={handleCloseRegisterModal}
-      >
-        <InputContainerSC>
-          <PostForm />
-        </InputContainerSC>
-      </Modal>
+      <PostForm opened={openedRegisterModal} handleModalClosed={handleCloseRegisterModal} />
     </>
   );
 };
