@@ -30,10 +30,6 @@ const Card = ({id, title, description, status, expired_at}: ICardProps) => {
   const theme = useTheme()
   const {handleDelete, isShowingDelete, deleteOpened, deleteClosed, isPending } = useDeleteVote(id);
 
- function initialProcessDelete() {
-    handleDelete()
- }
-
   return (
     <>
       <ContainerSC>
@@ -77,7 +73,7 @@ const Card = ({id, title, description, status, expired_at}: ICardProps) => {
 
       <ModalDelete 
         opened={isShowingDelete} 
-        onConfirmModal={initialProcessDelete} 
+        onConfirmModal={handleDelete} 
         closeModal={deleteClosed}
         isLoading={isPending}
       />
