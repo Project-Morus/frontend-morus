@@ -43,7 +43,7 @@ const Card = ({id, title, description, status, expired_at}: ICardProps) => {
             <Status openedVote={status} />
           </BoxHeaderSC>
 
-          <CustomIconTrash name="ph-trash" onClick={() => deleteOpened()}/>
+          <CustomIconTrash name="ph-trash" onClick={deleteOpened}/>
         </HeaderSC>
 
         <ContentSC>
