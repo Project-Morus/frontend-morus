@@ -9,8 +9,6 @@ const Orders = () => {
 
   const messageCount = emptyData ? 'Sem ocorrências!' : `Quantidade total de ocorrências: ${count}`
 
-  console.log(data)
-
   return (
     <>
       <HeaderSC>
@@ -46,13 +44,17 @@ const Orders = () => {
 
       {data?.map(item => (
         <Card 
-        key={item.id} 
-        title={item.tema} 
-        description={item.descricao} 
-        expired_at={item.dataExpiracao} 
-        status={item.ativa} 
+          key={item.id} 
+          id={item.id}
+          title={item.tema} 
+          description={item.descricao} 
+          expired_at={item.dataExpiracao} 
+          status={item.ativa} 
         />
       ))}
+
+
+
     </>
   );
 };
