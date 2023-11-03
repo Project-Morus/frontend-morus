@@ -1,9 +1,29 @@
 import { useTheme } from "styled-components";
 import { Icon } from "../../../../components";
 import Status from "../Status";
-import { ContainerSC, ContentSC, MainTextsSC, HeaderSC, CustomIconCard, CustomIconTrash, BoxHeaderSC, TitleSC, DateSC, DescriptionSC, AmountVotesSC, VoteTextSC } from "./styles";
+import { 
+  ContainerSC, 
+  ContentSC, 
+  MainTextsSC, 
+  HeaderSC, 
+  CustomIconCard, 
+  CustomIconTrash, 
+  BoxHeaderSC, 
+  TitleSC, 
+  DateSC, 
+  DescriptionSC, 
+  AmountVotesSC, 
+  VoteTextSC } from "./styles";
+import { formatDate } from "../../../../helpers/date";
 
-const Card = () => {
+  interface ICardProps {
+    title: string,
+    description: string,
+    expired_at: string,
+    status: boolean,
+  }
+
+const Card = ({title, description, status, expired_at}: ICardProps) => {
   const theme = useTheme()
   return (
     <ContainerSC>
@@ -11,19 +31,19 @@ const Card = () => {
         <BoxHeaderSC>
           <MainTextsSC>
             <CustomIconCard variant="primary" icon='ph-gavel' />
-            <TitleSC>Implementação de Medidas Sustentáveis no Condomínio</TitleSC>
+            <TitleSC>{title}</TitleSC>
           </MainTextsSC>
 
-          <Status openedVote />
+          <Status openedVote={status} />
         </BoxHeaderSC>
 
         <CustomIconTrash name="ph-trash" />
       </HeaderSC>
 
       <ContentSC>
-        <DateSC>01/11/2023</DateSC>
+        <DateSC>{formatDate(expired_at)}</DateSC>
         <DescriptionSC>
-          O tema de votação em questão diz respeito à possibilidade de implementar medidas sustentáveis no nosso condomínio, com o objetivo de promover práticas mais ecológicas e conscientes em nosso ambiente residencial. A sustentabilidade é uma preocupação global crescente, e é importante que também façamos a nossa parte para minimizar o impacto ambiental de nosso condomínio.
+          {description}
         </DescriptionSC>
       </ContentSC>
 

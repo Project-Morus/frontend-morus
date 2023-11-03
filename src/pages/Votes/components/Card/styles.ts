@@ -8,6 +8,10 @@ export const ContainerSC = styled.main`
   border-radius: ${({ theme }) => theme.border.radius.regular};
 
   box-shadow: 0px 4px 4px 0px rgba(0, 74, 173, 0.15);
+
+  & + & {
+    margin-top: ${({ theme }) => theme.spacing[7]};
+  }
 `
 
 export const HeaderSC = styled.header`
