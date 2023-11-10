@@ -7,6 +7,7 @@ export interface CashBookProps {
   valorTransacao: number;
   dataTransacao: string;
   idCondominio: number;
+  tipoTransacao: number;
 }
 
 export interface ITableHeaderProps {

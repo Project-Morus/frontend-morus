@@ -1,63 +1,105 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Icon, Modal } from "../../../components";
-import { InputContainerSC } from "./styles";
-import { CardInformationProps } from "../../Home/parts/types";
-import PostForm from "../parts/PostForm";
+import { useDeleteCashBook, usePutCashBook } from "../controller";
+import EditForm from "../parts/EditForm";
+import { CashBookResponse } from "../../../services/cashBookService/types";
 
-export const IconsSC = (data: CardInformationProps) => {
-  const [openedDeleteModal, setOpenedDeleteModal] = useState<boolean>(false);
-  const [openedEditModal, setOpenedEditModal] = useState<boolean>(false);
+export const IconsSC = (cashBookdata: CashBookResponse) => {
+  const {
+    handleDelete,
+    deleteOpened,
+    isShowingDelete,
+    deleteClosed,
+    isPending,
+  } = useDeleteCashBook();
 
-  const handleOpenDeleteModal = () => {
-    setOpenedDeleteModal(true);
+  const {
+    handleSubmit,
+    errors,
+    isPending: isPendingEdit,
+    isShowingEdit,
+    register,
+    putClosed,
+    putOpened,
+    reset,
+  } = usePutCashBook();
+
+  const [id, setId] = useState<number>(0);
+
+  const [cashBookValue, setCashBookValue] = useState<CashBookResponse>({
+    id: 0,
+    descricaoTransacao: "",
+    categoria: "",
+    torre: "",
+    dataTransacao: "",
+    valorTransacao: 0,
+    tipoTransacao: 0,
+  });
+
+  const handleOpenEditModal = (item: CashBookResponse) => {
+    setCashBookValue(item);
+
+    putOpened();
   };
 
-  const handleCloseDeleteModal = () => {
-    console.log(data);
-    setOpenedDeleteModal(false);
+  const initiateDeletionProcess = (idCashBook: number) => {
+    setId(idCashBook);
+
+    deleteOpened();
   };
 
-  const handleOpenEditModal = () => {
-    setOpenedEditModal(true);
-  };
+  useEffect(() => {
+    const initialValues = {
+      id: cashBookValue.id,
+      descricaoTransacao: cashBookValue.descricaoTransacao,
+      categoria: cashBookValue.categoria,
+      torre: cashBookValue.torre,
+      dataTransacao: cashBookValue.dataTransacao,
+      valorTransacao: cashBookValue.valorTransacao,
+      tipoTransacao: cashBookValue.tipoTransacao,
+    };
 
-  const handleCloseEditModal = () => {
-    setOpenedEditModal(false);
-  };
+    reset(initialValues);
+  }, [cashBookValue, reset]);
 
   return (
     <>
       <div style={{ display: "flex", gap: "0.8rem" }}>
-        <Icon name="ph-pencil-simple-line" size="20" onClick={handleOpenEditModal} />
-        <Icon name="ph-trash" color="#CE323B" size="20" onClick={handleOpenDeleteModal} />
+        <Icon
+          name="ph-pencil-simple-line"
+          size="20"
+          onClick={() => handleOpenEditModal(cashBookdata)}
+        />
+        <Icon
+          name="ph-trash"
+          color="#CE323B"
+          size="20"
+          onClick={() => initiateDeletionProcess(cashBookdata.id)}
+        />
       </div>
 
       <Modal
-        open={openedDeleteModal}
-        closeModal={handleCloseDeleteModal}
+        open={isShowingDelete}
+        isLoading={isPending}
+        closeModal={deleteClosed}
         variant="warning"
-        onConfirmModal={handleCloseDeleteModal}
-
+        onConfirmModal={() => handleDelete(id)}
       >
         <p>
-          Tem certeza que deseja excluir o item da lista do Livro caixa do condôminio Ilha de Capri? Esta ação não
-          poderá ser desfeita.
+          Tem certeza que deseja excluir a transação "
+          {cashBookdata.descricaoTransacao}" do livro caixa do condomínio Ilha
+          de Capri? Esta ação não poderá ser desfeita.
         </p>
       </Modal>
 
-      <Modal
-        open={openedEditModal}
-        closeModal={handleCloseEditModal}
-        variant="form"
-        iconName="ph-book-bookmark"
-        modalTitle="Editar Transação"
-        buttonLabel="Confirmar Edição"
-        onConfirmModal={handleCloseEditModal}
-      >
-        <InputContainerSC>
-          <PostForm />
-        </InputContainerSC>
-      </Modal>
+      <EditForm
+        opened={isShowingEdit}
+        closeModal={putClosed}
+        errors={errors}
+        register={register}
+        onConfirmModal={handleSubmit}
+        isLoading={isPendingEdit}
+      />
     </>
   );
 };

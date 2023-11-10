@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import toast from "react-hot-toast";
-import { CashBookResponse } from "../../../services/cashBookService/get";
 import { cashBookService } from "../../../services/cashBookService";
+import { CashBookResponse } from "../../../services/cashBookService/types";
 
 export function useGetCashBook() {
   const { data, isError, isLoading } = useQuery<CashBookResponse[]>({
@@ -15,7 +15,7 @@ export function useGetCashBook() {
   const count = data?.length;
 
   if (isError) {
-    toast.error("Ops! Ocorreu um erro ao carregar os dados!", { id: "cash-book-list" });
+    toast.error("Ops! Ocorreu um erro ao carregar os dados!", { id: "cash-book" });
   }
 
   return { data, isError, isLoading, emptyData, count };

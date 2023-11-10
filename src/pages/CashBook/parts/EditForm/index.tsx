@@ -1,24 +1,32 @@
 import { Input, Modal } from "../../../../components";
-import { usePostCashBook } from "../../controller";
+import { FieldErrors, UseFormRegister } from "react-hook-form";
+import { FormData } from "../../controller";
 
 type FormTypes = {
   opened: boolean;
-  handleModalClosed: () => void;
+  closeModal: () => void;
+  onConfirmModal: () => void;
+  isLoading: boolean;
+  register: UseFormRegister<FormData>;
+  errors: FieldErrors<FormData>;
 };
 
-const PostForm = ({ opened, handleModalClosed }: FormTypes) => {
-  const { handleSubmit, register, errors, isPending } = usePostCashBook({
-    handleModalClosed,
-  });
-
+const EditForm = ({
+  opened,
+  closeModal,
+  onConfirmModal,
+  errors,
+  isLoading,
+  register,
+}: FormTypes) => {
   return (
     <Modal
       variant="form"
       modalTitle="Cadastrar transação"
       open={opened}
-      closeModal={handleModalClosed}
-      onConfirmModal={handleSubmit}
-      isLoading={isPending}
+      closeModal={closeModal}
+      onConfirmModal={onConfirmModal}
+      isLoading={isLoading}
       iconName="ph-money"
     >
       <div style={{ display: "flex", gap: "1rem", flexDirection: "column" }}>
@@ -58,6 +66,7 @@ const PostForm = ({ opened, handleModalClosed }: FormTypes) => {
           errorText={errors.descricaoTransacao?.message}
           {...register("torre")}
         />
+
         <Input
           id={"descricao"}
           label={"Descrição"}
@@ -71,4 +80,4 @@ const PostForm = ({ opened, handleModalClosed }: FormTypes) => {
   );
 };
 
-export default PostForm;
+export default EditForm;

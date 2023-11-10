@@ -1,51 +1,60 @@
-import { useEffect, useState } from "react";
-import { CashBookProps, ITableHeaderProps } from "../../types";
 import { IconsSC } from "../../Icons";
-import { CustomTableSC } from "./styles";
-import { httpClient } from "../../../../services/httpClient";
+import { ContentLoaderSC } from "./styles";
+import { useGetCashBook } from "../../controller";
+import { Loader, NewTable } from "../../../../components";
+import { formatDate } from "../../../../helpers/date";
+import { WrapperIcons } from "../../../MonthlyFee/parts/Table/styles";
+import { HEADER_TABLE_CELLS } from "./mockData";
 
 const CustomTable = () => {
-  const [rows, setRows] = useState<CashBookProps[]>([]);
+  const { data, isLoading } = useGetCashBook();
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        console.log("entrou no try");
-        const response = await httpClient.get("api/ListarLivroCaixa");
-
-        const dataRows = response.data.data.map((info: CashBookProps) => ({
-          tower: info.torre,
-          description: info.descricaoTransacao,
-          value: info.valorTransacao,
-          trasactionDate: info.descricaoTransacao,
-          category: info.categoria,
-          actions: <IconsSC data={info} />,
-        }));
-
-        setRows(dataRows);
-      } catch (error) {
-        console.log("entrou no catch");
-        console.error("Erro ao buscar dados da API:", error);
-      }
-    }
-    fetchData();
-  }, []);
-
-  const HEADER_TABLE_CELLS: ITableHeaderProps[] = [
-    { colName: "Torre" },
-    { colName: "Descrição" },
-    { colName: "Valor" },
-    { colName: "Data" },
-    { colName: "Categoria" },
-    { colName: "Ações" },
-  ];
+  if (isLoading)
+    return (
+      <ContentLoaderSC>
+        <Loader />
+      </ContentLoaderSC>
+    );
 
   return (
-    <CustomTableSC
-      headerCells={HEADER_TABLE_CELLS}
-      rowCells={rows}
-      emptyMessage="A tabela está vazia no momento. Espere o síndico adicionar novas informações!"
-    />
+    <>
+      <NewTable.Container>
+        <NewTable.Head>
+          <NewTable.Row>
+            {HEADER_TABLE_CELLS.map((header, index) => (
+              <NewTable.CellHeader key={index}>
+                {header.colName}
+              </NewTable.CellHeader>
+            ))}
+          </NewTable.Row>
+        </NewTable.Head>
+
+        {data?.map((item) => (
+          <NewTable.Body>
+            <NewTable.Row>
+              <NewTable.Cell>{item.torre}</NewTable.Cell>
+              <NewTable.Cell>{item.descricaoTransacao}</NewTable.Cell>
+              <NewTable.Cell>R${item.valorTransacao}</NewTable.Cell>
+              <NewTable.Cell>{formatDate(item.dataTransacao)}</NewTable.Cell>
+              <NewTable.Cell>{item.categoria}</NewTable.Cell>
+              <NewTable.Cell>
+                <WrapperIcons>
+                  <IconsSC
+                    categoria={item.categoria}
+                    dataTransacao={item.dataTransacao}
+                    descricaoTransacao={item.descricaoTransacao}
+                    id={item.id}
+                    tipoTransacao={item.tipoTransacao}
+                    torre={item.torre}
+                    valorTransacao={item.valorTransacao}
+                  />
+                </WrapperIcons>
+              </NewTable.Cell>
+            </NewTable.Row>
+          </NewTable.Body>
+        ))}
+      </NewTable.Container>
+    </>
   );
 };
 
