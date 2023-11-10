@@ -2,9 +2,8 @@ export type CashBookResponse = {
   id: number;
   descricaoTransacao: string;
   valorTransacao: number;
-  categoria: number;
+  categoria: string;
   torre: string;
   dataTransacao: string;
   tipoTransacao: number;
-  idCondominio: number;
 };

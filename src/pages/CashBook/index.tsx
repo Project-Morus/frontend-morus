@@ -3,7 +3,6 @@ import { TitleSC, MessageSC } from "../styles";
 import { Button, Modal } from "../../components";
 import CustomTable from "./parts/CustomTable";
 import PostForm from "./parts/PostForm";
-import { InputContainerSC } from "./Icons/styles";
 import { useState } from "react";
 
 const CashBook = () => {

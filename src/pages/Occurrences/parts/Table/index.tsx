@@ -5,11 +5,7 @@ import { formatDate } from "../../../../helpers/date";
 import { HEADER_TABLE_CELLS } from "../../mockData";
 import Status from "../Status";
 import { WrapperIcons } from "./styles";
-import {
-  useDeleteOcurrences,
-  useGetOcurrences,
-  usePutOcurrences,
-} from "../../controller";
+import { useDeleteOcurrences, useGetOcurrences, usePutOcurrences } from "../../controller";
 import { Checkbox, Label } from "../Form/styles";
 import { PutParams } from "../../../../services/ocurrenceService/put";
 import { ContentLoaderSC } from "../../../styles";
@@ -17,13 +13,7 @@ import { ContentLoaderSC } from "../../../styles";
 function TableOcurrence() {
   const theme = useTheme();
   const { data, isError, isLoading, emptyData } = useGetOcurrences();
-  const {
-    handleDelete,
-    isShowingDelete,
-    deleteOpened,
-    deleteClosed,
-    isPending,
-  } = useDeleteOcurrences();
+  const { handleDelete, isShowingDelete, deleteOpened, deleteClosed, isPending } = useDeleteOcurrences();
   const {
     handleSubmit,
     register,
@@ -51,7 +41,7 @@ function TableOcurrence() {
     deleteOpened();
   };
 
-  const initiateUpdateProcess = async (item: PutParams) => {
+  const initiateTestProcess = async (item: PutParams) => {
     setOcurrenceValue(item);
 
     handleModalOpenedEdit();
@@ -83,9 +73,7 @@ function TableOcurrence() {
         <NewTable.Head>
           <NewTable.Row>
             {HEADER_TABLE_CELLS.map((header, index) => (
-              <NewTable.CellHeader key={index}>
-                {header.colName}
-              </NewTable.CellHeader>
+              <NewTable.CellHeader key={index}>{header.colName}</NewTable.CellHeader>
             ))}
           </NewTable.Row>
         </NewTable.Head>
@@ -102,10 +90,7 @@ function TableOcurrence() {
                 </NewTable.Cell>
                 <NewTable.Cell>
                   <WrapperIcons>
-                    <Icon
-                      name="ph-pencil-simple-line"
-                      onClick={() => initiateUpdateProcess(item)}
-                    />
+                    <Icon name="ph-pencil-simple-line" onClick={() => initiateTestProcess(item)} />
                     <Icon
                       name="ph-trash"
                       color={theme.colors.red[500]}
@@ -126,8 +111,7 @@ function TableOcurrence() {
         onConfirmModal={() => handleDelete(id)}
         isLoading={isPending}
       >
-        Tem certeza que deseja excluir a ocorrência do condomínio Ilha de Capri?
-        Esta ação não poderá ser desfeita.
+        Tem certeza que deseja excluir a ocorrência do condomínio Ilha de Capri? Esta ação não poderá ser desfeita.
       </Modal>
 
       <Modal
@@ -158,11 +142,7 @@ function TableOcurrence() {
 
           <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
             <Label htmlFor="isResolved">A ocorrência foi resolvida?</Label>
-            <Checkbox
-              type="checkbox"
-              {...register("resolvido")}
-              id="isResolved"
-            />
+            <Checkbox type="checkbox" {...register("resolvido")} id="isResolved" />
           </div>
         </div>
       </Modal>

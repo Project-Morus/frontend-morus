@@ -1,24 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Icon, Modal } from "../../../components";
-import { InputContainerSC } from "./styles";
-import { CardInformationProps } from "../../Home/parts/types";
-import PostForm from "../parts/PostForm";
-import { useDeleteCashBook } from "../controller";
+import { useDeleteCashBook, usePutCashBook } from "../controller";
+import EditForm from "../parts/EditForm";
+import { CashBookResponse } from "../../../services/cashBookService/types";
 
-export const IconsSC = (data: CardInformationProps) => {
+export const IconsSC = (cashBookdata: CashBookResponse) => {
   const [openedEditModal, setOpenedEditModal] = useState<boolean>(false);
 
   const { handleDelete, deleteOpened, isShowingDelete, deleteClosed, isPending } = useDeleteCashBook();
 
+  const { reset } = usePutCashBook();
+
   const [id, setId] = useState<number>(0);
 
-  const initiateDeletionProcess = (idOccurence: number) => {
-    setId(idOccurence);
+  const initiateDeletionProcess = (idCashBook: number) => {
+    setId(idCashBook);
 
     deleteOpened();
   };
 
-  const handleOpenEditModal = () => {
+  const [cashBookValue, setCashBookValue] = useState<CashBookResponse>({
+    id: 0,
+    descricaoTransacao: "",
+    categoria: "",
+    torre: "",
+    dataTransacao: "",
+    valorTransacao: 0,
+    tipoTransacao: 0,
+  });
+
+  const handleOpenEditModal = (item: CashBookResponse) => {
+    setCashBookValue(item);
+
     setOpenedEditModal(true);
   };
 
@@ -26,11 +39,25 @@ export const IconsSC = (data: CardInformationProps) => {
     setOpenedEditModal(false);
   };
 
+  useEffect(() => {
+    const initialValues = {
+      id: cashBookValue.id,
+      descricaoTransacao: cashBookValue.descricaoTransacao,
+      categoria: cashBookValue.categoria,
+      torre: cashBookValue.torre,
+      dataTransacao: cashBookValue.dataTransacao,
+      valorTransacao: cashBookValue.valorTransacao,
+      tipoTransacao: cashBookValue.tipoTransacao,
+    };
+
+    reset(initialValues);
+  }, [cashBookValue, reset]);
+
   return (
     <>
       <div style={{ display: "flex", gap: "0.8rem" }}>
-        <Icon name="ph-pencil-simple-line" size="20" onClick={handleOpenEditModal} />
-        <Icon name="ph-trash" color="#CE323B" size="20" onClick={() => initiateDeletionProcess(data.data.id)} />
+        <Icon name="ph-pencil-simple-line" size="20" onClick={() => handleOpenEditModal(cashBookdata)} />
+        <Icon name="ph-trash" color="#CE323B" size="20" onClick={() => initiateDeletionProcess(cashBookdata.id)} />
       </div>
 
       <Modal
@@ -38,27 +65,15 @@ export const IconsSC = (data: CardInformationProps) => {
         isLoading={isPending}
         closeModal={deleteClosed}
         variant="warning"
-        onConfirmModal={handleCloseDeleteModal}
+        onConfirmModal={() => handleDelete(id)}
       >
         <p>
-          Tem certeza que deseja excluir a transação "{data.data.descricaoTransacao}" do livro caixa do condomínio Ilha
-          de Capri? Esta ação não poderá ser desfeita.
+          Tem certeza que deseja excluir a transação "{cashBookdata.descricaoTransacao}" do livro caixa do condomínio
+          Ilha de Capri? Esta ação não poderá ser desfeita.
         </p>
       </Modal>
 
-      <Modal
-        open={openedEditModal}
-        closeModal={handleCloseEditModal}
-        variant="form"
-        iconName="ph-book-bookmark"
-        modalTitle="Editar Transação"
-        buttonLabel="Confirmar Edição"
-        onConfirmModal={handleCloseEditModal}
-      >
-        <InputContainerSC>
-          <PostForm />
-        </InputContainerSC>
-      </Modal>
+      <EditForm opened={openedEditModal} handleModalClosed={handleCloseEditModal} cashBookValue={cashBookValue} />
     </>
   );
 };

@@ -2,8 +2,12 @@ import { ITableHeaderProps } from "../../types";
 import { IconsSC } from "../../Icons";
 import { ContentLoaderSC, CustomTableSC } from "./styles";
 import { useGetCashBook } from "../../controller";
-import { Loader } from "../../../../components";
+import { Icon, Loader, NewTable } from "../../../../components";
 import { formatDate } from "../../../../helpers/date";
+import { ModalDelete } from "../../../MonthlyFee/parts/ModalDelete";
+import ModalPut from "../../../MonthlyFee/parts/ModalPut";
+import { WrapperIcons } from "../../../MonthlyFee/parts/Table/styles";
+import Status from "../../../Orders/Status";
 
 const CustomTable = () => {
   const { data, isLoading, emptyData } = useGetCashBook();
@@ -13,12 +17,6 @@ const CustomTable = () => {
         <Loader />
       </ContentLoaderSC>
     );
-
-  const rowData = data?.map((info) => {
-    const [description, category, tower, value, transactionDate] = Object.values(info).slice(1, 6);
-    const formatedTransactionDate = formatDate(transactionDate);
-    return { tower, description, value, formatedTransactionDate, category, actions: <IconsSC data={info} /> };
-  });
 
   const HEADER_TABLE_CELLS: ITableHeaderProps[] = [
     { colName: "Torre" },
@@ -30,11 +28,34 @@ const CustomTable = () => {
   ];
 
   return (
-    <CustomTableSC
-      headerCells={HEADER_TABLE_CELLS}
-      rowCells={rowData}
-      emptyMessage="A tabela está vazia no momento. Espere o síndico adicionar novas informações!"
-    />
+    <>
+      <NewTable.Container>
+        <NewTable.Head>
+          <NewTable.Row>
+            {HEADER_TABLE_CELLS.map((header, index) => (
+              <NewTable.CellHeader key={index}>{header.colName}</NewTable.CellHeader>
+            ))}
+          </NewTable.Row>
+        </NewTable.Head>
+
+        {data?.map((item) => (
+          <NewTable.Body>
+            <NewTable.Row>
+              <NewTable.Cell>{item.torre}</NewTable.Cell>
+              <NewTable.Cell>{item.descricaoTransacao}</NewTable.Cell>
+              <NewTable.Cell>R${item.valorTransacao}</NewTable.Cell>
+              <NewTable.Cell>{formatDate(item.dataTransacao)}</NewTable.Cell>
+              <NewTable.Cell>{item.categoria}</NewTable.Cell>
+              <NewTable.Cell>
+                <WrapperIcons>
+                  <IconsSC data={item} />
+                </WrapperIcons>
+              </NewTable.Cell>
+            </NewTable.Row>
+          </NewTable.Body>
+        ))}
+      </NewTable.Container>
+    </>
   );
 };
 
