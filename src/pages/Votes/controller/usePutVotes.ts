@@ -11,6 +11,7 @@ const schema = z.object({
   tema: z.string().min(1, "Tema é obrigatório"),
   descricao: z.string().min(1, "Descrição é obrigatório").max(300),
   dataExpiracao: z.string(),
+  ativo: z.boolean(),
 })
 
 export type FormData = z.infer<typeof schema>;

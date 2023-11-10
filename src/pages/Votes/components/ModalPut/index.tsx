@@ -1,6 +1,7 @@
 import { Input, Modal } from "../../../../components";
 import { FieldErrors, UseFormRegister } from "react-hook-form";
 import { FormData } from "../../controller/usePutVotes";
+import { Checkbox, Label } from "./styles";
 
 interface IModalPutProps {
   opened: boolean;
@@ -58,6 +59,18 @@ export function ModalPut({
           errorText={errors.descricao?.message}
           {...register("descricao")}
         />
+
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "1rem",
+            marginTop: "0.5rem",
+          }}
+        >
+          <Label htmlFor="isActive">A votação ainda continua?</Label>
+          <Checkbox type="checkbox" {...register("ativo")} id="isActive" />
+        </div>
       </div>
     </Modal>
   );

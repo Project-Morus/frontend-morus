@@ -63,6 +63,7 @@ const Card = (props: ICardProps) => {
       tema: title,
       descricao: description,
       dataExpiracao: expired_at,
+      ativo: status,
     };
 
     reset(initialValues);

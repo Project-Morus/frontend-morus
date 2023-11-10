@@ -6,6 +6,7 @@ export interface PutParams {
   tema: string,
   descricao: string,
   dataExpiracao: string,
+  ativo: boolean,
 }
 
 interface PutVoteProps {
