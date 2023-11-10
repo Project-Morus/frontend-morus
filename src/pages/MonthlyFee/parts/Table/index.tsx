@@ -1,6 +1,5 @@
 import { useTheme } from "styled-components";
 import { NewTable, Icon } from "../../../../components";
-import { formatDate } from "../../../../helpers/date";
 import { HEADER_TABLE_CELLS } from "../mockData";
 import Status from "../Status";
 import { WrapperIcons } from "./styles";

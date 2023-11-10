@@ -1,4 +1,4 @@
-import { Button, Input, Table } from "../../components";
+import { Button, Input } from "../../components";
 import { MessageSC, QuantityTotalSC, TitleSC } from "../styles";
 import TableMonthlyFee from "./parts/Table";
 import {
