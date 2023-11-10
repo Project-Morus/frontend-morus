@@ -41,6 +41,15 @@ const EditForm = ({
         />
 
         <Input
+          id="dataTransacao"
+          label="Data da transação"
+          type="datetime-local"
+          hasError={!!errors.dataTransacao}
+          errorText={errors.dataTransacao?.message}
+          {...register("dataTransacao")}
+        />
+
+        <Input
           id={"categoria"}
           label={"Categoria"}
           type="text"
