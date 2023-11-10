@@ -12,14 +12,7 @@ interface IModalPutProps {
   errors: FieldErrors<FormData>;
 }
 
-export function ModalPut({
-  register,
-  errors,
-  opened,
-  closeModal,
-  onConfirmModal,
-  isLoading,
-}: IModalPutProps) {
+export function ModalPut({ register, errors, opened, closeModal, onConfirmModal, isLoading }: IModalPutProps) {
   return (
     <Modal
       variant="form"
@@ -69,7 +62,7 @@ export function ModalPut({
           }}
         >
           <Label htmlFor="isActive">A votação ainda continua?</Label>
-          <Checkbox type="checkbox" {...register("ativo")} id="isActive" />
+          <Checkbox type="checkbox" {...register("ativa")} id="isActive" />
         </div>
       </div>
     </Modal>

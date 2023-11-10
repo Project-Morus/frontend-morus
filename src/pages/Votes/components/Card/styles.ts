@@ -12,21 +12,21 @@ export const ContainerSC = styled.main`
   & + & {
     margin-top: ${({ theme }) => theme.spacing[7]};
   }
-`
+`;
 
 export const HeaderSC = styled.header`
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-`
+`;
 
 export const MainTextsSC = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   gap: ${({ theme }) => theme.spacing[4]};
-`
+`;
 
 export const BoxHeaderSC = styled.div`
   width: 95%;
@@ -36,12 +36,12 @@ export const BoxHeaderSC = styled.div`
   justify-content: space-between;
 
   margin-top: ${({ theme }) => theme.spacing[4]};
-`
+`;
 
 export const TitleSC = styled.h3`
-  font-weight: ${({ theme }) => theme.typography.FONT_WEIGHTS.regular}; 
+  font-weight: ${({ theme }) => theme.typography.FONT_WEIGHTS.regular};
   color: ${({ theme }) => theme.colors.grey[500]};
-`
+`;
 
 export const ContentSC = styled.div`
   position: relative;
@@ -51,21 +51,20 @@ export const ContentSC = styled.div`
   margin-top: ${({ theme }) => theme.spacing[6]};
 
   border-radius: ${({ theme }) => theme.border.radius.regular};
-`
+`;
 
 export const DateSC = styled.span`
   position: absolute;
   top: 16px;
   right: 24px;
-  
 
-  font-weight: ${({ theme }) => theme.typography.FONT_WEIGHTS.bold}; 
+  font-weight: ${({ theme }) => theme.typography.FONT_WEIGHTS.bold};
   color: ${({ theme }) => theme.colors.grey[400]};
-`
+`;
 
 export const DescriptionSC = styled.p`
   margin-top: ${({ theme }) => theme.spacing[4]};
-`
+`;
 
 export const CustomIconCard = styled(IconCard)`
   width: 50px;
@@ -75,16 +74,15 @@ export const CustomIconCard = styled(IconCard)`
     width: 24px;
     height: 24px;
   }
-`
+`;
 
 export const CustomIconTrash = styled(Icon)`
   color: ${({ theme }) => theme.colors.red[500]};
-`
+`;
 
 export const CustomIconEdit = styled(Icon)`
   color: ${({ theme }) => theme.colors.primary[500]};
-`
-
+`;
 
 export const AmountVotesSC = styled.div`
   display: flex;
@@ -92,16 +90,12 @@ export const AmountVotesSC = styled.div`
   align-items: center;
 
   margin-top: ${({ theme }) => theme.spacing[7]};
-`
+`;
 
 export const VoteTextSC = styled.span`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.spacing[5]};
-  
+
   font-size: ${({ theme }) => theme.typography.TEXT_SIZES.medium};
-`
-
-
-
-
+`;

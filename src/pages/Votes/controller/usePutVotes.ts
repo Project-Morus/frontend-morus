@@ -11,18 +11,15 @@ const schema = z.object({
   tema: z.string().min(1, "Tema é obrigatório"),
   descricao: z.string().min(1, "Descrição é obrigatório").max(300),
   dataExpiracao: z.string(),
-  ativo: z.boolean(),
-})
+  ativa: z.boolean(),
+});
 
 export type FormData = z.infer<typeof schema>;
 
 export function usePutVotes() {
-  const queryClient = useQueryClient()
+  const queryClient = useQueryClient();
 
-  const {
-    isShowing: isShowingPut,
-    handleModalOpened: putOpened,
-    handleModalClose: putClosed } = useModal()
+  const { isShowing: isShowingPut, handleModalOpened: putOpened, handleModalClose: putClosed } = useModal();
 
   const {
     register,
@@ -32,31 +29,30 @@ export function usePutVotes() {
     reset,
   } = useForm<FormData>({
     resolver: zodResolver(schema),
-  })
+  });
 
   const { mutateAsync, isPending } = useMutation({
     mutationFn: (data: FormData) => {
       return votesService.putVotes(data);
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['votes-list'] })
-    }
+      queryClient.invalidateQueries({ queryKey: ["votes-list"] });
+    },
   });
-
 
   const handleSubmit = hookFormSubmit(async (data) => {
     try {
-      await mutateAsync(data)
+      await mutateAsync(data);
 
-      toast.success('Votação atualizada com sucesso!')
+      toast.success("Votação atualizada com sucesso!");
 
-      putClosed()
+      putClosed();
 
-      reset()
+      reset();
     } catch (error) {
-      toast.error('Verifique os seus campos!')
+      toast.error("Verifique os seus campos!");
     }
-  })
+  });
 
-  return { register, handleSubmit, control, errors, isPending, isShowingPut, putOpened, putClosed, reset }
+  return { register, handleSubmit, control, errors, isPending, isShowingPut, putOpened, putClosed, reset };
 }

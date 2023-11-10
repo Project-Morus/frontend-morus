@@ -27,24 +27,9 @@ import { useEffect } from "react";
 
 const Card = (props: ICardProps) => {
   const theme = useTheme();
-  const {
-    id,
-    title,
-    description,
-    status,
-    expired_at,
-    qtdVotosFavoraveis,
-    qtdVotosContras,
-    qtdVotosNulos,
-  } = props;
+  const { id, title, description, status, expired_at, qtdVotosFavoraveis, qtdVotosContras, qtdVotosNulos } = props;
 
-  const {
-    handleDelete,
-    isShowingDelete,
-    deleteOpened,
-    deleteClosed,
-    isPending,
-  } = useDeleteVote(id);
+  const { handleDelete, isShowingDelete, deleteOpened, deleteClosed, isPending } = useDeleteVote(id);
 
   const {
     handleSubmit,
@@ -63,7 +48,7 @@ const Card = (props: ICardProps) => {
       tema: title,
       descricao: description,
       dataExpiracao: expired_at,
-      ativo: status,
+      ativa: status,
     };
 
     reset(initialValues);
@@ -82,7 +67,7 @@ const Card = (props: ICardProps) => {
             <Status openedVote={status} />
           </BoxHeaderSC>
 
-          <div style={{ position: "absolute", top: "0", right: "0" }}>
+          <div style={{ position: "absolute", top: "-10px", right: "0" }}>
             <div
               style={{
                 display: "flex",
@@ -91,10 +76,7 @@ const Card = (props: ICardProps) => {
               }}
             >
               <CustomIconTrash name="ph-trash" onClick={deleteOpened} />
-              <CustomIconEdit
-                name="ph-pencil-simple-line"
-                onClick={putOpened}
-              />
+              <CustomIconEdit name="ph-pencil-simple-line" onClick={putOpened} />
             </div>
           </div>
         </HeaderSC>
