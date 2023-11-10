@@ -15,7 +15,7 @@ export function useGetCommonAreas() {
   const count = data?.length;
 
   if (isError) {
-    toast.error("Ops! Ocorreu um erro ao carregar os dados!", { id: "area" });
+    toast.error("Ops! Ocorreu um erro ao carregar os dados!", { id: "common-area" });
   }
 
   return { data, isError, isLoading, emptyData, count };

@@ -7,8 +7,6 @@ import { CardsContainerSC, ContentLoaderSC, HeaderSC } from "./styles";
 const CommonArea = () => {
   const { data, isLoading } = useGetCommonAreas();
 
-  console.log(data);
-
   if (isLoading)
     return (
       <ContentLoaderSC>

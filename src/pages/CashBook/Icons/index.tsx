@@ -37,7 +37,7 @@ export const IconsSC = (data: CardInformationProps) => {
         closeModal={handleCloseDeleteModal}
         variant="warning"
         onConfirmModal={handleCloseDeleteModal}
-        onCancelModal={handleCloseDeleteModal}
+
       >
         <p>
           Tem certeza que deseja excluir o item da lista do Livro caixa do condôminio Ilha de Capri? Esta ação não
@@ -53,7 +53,6 @@ export const IconsSC = (data: CardInformationProps) => {
         modalTitle="Editar Transação"
         buttonLabel="Confirmar Edição"
         onConfirmModal={handleCloseEditModal}
-        onCancelModal={handleCloseEditModal}
       >
         <InputContainerSC>
           <PostForm />
