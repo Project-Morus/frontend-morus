@@ -2,7 +2,7 @@ import { Button, Input } from "../../components";
 import { MessageSC, QuantityTotalSC, TitleSC } from "../styles";
 import { useGetMonthlyFee } from "./controller/useGetMonthlyFee";
 import { usePostMonthlyFee } from "./controller/usePostMonthlyFee";
-import Form from "./parts/ModalForm";
+import ModalPost from "./parts/ModalPost";
 import TableMonthlyFee from "./parts/Table";
 import {
   ButtonContainerSC,
@@ -56,7 +56,7 @@ export default function MonthlyFee() {
 
       <TableMonthlyFee data={data ? data : []} isLoading={isLoading} />
 
-      <Form
+      <ModalPost
         opened={isShowingPost}
         closeModal={postClosed}
         errors={errors}

@@ -61,7 +61,7 @@ function TableMonthlyFee({ data, isLoading }: ITableMonthlFeeProps) {
               <NewTable.Cell>R${item.valor}</NewTable.Cell>
               <NewTable.Cell>{formatDate(item.dataFim)}</NewTable.Cell>
               <NewTable.Cell>
-                <Status recurring={item.recorrent} />
+                <Status recurring={item.recorrente} />
               </NewTable.Cell>
               <NewTable.Cell>
                 <WrapperIcons>

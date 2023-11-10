@@ -12,7 +12,7 @@ interface IModalPostProps {
   errors: FieldErrors<FormData>;
 }
 
-const Form = ({
+const ModalPost = ({
   opened,
   closeModal,
   onConfirmModal,
@@ -88,4 +88,4 @@ const Form = ({
   );
 };
 
-export default Form;
+export default ModalPost;
