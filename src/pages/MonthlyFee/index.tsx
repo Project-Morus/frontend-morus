@@ -1,5 +1,6 @@
 import { Button, Input } from "../../components";
 import { MessageSC, QuantityTotalSC, TitleSC } from "../styles";
+import { useGetMonthlyFee } from "./controller/useGetMonthlyFee";
 import TableMonthlyFee from "./parts/Table";
 import {
   ButtonContainerSC,
@@ -8,6 +9,12 @@ import {
 } from "./styles";
 
 export default function MonthlyFee() {
+  const { data, count, emptyData, isLoading } = useGetMonthlyFee();
+
+  const messageCount = emptyData
+    ? "Sem ocorrências!"
+    : `Quantidade total de taxas mensais: ${count}`;
+
   return (
     <>
       <HeaderSC>
@@ -19,7 +26,7 @@ export default function MonthlyFee() {
           </MessageSC>
         </div>
         <QuantityTotalSC>
-          {/* {isLoading ? "Carregando..." : messageCount} */}
+          {isLoading ? "Carregando..." : messageCount}
         </QuantityTotalSC>
       </HeaderSC>
 
@@ -36,7 +43,7 @@ export default function MonthlyFee() {
         </ButtonContainerSC>
       </InputAndButtonsContainerSC>
 
-      <TableMonthlyFee />
+      <TableMonthlyFee data={data ? data : []} isLoading={isLoading} />
     </>
   );
 }

@@ -1,18 +1,26 @@
 import { useTheme } from "styled-components";
-import { NewTable, Icon } from "../../../../components";
+import { NewTable, Icon, Loader } from "../../../../components";
 import { HEADER_TABLE_CELLS } from "../mockData";
 import Status from "../Status";
 import { WrapperIcons } from "./styles";
+import { ContentLoaderSC } from "../../../styles";
+import { MonthlyFeeResponse } from "../../../../services/monthlyFeeService/get";
+import { formatDate } from "../../../../helpers/date";
 
-function TableMonthlyFee() {
+interface ITableMonthlFeeProps {
+  data: MonthlyFeeResponse[];
+  isLoading: boolean;
+}
+
+function TableMonthlyFee({ data, isLoading }: ITableMonthlFeeProps) {
   const theme = useTheme();
 
-  // if (isLoading)
-  //   return (
-  //     <ContentLoaderSC>
-  //       <Loader />
-  //     </ContentLoaderSC>
-  //   );
+  if (isLoading)
+    return (
+      <ContentLoaderSC>
+        <Loader />
+      </ContentLoaderSC>
+    );
 
   return (
     <>
@@ -27,23 +35,25 @@ function TableMonthlyFee() {
           </NewTable.Row>
         </NewTable.Head>
 
-        <NewTable.Body>
-          <NewTable.Row>
-            <NewTable.Cell>Taxa de Condominio</NewTable.Cell>
-            <NewTable.Cell>Alguma coisa</NewTable.Cell>
-            <NewTable.Cell>R$1.200,50</NewTable.Cell>
-            <NewTable.Cell>01/11/2023</NewTable.Cell>
-            <NewTable.Cell>
-              <Status recurring={false} />
-            </NewTable.Cell>
-            <NewTable.Cell>
-              <WrapperIcons>
-                <Icon name="ph-pencil-simple-line" />
-                <Icon name="ph-trash" color={theme.colors.red[500]} />
-              </WrapperIcons>
-            </NewTable.Cell>
-          </NewTable.Row>
-        </NewTable.Body>
+        {data.map((item) => (
+          <NewTable.Body>
+            <NewTable.Row>
+              <NewTable.Cell>{item.nome}</NewTable.Cell>
+              <NewTable.Cell>{item.descricao}</NewTable.Cell>
+              <NewTable.Cell>R${item.valor}</NewTable.Cell>
+              <NewTable.Cell>{formatDate(item.dataFim)}</NewTable.Cell>
+              <NewTable.Cell>
+                <Status recurring={item.recorrent} />
+              </NewTable.Cell>
+              <NewTable.Cell>
+                <WrapperIcons>
+                  <Icon name="ph-pencil-simple-line" />
+                  <Icon name="ph-trash" color={theme.colors.red[500]} />
+                </WrapperIcons>
+              </NewTable.Cell>
+            </NewTable.Row>
+          </NewTable.Body>
+        ))}
       </NewTable.Container>
     </>
   );
