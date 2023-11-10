@@ -6,6 +6,9 @@ import { WrapperIcons } from "./styles";
 import { ContentLoaderSC } from "../../../styles";
 import { MonthlyFeeResponse } from "../../../../services/monthlyFeeService/get";
 import { formatDate } from "../../../../helpers/date";
+import { ModalDelete } from "../ModalDelete";
+import { useDeleteMonthlyFee } from "../../controller/useDeleteMonthlyFee";
+import { useState } from "react";
 
 interface ITableMonthlFeeProps {
   data: MonthlyFeeResponse[];
@@ -14,6 +17,21 @@ interface ITableMonthlFeeProps {
 
 function TableMonthlyFee({ data, isLoading }: ITableMonthlFeeProps) {
   const theme = useTheme();
+  const [id, setId] = useState<number>(0);
+
+  const {
+    handleDelete,
+    isPending,
+    isShowingDelete,
+    deleteOpened,
+    deleteClosed,
+  } = useDeleteMonthlyFee(id);
+
+  const initiateDeletionProcess = (idFee: number) => {
+    setId(idFee);
+
+    deleteOpened();
+  };
 
   if (isLoading)
     return (
@@ -48,13 +66,24 @@ function TableMonthlyFee({ data, isLoading }: ITableMonthlFeeProps) {
               <NewTable.Cell>
                 <WrapperIcons>
                   <Icon name="ph-pencil-simple-line" />
-                  <Icon name="ph-trash" color={theme.colors.red[500]} />
+                  <Icon
+                    name="ph-trash"
+                    color={theme.colors.red[500]}
+                    onClick={() => initiateDeletionProcess(item.id)}
+                  />
                 </WrapperIcons>
               </NewTable.Cell>
             </NewTable.Row>
           </NewTable.Body>
         ))}
       </NewTable.Container>
+
+      <ModalDelete
+        opened={isShowingDelete}
+        closeModal={deleteClosed}
+        onConfirmModal={handleDelete}
+        isLoading={isPending}
+      />
     </>
   );
 }
