@@ -7,7 +7,9 @@ type FormTypes = {
 };
 
 const PostForm = ({ opened, handleModalClosed }: FormTypes) => {
-  const { handleSubmit, register, errors, isPending } = usePostCashBook({ handleModalClosed });
+  const { handleSubmit, register, errors, isPending } = usePostCashBook({
+    handleModalClosed,
+  });
 
   return (
     <Modal
@@ -53,6 +55,15 @@ const PostForm = ({ opened, handleModalClosed }: FormTypes) => {
           hasError={!!errors.descricaoTransacao}
           errorText={errors.descricaoTransacao?.message}
           {...register("descricaoTransacao")}
+        />
+
+        <Input
+          id="dataTransacao"
+          label="Data da transação"
+          type="datetime-local"
+          hasError={!!errors.dataTransacao}
+          errorText={errors.dataTransacao?.message}
+          {...register("dataTransacao")}
         />
       </div>
     </Modal>

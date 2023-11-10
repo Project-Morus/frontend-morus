@@ -5,19 +5,26 @@ import EditForm from "../parts/EditForm";
 import { CashBookResponse } from "../../../services/cashBookService/types";
 
 export const IconsSC = (cashBookdata: CashBookResponse) => {
-  const [openedEditModal, setOpenedEditModal] = useState<boolean>(false);
+  const {
+    handleDelete,
+    deleteOpened,
+    isShowingDelete,
+    deleteClosed,
+    isPending,
+  } = useDeleteCashBook();
 
-  const { handleDelete, deleteOpened, isShowingDelete, deleteClosed, isPending } = useDeleteCashBook();
-
-  const { reset } = usePutCashBook();
+  const {
+    handleSubmit,
+    errors,
+    isPending: isPendingEdit,
+    isShowingEdit,
+    register,
+    putClosed,
+    putOpened,
+    reset,
+  } = usePutCashBook();
 
   const [id, setId] = useState<number>(0);
-
-  const initiateDeletionProcess = (idCashBook: number) => {
-    setId(idCashBook);
-
-    deleteOpened();
-  };
 
   const [cashBookValue, setCashBookValue] = useState<CashBookResponse>({
     id: 0,
@@ -32,11 +39,13 @@ export const IconsSC = (cashBookdata: CashBookResponse) => {
   const handleOpenEditModal = (item: CashBookResponse) => {
     setCashBookValue(item);
 
-    setOpenedEditModal(true);
+    putOpened();
   };
 
-  const handleCloseEditModal = () => {
-    setOpenedEditModal(false);
+  const initiateDeletionProcess = (idCashBook: number) => {
+    setId(idCashBook);
+
+    deleteOpened();
   };
 
   useEffect(() => {
@@ -56,8 +65,17 @@ export const IconsSC = (cashBookdata: CashBookResponse) => {
   return (
     <>
       <div style={{ display: "flex", gap: "0.8rem" }}>
-        <Icon name="ph-pencil-simple-line" size="20" onClick={() => handleOpenEditModal(cashBookdata)} />
-        <Icon name="ph-trash" color="#CE323B" size="20" onClick={() => initiateDeletionProcess(cashBookdata.id)} />
+        <Icon
+          name="ph-pencil-simple-line"
+          size="20"
+          onClick={() => handleOpenEditModal(cashBookdata)}
+        />
+        <Icon
+          name="ph-trash"
+          color="#CE323B"
+          size="20"
+          onClick={() => initiateDeletionProcess(cashBookdata.id)}
+        />
       </div>
 
       <Modal
@@ -68,12 +86,20 @@ export const IconsSC = (cashBookdata: CashBookResponse) => {
         onConfirmModal={() => handleDelete(id)}
       >
         <p>
-          Tem certeza que deseja excluir a transação "{cashBookdata.descricaoTransacao}" do livro caixa do condomínio
-          Ilha de Capri? Esta ação não poderá ser desfeita.
+          Tem certeza que deseja excluir a transação "
+          {cashBookdata.descricaoTransacao}" do livro caixa do condomínio Ilha
+          de Capri? Esta ação não poderá ser desfeita.
         </p>
       </Modal>
 
-      <EditForm opened={openedEditModal} handleModalClosed={handleCloseEditModal} cashBookValue={cashBookValue} />
+      <EditForm
+        opened={isShowingEdit}
+        closeModal={putClosed}
+        errors={errors}
+        register={register}
+        onConfirmModal={handleSubmit}
+        isLoading={isPendingEdit}
+      />
     </>
   );
 };

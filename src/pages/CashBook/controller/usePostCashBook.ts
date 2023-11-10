@@ -11,6 +11,7 @@ const schema = z.object({
   torre: z.string(),
   valorTransacao: z.number().int(),
   tipoTransacao: z.number().int(),
+  dataTransacao: z.string().min(1, 'Data da transação é obrigatória')
 });
 
 type FormData = z.infer<typeof schema>;

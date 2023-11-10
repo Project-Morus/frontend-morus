@@ -7,6 +7,7 @@ export interface PostParams {
   torre: string;
   valorTransacao: number;
   tipoTransacao: number;
+  dataTransacao: string,
 }
 
 interface PostCashBookProps {

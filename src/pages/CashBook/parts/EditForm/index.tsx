@@ -1,21 +1,32 @@
 import { Input, Modal } from "../../../../components";
-import { PutParams } from "../../../../services/cashBookService/put";
+import { FieldErrors, UseFormRegister } from "react-hook-form";
+import { FormData } from "../../controller";
 
 type FormTypes = {
   opened: boolean;
-  handleModalClosed: () => void;
-  cashBookValue: PutParams;
+  closeModal: () => void;
+  onConfirmModal: () => void;
+  isLoading: boolean;
+  register: UseFormRegister<FormData>;
+  errors: FieldErrors<FormData>;
 };
 
-const EditForm = ({ opened, handleModalClosed, cashBookValue }: FormTypes) => {
+const EditForm = ({
+  opened,
+  closeModal,
+  onConfirmModal,
+  errors,
+  isLoading,
+  register,
+}: FormTypes) => {
   return (
     <Modal
       variant="form"
       modalTitle="Cadastrar transação"
       open={opened}
-      closeModal={handleModalClosed}
-      onConfirmModal={handleSubmit}
-      isLoading={isPending}
+      closeModal={closeModal}
+      onConfirmModal={onConfirmModal}
+      isLoading={isLoading}
       iconName="ph-money"
     >
       <div style={{ display: "flex", gap: "1rem", flexDirection: "column" }}>
