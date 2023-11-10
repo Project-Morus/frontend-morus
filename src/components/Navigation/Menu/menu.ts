@@ -37,6 +37,11 @@ export const MENU_LIST: IMenuDataProps[] = [
     icon: "ph-book-bookmark",
   },
   {
+    title: "Taxa Mensal",
+    link: "monthlyFee",
+    icon: "ph-currency-dollar",
+  },
+  {
     title: "Mural de Informações",
     link: "informations-mural",
     icon: "ph-newspaper",

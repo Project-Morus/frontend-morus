@@ -951,6 +951,7 @@ const PhosphorIconsMap = {
   "ph-text-h-six": Icon.TextHSix,
   "ph-text-h-three": Icon.TextHThree,
   "ph-text-h-two": Icon.TextHTwo,
+  "ph-handcoins": Icon.HandCoins,
   "ph-text-indent": Icon.TextIndent,
   "ph-text-italic": Icon.TextItalic,
   "ph-text-outdent": Icon.TextOutdent,

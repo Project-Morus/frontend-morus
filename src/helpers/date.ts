@@ -18,4 +18,4 @@ const minutes = String(date.getUTCMinutes()).padStart(2, '0');
 const seconds = String(date.getUTCSeconds()).padStart(2, '0');
 const milliseconds = String(date.getUTCMilliseconds()).padStart(3, '0');
 
-export const completedDate = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}.${milliseconds}Z`;
+export const completedDate = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}.${milliseconds}`;

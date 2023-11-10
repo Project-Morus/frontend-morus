@@ -6,5 +6,5 @@ export async function getCommonAreas() {
 
   const response = await httpClient.get("/api/ListarAreasComuns");
 
-  return response.data;
+  return response.data.data;
 }

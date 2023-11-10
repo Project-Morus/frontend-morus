@@ -3,42 +3,59 @@ import { useTheme } from "styled-components";
 import { Loader, NewTable, Icon, Modal, Input } from "../../../../components";
 import { formatDate } from "../../../../helpers/date";
 import { HEADER_TABLE_CELLS } from "../../mockData";
-import { ContentLoaderSC } from "../../styles";
 import Status from "../Status";
 import { WrapperIcons } from "./styles";
-import { useDeleteOcurrences, useGetOcurrences, usePutOcurrences } from "../../controller";
+import {
+  useDeleteOcurrences,
+  useGetOcurrences,
+  usePutOcurrences,
+} from "../../controller";
 import { Checkbox, Label } from "../Form/styles";
 import { PutParams } from "../../../../services/ocurrenceService/put";
-
+import { ContentLoaderSC } from "../../../styles";
 
 function TableOcurrence() {
-  const theme = useTheme()
-  const { data, isError, isLoading, emptyData } = useGetOcurrences()
-  const { handleDelete, isShowingDelete, deleteOpened, deleteClosed, isPending } = useDeleteOcurrences();
-  const { handleSubmit, register, errors, isPending: isPendingEdit, isShowingEdit, handleModalOpenedEdit, handleModalClosedEdit, reset } = usePutOcurrences()
+  const theme = useTheme();
+  const { data, isError, isLoading, emptyData } = useGetOcurrences();
+  const {
+    handleDelete,
+    isShowingDelete,
+    deleteOpened,
+    deleteClosed,
+    isPending,
+  } = useDeleteOcurrences();
+  const {
+    handleSubmit,
+    register,
+    errors,
+    isPending: isPendingEdit,
+    isShowingEdit,
+    handleModalOpenedEdit,
+    handleModalClosedEdit,
+    reset,
+  } = usePutOcurrences();
 
-  const [id, setId] = useState<number>(0)
+  const [id, setId] = useState<number>(0);
   const [ocurrenceValue, setOcurrenceValue] = useState<PutParams>({
     idUsuario: 0,
     id: 0,
     resolvido: false,
-    titulo: '',
-    descricao: '',
-    dataCadastro: '',
-  }
-  )
+    titulo: "",
+    descricao: "",
+    dataCadastro: "",
+  });
 
   const initiateDeletionProcess = (idOccurence: number) => {
-    setId(idOccurence)
+    setId(idOccurence);
 
-    deleteOpened()
-  }
+    deleteOpened();
+  };
 
-  const initiateTestProcess = async (item: PutParams) => {
-    setOcurrenceValue(item)
+  const initiateUpdateProcess = async (item: PutParams) => {
+    setOcurrenceValue(item);
 
-    handleModalOpenedEdit()
-  }
+    handleModalOpenedEdit();
+  };
 
   useEffect(() => {
     const initialValues = {
@@ -53,7 +70,12 @@ function TableOcurrence() {
     reset(initialValues);
   }, [ocurrenceValue, reset]);
 
-  if (isLoading) return <ContentLoaderSC><Loader /></ContentLoaderSC>
+  if (isLoading)
+    return (
+      <ContentLoaderSC>
+        <Loader />
+      </ContentLoaderSC>
+    );
 
   return (
     <>
@@ -61,27 +83,38 @@ function TableOcurrence() {
         <NewTable.Head>
           <NewTable.Row>
             {HEADER_TABLE_CELLS.map((header, index) => (
-              <NewTable.CellHeader key={index}>{header.colName}</NewTable.CellHeader>
+              <NewTable.CellHeader key={index}>
+                {header.colName}
+              </NewTable.CellHeader>
             ))}
           </NewTable.Row>
         </NewTable.Head>
 
         <NewTable.Body>
-          {data?.map(item => {
+          {data?.map((item) => {
             return (
               <NewTable.Row key={item.id}>
                 <NewTable.Cell>{item.titulo}</NewTable.Cell>
                 <NewTable.Cell>{item.descricao}</NewTable.Cell>
                 <NewTable.Cell>{formatDate(item.dataCadastro)}</NewTable.Cell>
-                <NewTable.Cell><Status resolved={item.resolvido} /></NewTable.Cell>
+                <NewTable.Cell>
+                  <Status resolved={item.resolvido} />
+                </NewTable.Cell>
                 <NewTable.Cell>
                   <WrapperIcons>
-                    <Icon name="ph-pencil-simple-line" onClick={() => initiateTestProcess(item)} />
-                    <Icon name="ph-trash" color={theme.colors.red[500]} onClick={() => initiateDeletionProcess(item.id)} />
+                    <Icon
+                      name="ph-pencil-simple-line"
+                      onClick={() => initiateUpdateProcess(item)}
+                    />
+                    <Icon
+                      name="ph-trash"
+                      color={theme.colors.red[500]}
+                      onClick={() => initiateDeletionProcess(item.id)}
+                    />
                   </WrapperIcons>
                 </NewTable.Cell>
               </NewTable.Row>
-            )
+            );
           })}
         </NewTable.Body>
       </NewTable.Container>
@@ -93,7 +126,8 @@ function TableOcurrence() {
         onConfirmModal={() => handleDelete(id)}
         isLoading={isPending}
       >
-        Tem certeza que deseja excluir a ocorrência do condomínio Ilha de Capri? Esta ação não poderá ser desfeita.
+        Tem certeza que deseja excluir a ocorrência do condomínio Ilha de Capri?
+        Esta ação não poderá ser desfeita.
       </Modal>
 
       <Modal
@@ -104,14 +138,14 @@ function TableOcurrence() {
         onConfirmModal={handleSubmit}
         isLoading={isPendingEdit}
       >
-        <div style={{ display: 'flex', gap: '1rem', flexDirection: 'column' }}>
+        <div style={{ display: "flex", gap: "1rem", flexDirection: "column" }}>
           <Input
             id="titulo"
             label="Motivo"
             type="text"
             hasError={!!errors.titulo}
             errorText={errors.titulo?.message}
-            {...register('titulo')}
+            {...register("titulo")}
           />
           <Input
             id="descricao"
@@ -119,12 +153,16 @@ function TableOcurrence() {
             type="text"
             hasError={!!errors.descricao}
             errorText={errors.descricao?.message}
-            {...register('descricao')}
+            {...register("descricao")}
           />
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
             <Label htmlFor="isResolved">A ocorrência foi resolvida?</Label>
-            <Checkbox type="checkbox" {...register('resolvido')} id='isResolved' />
+            <Checkbox
+              type="checkbox"
+              {...register("resolvido")}
+              id="isResolved"
+            />
           </div>
         </div>
       </Modal>

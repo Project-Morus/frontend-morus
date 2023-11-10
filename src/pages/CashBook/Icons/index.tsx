@@ -38,7 +38,7 @@ export const IconsSC = (data: CardInformationProps) => {
         isLoading={isPending}
         closeModal={deleteClosed}
         variant="warning"
-        onConfirmModal={() => handleDelete(id)}
+        onConfirmModal={handleCloseDeleteModal}
       >
         <p>
           Tem certeza que deseja excluir a transação "{data.data.descricaoTransacao}" do livro caixa do condomínio Ilha
