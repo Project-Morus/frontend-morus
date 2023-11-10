@@ -1,8 +1,9 @@
 import { ITableHeaderProps } from "../../types";
-import { CustomTableSC, ContentLoaderSC } from "./styles";
+import { CustomTableSC } from "./styles";
 import { useGetInformations } from "../../controller";
 import { IconsSC } from "../Icons";
 import { Loader } from "../../../../components";
+import { ContentLoaderSC } from "../../../styles";
 
 const CustomTable = () => {
   const { data, isLoading } = useGetInformations();

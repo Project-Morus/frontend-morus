@@ -19,6 +19,7 @@ const Form = ({ opened, handleModalClosed }: FormTypes) => {
       closeModal={handleModalClosed}
       onConfirmModal={handleSubmit}
       isLoading={isPending}
+      iconName="ph-clipboard-text"
     >
       <div style={{ display: 'flex', gap: '1rem', flexDirection: 'column' }}>
         <Input

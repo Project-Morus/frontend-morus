@@ -16,6 +16,7 @@ import {
   InformationsMural,
   Orders,
   Votes,
+  MonthlyFee,
 } from "../pages";
 import { AuthGuard } from "./AuthGuard";
 import CommonArea from "../pages/CommonArea";
@@ -48,10 +49,11 @@ const Router = () => {
             <Route path="votes" element={<Votes />} />
             <Route path="archives" element={<Archives />} />
             <Route path="cashBook" element={<CashBook />} />
+            <Route path="monthlyFee" element={<MonthlyFee />} />
+            <Route path="common-areas/area" element={<AreaDetails />} />
             <Route path="occurrences" element={<Occurrences />} />
             <Route path="informations-mural" element={<InformationsMural />} />
             <Route path="common-areas" element={<CommonArea />} />
-            <Route path="common-areas/area" element={<AreaDetails />} />
           </Route>
         </Route>
       </Routes>

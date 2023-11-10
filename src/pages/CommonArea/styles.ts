@@ -31,11 +31,3 @@ export const CardsContainerSC = styled.div`
   gap: 20px;
   margin-top: 1rem;
 `;
-
-export const ContentLoaderSC = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  height: 100px;
-`;

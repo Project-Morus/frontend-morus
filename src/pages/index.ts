@@ -5,6 +5,7 @@ export { ForgotPasswordFirstStep, ForgotPasswordSecondStep } from "./ForgotPassw
 export { default as Home } from "./Home";
 export { default as Orders } from "./Orders";
 export { default as LandingPage } from "./LandingPage";
+export { default as MonthlyFee } from "./MonthlyFee";
 export { default as Login } from "./Login";
 export { default as Votes } from "./Votes";
 export { default as Residents } from "./Residents";

@@ -8,11 +8,3 @@ export const CustomTableSC = styled(Table)`
     }
   }
 `;
-
-export const ContentLoaderSC = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  height: 100px;
-`;

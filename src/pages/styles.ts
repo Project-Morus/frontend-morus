@@ -24,3 +24,13 @@ export const TitleLinkSC = styled(Link)`
 export const QuantityTotalSC = styled.strong`
   color: ${({ theme }) => theme.colors.grey[200]};
 `;
+
+export const ContentLoaderSC = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100px;
+
+` 
+

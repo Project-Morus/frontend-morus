@@ -27,12 +27,3 @@ export const ButtonContainerSC = styled.div`
   height: 50px;
   align-self: last baseline;
 `;
-
-export const ContentLoaderSC = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  height: 100px;
-
-` 
