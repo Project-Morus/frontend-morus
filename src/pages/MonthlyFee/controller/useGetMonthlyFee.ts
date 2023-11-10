@@ -15,7 +15,7 @@ export function useGetMonthlyFee() {
   const count = data?.length
 
   if (isError) {
-    toast.error('Ops! Ocorreu um erro ao carregar os dados!', { id: 'ocurrence-list' })
+    toast.error('Ops! Ocorreu um erro ao carregar os dados!', { id: 'monthlyFee-list' })
   }
 
   return { data, isError, isLoading, emptyData, count }
