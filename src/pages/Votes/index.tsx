@@ -1,4 +1,8 @@
-import { ButtonContainerSC, HeaderSC, InputAndButtonsContainerSC } from "./styles";
+import {
+  ButtonContainerSC,
+  HeaderSC,
+  InputAndButtonsContainerSC,
+} from "./styles";
 import { TitleSC, MessageSC, QuantityTotalSC } from "../styles";
 import { Button, Input } from "../../components";
 import Card from "./components/Card";
@@ -7,7 +11,7 @@ import { ModalPost } from "./components/ModalPost";
 import { usePostVotes } from "./controller/usePostVotes";
 
 const Orders = () => {
-  const { data, count, emptyData, isLoading } = useGetVotes()
+  const { data, count, emptyData, isLoading } = useGetVotes();
   const {
     handleSubmit,
     isShowingPost,
@@ -15,35 +19,32 @@ const Orders = () => {
     postOpened,
     errors,
     isPending,
-    register
-  } = usePostVotes()
+    register,
+  } = usePostVotes();
 
-  const messageCount = emptyData ? 'Sem ocorrências!' : `Quantidade total de ocorrências: ${count}`
+  const messageCount = emptyData
+    ? "Sem votações abertas!"
+    : `Quantidade total de votações abertas/concluídas: ${count}`;
 
   return (
     <>
       <HeaderSC>
         <div>
           <TitleSC>Votações</TitleSC>
-          <MessageSC>Essa é a lista de todas as votações em abertos dos moradores do condomínio Ilha de Capri. Busque e faça o seu voto!</MessageSC>
+          <MessageSC>
+            Essa é a lista de todas as votações em abertos dos moradores do
+            condomínio Ilha de Capri. Busque e faça o seu voto!
+          </MessageSC>
         </div>
         <QuantityTotalSC>
-          {isLoading ? 'Carregando...' : messageCount}
+          {isLoading ? "Carregando..." : messageCount}
         </QuantityTotalSC>
       </HeaderSC>
 
       <InputAndButtonsContainerSC>
-        <Input
-          maxWidth={300}
-          id={"search"}
-          label={"Buscar"}
-        />
+        <Input maxWidth={300} id={"search"} label={"Buscar"} />
         <ButtonContainerSC>
-          <Button
-            maxWidth={200}
-            text={"Todos"}
-            variant="secondary"
-          />
+          <Button maxWidth={200} text={"Todos"} variant="secondary" />
           <Button
             maxWidth={200}
             text={"Registrar Votação"}
@@ -53,8 +54,7 @@ const Orders = () => {
         </ButtonContainerSC>
       </InputAndButtonsContainerSC>
 
-
-      {data?.map(item => (
+      {data?.map((item) => (
         <Card
           key={item.id}
           id={item.id}
@@ -62,6 +62,9 @@ const Orders = () => {
           description={item.descricao}
           expired_at={item.dataExpiracao}
           status={item.ativa}
+          qtdVotosFavoraveis={item.qtdVotosFavoraveis}
+          qtdVotosContras={item.qtdVotosContras}
+          qtdVotosNulos={item.qtdVotosNulos}
         />
       ))}
 
@@ -73,7 +76,6 @@ const Orders = () => {
         register={register}
         isLoading={isPending}
       />
-
     </>
   );
 };

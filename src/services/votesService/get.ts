@@ -9,6 +9,9 @@ export type VotesResponse = {
   dataExpiracao: string,
   ativa: boolean,
   idCondominio: number,
+  qtdVotosFavoraveis: number,
+  qtdVotosContras: number,
+  qtdVotosNulos: number,
 }
 
 export async function getVotes() {
