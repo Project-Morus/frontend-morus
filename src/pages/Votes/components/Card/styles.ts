@@ -29,13 +29,13 @@ export const MainTextsSC = styled.div`
 `;
 
 export const BoxHeaderSC = styled.div`
-  width: 95%;
+  width: 100%;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  margin-top: ${({ theme }) => theme.spacing[4]};
+  margin-top: ${({ theme }) => theme.spacing[6]};
 `;
 
 export const TitleSC = styled.h3`

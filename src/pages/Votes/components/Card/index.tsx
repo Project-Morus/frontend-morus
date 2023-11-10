@@ -72,11 +72,11 @@ const Card = (props: ICardProps) => {
               style={{
                 display: "flex",
                 justifyContent: "center",
-                gap: "0.5rem",
+                gap: "1rem",
               }}
             >
-              <CustomIconTrash name="ph-trash" onClick={deleteOpened} />
               <CustomIconEdit name="ph-pencil-simple-line" onClick={putOpened} />
+              <CustomIconTrash name="ph-trash" onClick={deleteOpened} />
             </div>
           </div>
         </HeaderSC>
