@@ -7,6 +7,7 @@ export type MonthlyFeeResponse = {
   descricao: string,
   valor: number,
   recorrente: boolean,
+  dataInicio: string,
   dataFim: string,
 }
 

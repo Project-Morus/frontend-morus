@@ -1,7 +1,7 @@
 import { Input, Modal } from "../../../../components";
 import { FieldErrors, UseFormRegister } from "react-hook-form";
 import { Checkbox, Label } from "./styles";
-import { FormData } from "../../controller/usePostMonthlyFee";
+import { FormData } from "../../controller/usePutMonthlyFee";
 
 interface IModalPostProps {
   opened: boolean;
@@ -12,7 +12,7 @@ interface IModalPostProps {
   errors: FieldErrors<FormData>;
 }
 
-const ModalPost = ({
+const ModalPut = ({
   opened,
   closeModal,
   onConfirmModal,
@@ -23,7 +23,7 @@ const ModalPost = ({
   return (
     <Modal
       variant="form"
-      modalTitle="Registrar Taxa Mensal"
+      modalTitle="Atualizar Taxa Mensal"
       open={opened}
       closeModal={closeModal}
       onConfirmModal={onConfirmModal}
@@ -88,4 +88,4 @@ const ModalPost = ({
   );
 };
 
-export default ModalPost;
+export default ModalPut;

@@ -51,7 +51,7 @@ function TableOcurrence() {
     deleteOpened();
   };
 
-  const initiateTestProcess = async (item: PutParams) => {
+  const initiateUpdateProcess = async (item: PutParams) => {
     setOcurrenceValue(item);
 
     handleModalOpenedEdit();
@@ -104,7 +104,7 @@ function TableOcurrence() {
                   <WrapperIcons>
                     <Icon
                       name="ph-pencil-simple-line"
-                      onClick={() => initiateTestProcess(item)}
+                      onClick={() => initiateUpdateProcess(item)}
                     />
                     <Icon
                       name="ph-trash"

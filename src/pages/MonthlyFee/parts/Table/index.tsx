@@ -8,7 +8,10 @@ import { MonthlyFeeResponse } from "../../../../services/monthlyFeeService/get";
 import { formatDate } from "../../../../helpers/date";
 import { ModalDelete } from "../ModalDelete";
 import { useDeleteMonthlyFee } from "../../controller/useDeleteMonthlyFee";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import ModalPut from "../ModalPut";
+import { usePutMonthlyFee } from "../../controller/usePutMonthlyFee";
+import { PutParams } from "../../../../services/monthlyFeeService/put";
 
 interface ITableMonthlFeeProps {
   data: MonthlyFeeResponse[];
@@ -17,7 +20,17 @@ interface ITableMonthlFeeProps {
 
 function TableMonthlyFee({ data, isLoading }: ITableMonthlFeeProps) {
   const theme = useTheme();
+
   const [id, setId] = useState<number>(0);
+  const [monthlyFeeValue, setMonthlyFeeValue] = useState<PutParams>({
+    id: 0,
+    nome: "",
+    valor: 0,
+    recorrente: false,
+    descricao: "",
+    dataInicio: "",
+    dataFim: "",
+  });
 
   const {
     handleDelete,
@@ -27,11 +40,42 @@ function TableMonthlyFee({ data, isLoading }: ITableMonthlFeeProps) {
     deleteClosed,
   } = useDeleteMonthlyFee(id);
 
+  const {
+    handleSubmit: handleSubmitUpdate,
+    register: registerUpdate,
+    errors: errorsUpdate,
+    isPending: isPendingEdit,
+    isShowingEdit,
+    putOpened,
+    putClosed,
+    reset,
+  } = usePutMonthlyFee();
+
   const initiateDeletionProcess = (idFee: number) => {
     setId(idFee);
 
     deleteOpened();
   };
+
+  const initiateUpdateProcess = async (item: PutParams) => {
+    setMonthlyFeeValue(item);
+
+    putOpened();
+  };
+
+  useEffect(() => {
+    const initialValues = {
+      id: monthlyFeeValue.id,
+      nome: monthlyFeeValue.nome,
+      valor: monthlyFeeValue.valor,
+      recorrente: monthlyFeeValue.recorrente,
+      descricao: monthlyFeeValue.descricao,
+      dataInicio: monthlyFeeValue.dataInicio,
+      dataFim: monthlyFeeValue.dataFim,
+    };
+
+    reset(initialValues);
+  }, [monthlyFeeValue, reset, id]);
 
   if (isLoading)
     return (
@@ -65,7 +109,10 @@ function TableMonthlyFee({ data, isLoading }: ITableMonthlFeeProps) {
               </NewTable.Cell>
               <NewTable.Cell>
                 <WrapperIcons>
-                  <Icon name="ph-pencil-simple-line" />
+                  <Icon
+                    name="ph-pencil-simple-line"
+                    onClick={() => initiateUpdateProcess(item)}
+                  />
                   <Icon
                     name="ph-trash"
                     color={theme.colors.red[500]}
@@ -83,6 +130,15 @@ function TableMonthlyFee({ data, isLoading }: ITableMonthlFeeProps) {
         closeModal={deleteClosed}
         onConfirmModal={handleDelete}
         isLoading={isPending}
+      />
+
+      <ModalPut
+        opened={isShowingEdit}
+        closeModal={putClosed}
+        errors={errorsUpdate}
+        isLoading={isPendingEdit}
+        onConfirmModal={handleSubmitUpdate}
+        register={registerUpdate}
       />
     </>
   );
