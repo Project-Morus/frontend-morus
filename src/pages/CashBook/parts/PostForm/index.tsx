@@ -31,6 +31,16 @@ const PostForm = ({ opened, handleModalClosed }: FormTypes) => {
           errorText={errors.valorTransacao?.message}
           {...register("valorTransacao", { valueAsNumber: true })}
         />
+
+        <Input
+          id="dataTransacao"
+          label="Data da transação"
+          type="datetime-local"
+          hasError={!!errors.dataTransacao}
+          errorText={errors.dataTransacao?.message}
+          {...register("dataTransacao")}
+        />
+
         <Input
           id={"categoria"}
           label={"Categoria"}
@@ -55,15 +65,6 @@ const PostForm = ({ opened, handleModalClosed }: FormTypes) => {
           hasError={!!errors.descricaoTransacao}
           errorText={errors.descricaoTransacao?.message}
           {...register("descricaoTransacao")}
-        />
-
-        <Input
-          id="dataTransacao"
-          label="Data da transação"
-          type="datetime-local"
-          hasError={!!errors.dataTransacao}
-          errorText={errors.dataTransacao?.message}
-          {...register("dataTransacao")}
         />
       </div>
     </Modal>
