@@ -14,33 +14,30 @@ import {
   DescriptionSC,
   AmountVotesSC,
   VoteTextSC,
+  CustomIconEdit,
 } from "./styles";
 import { formatDate } from "../../../../helpers/date";
 import { useDeleteVote } from "../../controller/useDeleteVote";
 import { ModalDelete } from "../ModalDelete";
+import { ModalPut } from "../ModalPut";
 
-interface ICardProps {
-  id: number;
-  title: string;
-  description: string;
-  expired_at: string;
-  status: boolean;
-  qtdVotosFavoraveis: number;
-  qtdVotosContras: number;
-  qtdVotosNulos: number;
-}
+import { ICardProps } from "./interface";
+import { usePutVotes } from "../../controller/usePutVotes";
+import { useEffect } from "react";
 
-const Card = ({
-  id,
-  title,
-  description,
-  status,
-  expired_at,
-  qtdVotosFavoraveis,
-  qtdVotosContras,
-  qtdVotosNulos,
-}: ICardProps) => {
+const Card = (props: ICardProps) => {
   const theme = useTheme();
+  const {
+    id,
+    title,
+    description,
+    status,
+    expired_at,
+    qtdVotosFavoraveis,
+    qtdVotosContras,
+    qtdVotosNulos,
+  } = props;
+
   const {
     handleDelete,
     isShowingDelete,
@@ -48,6 +45,29 @@ const Card = ({
     deleteClosed,
     isPending,
   } = useDeleteVote(id);
+
+  const {
+    handleSubmit,
+    errors,
+    putOpened,
+    putClosed,
+    isShowingPut,
+    isPending: isPendingEdit,
+    register,
+    reset,
+  } = usePutVotes();
+
+  useEffect(() => {
+    const initialValues = {
+      id,
+      tema: title,
+      descricao: description,
+      dataExpiracao: expired_at,
+      ativo: status,
+    };
+
+    reset(initialValues);
+  }, [reset, id, title, description, status, expired_at]);
 
   return (
     <>
@@ -62,7 +82,21 @@ const Card = ({
             <Status openedVote={status} />
           </BoxHeaderSC>
 
-          <CustomIconTrash name="ph-trash" onClick={deleteOpened} />
+          <div style={{ position: "absolute", top: "0", right: "0" }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "0.5rem",
+              }}
+            >
+              <CustomIconTrash name="ph-trash" onClick={deleteOpened} />
+              <CustomIconEdit
+                name="ph-pencil-simple-line"
+                onClick={putOpened}
+              />
+            </div>
+          </div>
         </HeaderSC>
 
         <ContentSC>
@@ -93,6 +127,15 @@ const Card = ({
         onConfirmModal={handleDelete}
         closeModal={deleteClosed}
         isLoading={isPending}
+      />
+
+      <ModalPut
+        onConfirmModal={handleSubmit}
+        register={register}
+        closeModal={putClosed}
+        opened={isShowingPut}
+        isLoading={isPendingEdit}
+        errors={errors}
       />
     </>
   );

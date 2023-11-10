@@ -78,11 +78,11 @@ export const CustomIconCard = styled(IconCard)`
 `
 
 export const CustomIconTrash = styled(Icon)`
-  position: absolute;
-  top: 0;
-  right: 0;
-
   color: ${({ theme }) => theme.colors.red[500]};
+`
+
+export const CustomIconEdit = styled(Icon)`
+  color: ${({ theme }) => theme.colors.primary[500]};
 `
 
 
