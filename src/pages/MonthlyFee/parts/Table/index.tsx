@@ -35,7 +35,7 @@ function TableMonthlyFee() {
             <NewTable.Cell>R$1.200,50</NewTable.Cell>
             <NewTable.Cell>01/11/2023</NewTable.Cell>
             <NewTable.Cell>
-              <Status recurring={true} />
+              <Status recurring={false} />
             </NewTable.Cell>
             <NewTable.Cell>
               <WrapperIcons>

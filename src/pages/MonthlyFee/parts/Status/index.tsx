@@ -3,9 +3,9 @@ import { StatusProps } from "./types";
 
 const Status = ({ recurring }: StatusProps) => {
   const renderText = (recurring: boolean) => {
-    if (recurring) return "Resolvido";
+    if (recurring) return "Recorrente";
 
-    return "Pendente";
+    return "Não Recorrente";
   };
 
   return (
