@@ -5,7 +5,7 @@ export interface PostParams {
   nome: string,
   descricao: string,
   valor: number,
-  recorrent: boolean,
+  recorrente: boolean,
   dataInicio: string,
   dataFim: string,
 }

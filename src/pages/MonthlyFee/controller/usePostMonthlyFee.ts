@@ -11,7 +11,7 @@ const schema = z.object({
   nome: z.string().min(1, "Tema é obrigatório"),
   descricao: z.string().min(1, "Descrição é obrigatório").max(300),
   valor: z.coerce.number().min(1, "Valor da taxa é obrigatório").int().positive(),
-  recorrent: z.boolean(),
+  recorrente: z.boolean(),
   dataInicio: z.string(),
   dataFim: z.string(),
 })

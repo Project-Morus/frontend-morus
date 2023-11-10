@@ -79,7 +79,7 @@ const Form = ({
           <Label htmlFor="isRecorrent">É recorrente?</Label>
           <Checkbox
             type="checkbox"
-            {...register("recorrent")}
+            {...register("recorrente")}
             id="isRecorrent"
           />
         </div>
