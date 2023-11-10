@@ -1,5 +1,8 @@
 import { Button, Input } from "../../components";
 import { MessageSC, QuantityTotalSC, TitleSC } from "../styles";
+import { useGetMonthlyFee } from "./controller/useGetMonthlyFee";
+import { usePostMonthlyFee } from "./controller/usePostMonthlyFee";
+import ModalPost from "./parts/ModalPost";
 import TableMonthlyFee from "./parts/Table";
 import {
   ButtonContainerSC,
@@ -8,6 +11,21 @@ import {
 } from "./styles";
 
 export default function MonthlyFee() {
+  const { data, count, emptyData, isLoading } = useGetMonthlyFee();
+  const {
+    handleSubmit,
+    register,
+    errors,
+    isPending,
+    postOpened,
+    postClosed,
+    isShowingPost,
+  } = usePostMonthlyFee();
+
+  const messageCount = emptyData
+    ? "Sem ocorrências!"
+    : `Quantidade total de taxas mensais: ${count}`;
+
   return (
     <>
       <HeaderSC>
@@ -19,7 +37,7 @@ export default function MonthlyFee() {
           </MessageSC>
         </div>
         <QuantityTotalSC>
-          {/* {isLoading ? "Carregando..." : messageCount} */}
+          {isLoading ? "Carregando..." : messageCount}
         </QuantityTotalSC>
       </HeaderSC>
 
@@ -31,12 +49,21 @@ export default function MonthlyFee() {
             maxWidth={200}
             text={"Registrar Transação"}
             variant="primary"
-            // onClick={postOpened}
+            onClick={postOpened}
           />
         </ButtonContainerSC>
       </InputAndButtonsContainerSC>
 
-      <TableMonthlyFee />
+      <TableMonthlyFee data={data ? data : []} isLoading={isLoading} />
+
+      <ModalPost
+        opened={isShowingPost}
+        closeModal={postClosed}
+        errors={errors}
+        isLoading={isPending}
+        onConfirmModal={handleSubmit}
+        register={register}
+      />
     </>
   );
 }
